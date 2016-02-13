@@ -1,0 +1,81 @@
+
+Importing Database Model AdventureWorks2008R2:
+	The table 'AdventureWorks2008R2.Production.Document' is referenced by a relationship, but cannot be found.
+	the HiarchyId is not supported by EntityFramework designer so Table not imported and also you can not see any entities on the designer, remove this table to have it
+
+	The ProcbelAppsLocal.mdf file is a local replication from AppsMain.edmx model.
+	 Each time the model is changed you should uprade/update/renew this database. 
+	 This database is used for the console and robot operations to storage locally the information. Then later services replicate to main database.
+	 to use in an application you msut create a link inside the App_Data folder and to the file and use the following database connection:
+		<add name="ProcbelAppsLocalConnection" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|AppsLocal.mdf;Integrated Security=True" providerName="System.Data.SqlClient" />
+
+
+
+Examples of using EF in a hierarchy model like Employees:
+
+here is the code to load the whole subtree from a node.
+
+Employee root = context.Employee.Where(e => e.Parent == null).First();
+IList<Employee> childs = context.Employee
+   .Where(e => e.fullPath.StartsWith(root.fullPath))
+   .OrderBy(e => e.fullPath)
+   .ToList();
+foreach (Employee child in childs)
+{
+   Console.WriteLine("{0}{1}", new String('-', child.hierarchyLevel.Value), child.Name);
+}
+Console.WriteLine("print tree recursively.");
+PrintNoLoad(root, 0);
+
+
+Entity Framework resolves all references for you, this means that the whole tree structure is reconstructed in memory, you can verify this with the PrintNoLoad function that print the whole subtree recursively.
+
+ public static void PrintNoLoad(Employee employee, Int32 level)
+{
+   Console.WriteLine("{0}{1}", new String('-', level), employee.Name);
+   foreach (Employee child in employee.Childs)
+   {
+      PrintNoLoad(child, level + 1);
+   }
+}
+
+
+
+create a method LoadSubtree with partial class to shield the user from a deep knowledge of the fullpath structure.
+
+ public partial class Employee
+{
+   public void LoadSubtree(TestEntities context)
+   {
+      context.Employee
+         .Where(e => e.fullPath.StartsWith(this.fullPath))
+         .ToList();
+   }
+
+   .....
+}
+
+You can also find the root with this method.
+
+ public Employee GetRoot(TestEntities context)
+{
+   String rootId = fullPath.Substring(1, fullPath.IndexOf('.', 1) - 1);
+   return context.LoadByKey<Employee>(Int32.Parse(rootId));
+}
+
+
+You can also find all nodes that are sons of the same father.
+
+ public List<Employee> GetSiblings(TestEntities context)
+{
+   String parentPath = fullPath.Substring(0, fullPath.LastIndexOf('.', fullPath.Length - 2)); 
+   return context.Employee
+      .Where(e => e.fullPath.StartsWith(parentPath) && e.hierarchyLevel == hierarchyLevel)
+      .ToList();
+}
+
+
+
+
+
+

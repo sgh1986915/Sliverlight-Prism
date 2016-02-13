@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50912</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <ProjectOutputReferences>
+            <Ref Project="{FE49EA54-88B4-4064-8CEB-916863C4D92E}" Folder="ClientBin">Procbel.Apps.Silverlight.xap</Ref>
+            <Ref Project="{C4F16224-E36F-4E9A-BA40-015031711AAA}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Inicio.xap|System.ServiceModel.DomainServices.Client.Web.zip|System.ServiceModel.DomainServices.Client.zip|System.ServiceModel.Web.Extensions.zip</Ref>
+            <Ref Project="{E7E061B0-816E-44CA-981F-E022D41F4449}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Ventas.xap|System.ServiceModel.DomainServices.Client.Web.zip|System.ServiceModel.DomainServices.Client.zip|System.ServiceModel.Web.Extensions.zip</Ref>
+            <Ref Project="{62A6C3CC-840F-41ED-9A5F-AAC2E8BA5672}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Companies.xap</Ref>
+            <Ref Project="{7C0606EC-77D3-447C-AA5A-7262C9C8D435}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Contacts.xap|System.ServiceModel.DomainServices.Client.Web.zip|System.ServiceModel.DomainServices.Client.zip|System.ServiceModel.Web.Extensions.zip</Ref>
+            <Ref Project="{54DE5DFF-C20E-4815-B47A-D682C17AFEB4}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Activities.xap</Ref>
+            <Ref Project="{43655EDB-041A-4691-AEAA-F7DEDCCA72FB}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Incidencias.xap</Ref>
+            <Ref Project="{F48CE0B0-12E6-4858-AB30-F4107CA5F998}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Calidad.xap</Ref>
+            <Ref Project="{7B224458-EDA8-4DFB-949E-A2AFBB8D8692}" Folder="ClientBin">Procbel.Apps.Silverlight.Modules.Opportunities.xap|System.ComponentModel.Composition.zip</Ref>
+          </ProjectOutputReferences>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

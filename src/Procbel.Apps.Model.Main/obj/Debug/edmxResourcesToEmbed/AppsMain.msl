@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AppsMainStoreContainer" CdmEntityContainer="AppsMainContainer">
+    <EntitySetMapping Name="Sites">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Site)">
+        <MappingFragment StoreEntitySet="Sites">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Customer)">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Propiedad1" ColumnName="Propiedad1" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Supplier)">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="IdentificationTagId" ColumnName="IdentificationTagId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Image)">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactTags">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.FactTag)">
+        <MappingFragment StoreEntitySet="FactTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="DimDateId" ColumnName="DimDateId" />
+          <ScalarProperty Name="DimTimeId" ColumnName="DimTimeId" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+          <ScalarProperty Name="productAssortmentId" ColumnName="productAssortmentId" />
+          <ScalarProperty Name="ProductBoxId" ColumnName="ProductBoxId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assets">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Asset)">
+        <MappingFragment StoreEntitySet="Assets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimDates">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.DimDate)">
+        <MappingFragment StoreEntitySet="DimDates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullDate" ColumnName="FullDate" />
+          <ScalarProperty Name="DateName" ColumnName="DateName" />
+          <ScalarProperty Name="DateNameUS" ColumnName="DateNameUS" />
+          <ScalarProperty Name="DateNameEU" ColumnName="DateNameEU" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="DayOfWeekNameSpanish" ColumnName="DayOfWeekNameSpanish" />
+          <ScalarProperty Name="DayOfWeekNameChinese" ColumnName="DayOfWeekNameChinese" />
+          <ScalarProperty Name="DayOfMonth" ColumnName="DayOfMonth" />
+          <ScalarProperty Name="DayOfYear" ColumnName="DayOfYear" />
+          <ScalarProperty Name="WeekdayWeekend" ColumnName="WeekdayWeekend" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="MonthNameSpanish" ColumnName="MonthNameSpanish" />
+          <ScalarProperty Name="MonthNameChinese" ColumnName="MonthNameChinese" />
+          <ScalarProperty Name="MonthOfYear" ColumnName="MonthOfYear" />
+          <ScalarProperty Name="IsLastDayOfMonth" ColumnName="IsLastDayOfMonth" />
+          <ScalarProperty Name="CalendarQuarter" ColumnName="CalendarQuarter" />
+          <ScalarProperty Name="CalendarYear" ColumnName="CalendarYear" />
+          <ScalarProperty Name="CalendarYearMonth" ColumnName="CalendarYearMonth" />
+          <ScalarProperty Name="CalendarYearQtr" ColumnName="CalendarYearQtr" />
+          <ScalarProperty Name="FiscalMonthOfYear" ColumnName="FiscalMonthOfYear" />
+          <ScalarProperty Name="FiscalQuarter" ColumnName="FiscalQuarter" />
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="FiscalYearMonth" ColumnName="FiscalYearMonth" />
+          <ScalarProperty Name="FiscalYearQtr" ColumnName="FiscalYearQtr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SpaceCenter" ColumnName="SpaceCenter" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="hierarchyLevel" ColumnName="hierarchyLevel" />
+          <ScalarProperty Name="fullPath" ColumnName="fullPath" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="MapPath" ColumnName="MapPath" />
+          <ScalarProperty Name="HierarchyLevelId" ColumnName="HierarchyLevelId" />
+          <ScalarProperty Name="ShapeFileUri" ColumnName="ShapeFileUri" />
+          <ScalarProperty Name="ShapeFileDataUri" ColumnName="ShapeFileDataUri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InfoTags">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.InfoTag)">
+        <MappingFragment StoreEntitySet="InfoTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="SpaceRead" ColumnName="SpaceRead" />
+          <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
+          <ScalarProperty Name="isSync" ColumnName="isSync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReaderTags">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.ReaderTag)">
+        <MappingFragment StoreEntitySet="ReaderTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Com" ColumnName="Com" />
+          <ScalarProperty Name="CanWrite" ColumnName="CanWrite" />
+          <ScalarProperty Name="OnDemand" ColumnName="OnDemand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="ProductNumber" ColumnName="ProductNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="FrenchName" ColumnName="FrenchName" />
+          <ScalarProperty Name="ChineseName" ColumnName="ChineseName" />
+          <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Features" ColumnName="Features" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EnglishDescription" ColumnName="EnglishDescription" />
+          <ScalarProperty Name="FrenchDescription" ColumnName="FrenchDescription" />
+          <ScalarProperty Name="ChineseDescription" ColumnName="ChineseDescription" />
+          <ScalarProperty Name="ArabicDescription" ColumnName="ArabicDescription" />
+          <ScalarProperty Name="HebrewDescription" ColumnName="HebrewDescription" />
+          <ScalarProperty Name="ThaiDescription" ColumnName="ThaiDescription" />
+          <ScalarProperty Name="GermanDescription" ColumnName="GermanDescription" />
+          <ScalarProperty Name="JapaneseDescription" ColumnName="JapaneseDescription" />
+          <ScalarProperty Name="TurkishDescription" ColumnName="TurkishDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.ProductCategory)">
+        <MappingFragment StoreEntitySet="ProductCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEnglish" ColumnName="NameEnglish" />
+          <ScalarProperty Name="NameChinese" ColumnName="NameChinese" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productAssortments">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.productAssortment)">
+        <MappingFragment StoreEntitySet="productAssortments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEnglish" ColumnName="NameEnglish" />
+          <ScalarProperty Name="NameChinese" ColumnName="NameChinese" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductBoxes">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.ProductBox)">
+        <MappingFragment StoreEntitySet="ProductBoxes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEnglish" ColumnName="NameEnglish" />
+          <ScalarProperty Name="NameChinese" ColumnName="NameChinese" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeShifts">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.EmployeeShifts)">
+        <MappingFragment StoreEntitySet="EmployeeShifts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="DimTimeId" ColumnName="DimTimeId" />
+          <ScalarProperty Name="DimDateId" ColumnName="DimDateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReaderTagAntenas">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.ReaderTagAntena)">
+        <MappingFragment StoreEntitySet="ReaderTagAntenas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AntenaArray" ColumnName="AntenaArray" />
+          <ScalarProperty Name="ReaderTagId" ColumnName="ReaderTagId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimTime">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.DimTime)">
+        <MappingFragment StoreEntitySet="DimTime">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hour_of_day_24" ColumnName="hour_of_day_24" />
+          <ScalarProperty Name="hour_of_day_12" ColumnName="hour_of_day_12" />
+          <ScalarProperty Name="am_pm" ColumnName="am_pm" />
+          <ScalarProperty Name="minute_of_hour" ColumnName="minute_of_hour" />
+          <ScalarProperty Name="half_hour" ColumnName="half_hour" />
+          <ScalarProperty Name="half_hour_of_day" ColumnName="half_hour_of_day" />
+          <ScalarProperty Name="quarter_hour" ColumnName="quarter_hour" />
+          <ScalarProperty Name="quarter_hour_of_day" ColumnName="quarter_hour_of_day" />
+          <ScalarProperty Name="string_representation_24" ColumnName="string_representation_24" />
+          <ScalarProperty Name="string_representation_12" ColumnName="string_representation_12" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketAttachments">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.TicketAttachment)">
+        <MappingFragment StoreEntitySet="TicketAttachments">
+          <ScalarProperty Name="FileId" ColumnName="FileId" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="UploadedDate" ColumnName="UploadedDate" />
+          <ScalarProperty Name="FileContents" ColumnName="FileContents" />
+          <ScalarProperty Name="FileDescription" ColumnName="FileDescription" />
+          <ScalarProperty Name="IsPending" ColumnName="IsPending" />
+          <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketComments">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.TicketComment)">
+        <MappingFragment StoreEntitySet="TicketComments">
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="CommentEvent" ColumnName="CommentEvent" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="IsHtml" ColumnName="IsHtml" />
+          <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+          <ScalarProperty Name="CommentedDate" ColumnName="CommentedDate" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketEventNotifications">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.TicketEventNotification)">
+        <MappingFragment StoreEntitySet="TicketEventNotifications">
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="NotifyUser" ColumnName="NotifyUser" />
+          <ScalarProperty Name="NotifyUserDisplayName" ColumnName="NotifyUserDisplayName" />
+          <ScalarProperty Name="NotifyEmail" ColumnName="NotifyEmail" />
+          <ScalarProperty Name="NotifyUserReason" ColumnName="NotifyUserReason" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DeliveryAttempts" ColumnName="DeliveryAttempts" />
+          <ScalarProperty Name="LastDeliveryAttemptDate" ColumnName="LastDeliveryAttemptDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="NextDeliveryAttemptDate" ColumnName="NextDeliveryAttemptDate" />
+          <ScalarProperty Name="EventGeneratedByUser" ColumnName="EventGeneratedByUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Ticket)">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="IsHtml" ColumnName="IsHtml" />
+          <ScalarProperty Name="TagList" ColumnName="TagList" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="CurrentStatusDate" ColumnName="CurrentStatusDate" />
+          <ScalarProperty Name="CurrentStatusSetBy" ColumnName="CurrentStatusSetBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="AffectsCustomer" ColumnName="AffectsCustomer" />
+          <ScalarProperty Name="PublishedToKb" ColumnName="PublishedToKb" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="DimCreatedDateId" ColumnName="DimCreatedDateId" />
+          <ScalarProperty Name="DimCreatedTimeId" ColumnName="DimCreatedTimeId" />
+          <ScalarProperty Name="DimCurrentStatusDateId" ColumnName="DimCurrentStatusDateId" />
+          <ScalarProperty Name="DimCurrentStatusTimeId" ColumnName="DimCurrentStatusTimeId" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="TicketCategoryTicketCategoryId" ColumnName="TicketCategoryTicketCategoryId" />
+          <ScalarProperty Name="TicketTypeTicketTypeId" ColumnName="TicketTypeTicketTypeId" />
+          <ScalarProperty Name="TicketStatusTicketStatusId" ColumnName="TicketStatusTicketStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketTags">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.TicketTag)">
+        <MappingFragment StoreEntitySet="TicketTags">
+          <ScalarProperty Name="TicketTagId" ColumnName="TicketTagId" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Setting)">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+          <ScalarProperty Name="SettingType" ColumnName="SettingType" />
+          <ScalarProperty Name="SettingDescription" ColumnName="SettingDescription" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketTypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.TicketType)">
+        <MappingFragment StoreEntitySet="TicketTypeSet">
+          <ScalarProperty Name="TicketTypeId" ColumnName="TicketTypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketCategorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.TicketCategory)">
+        <MappingFragment StoreEntitySet="TicketCategorySet">
+          <ScalarProperty Name="TicketCategoryId" ColumnName="TicketCategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketStatusSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.TicketStatus)">
+        <MappingFragment StoreEntitySet="TicketStatusSet">
+          <ScalarProperty Name="TicketStatusId" ColumnName="TicketStatusId" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="ImportanceSize" ColumnName="ImportanceSize" />
+          <ScalarProperty Name="Editable" ColumnName="Editable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activity">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Activity)">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="OpportunityID" ColumnName="OpportunityID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="DimDateCreatedId" ColumnName="DimDateCreatedId" />
+          <ScalarProperty Name="DimTimeCreatedId" ColumnName="DimTimeCreatedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Company)">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="NASDAQ" ColumnName="NASDAQ" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Contact)">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="IsEmployee" ColumnName="IsEmployee" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="GooglePlus" ColumnName="GooglePlus" />
+          <ScalarProperty Name="Blog" ColumnName="Blog" />
+          <ScalarProperty Name="IsImportantPerson" ColumnName="IsImportantPerson" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opportunity">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Opportunity)">
+        <MappingFragment StoreEntitySet="Opportunity">
+          <ScalarProperty Name="OpportunityID" ColumnName="OpportunityID" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Lead" ColumnName="Lead" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="SuccessProbability" ColumnName="SuccessProbability" />
+          <ScalarProperty Name="WonLostReason" ColumnName="WonLostReason" />
+          <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
+          <ScalarProperty Name="DiscountReason" ColumnName="DiscountReason" />
+          <ScalarProperty Name="EstimationCloseDate" ColumnName="EstimationCloseDate" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DimDateCreatedId" ColumnName="DimDateCreatedId" />
+          <ScalarProperty Name="DimTimeCreatedId" ColumnName="DimTimeCreatedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesTrend">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.SalesTrend)">
+        <MappingFragment StoreEntitySet="SalesTrend">
+          <ScalarProperty Name="SalesTrendID" ColumnName="SalesTrendID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.LocationType)">
+        <MappingFragment StoreEntitySet="LocationTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationHierarchyLevels">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.LocationHierarchyLevel)">
+        <MappingFragment StoreEntitySet="LocationHierarchyLevels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IconUri" ColumnName="IconUri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCatalogStructures">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.ProductCatalogStructure)">
+        <MappingFragment StoreEntitySet="ProductCatalogStructures">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCatalogs">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.ProductCatalog)">
+        <MappingFragment StoreEntitySet="ProductCatalogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="FrenchName" ColumnName="FrenchName" />
+          <ScalarProperty Name="ChineseName" ColumnName="ChineseName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EnglishDescription" ColumnName="EnglishDescription" />
+          <ScalarProperty Name="FrenchDescription" ColumnName="FrenchDescription" />
+          <ScalarProperty Name="ChineseDescription" ColumnName="ChineseDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Document)">
+        <MappingFragment StoreEntitySet="DocumentSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Code">
+      <EntityTypeMapping TypeName="IsTypeOf(AppsMain.Code)">
+        <MappingFragment StoreEntitySet="Code">
+          <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+          <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AssocText" ColumnName="AssocText" />
+          <ScalarProperty Name="AssocValue" ColumnName="AssocValue" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="LocationLocationType" TypeName="AppsMain.LocationLocationType" StoreEntitySet="LocationLocationType">
+      <EndProperty Name="Location">
+        <ScalarProperty Name="Id" ColumnName="Locations_Id" />
+      </EndProperty>
+      <EndProperty Name="LocationType">
+        <ScalarProperty Name="Id" ColumnName="LocationTypes_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TicketTicketTag" TypeName="AppsMain.TicketTicketTag" StoreEntitySet="TicketTicketTag">
+      <EndProperty Name="Ticket">
+        <ScalarProperty Name="TicketId" ColumnName="Tickets_TicketId" />
+      </EndProperty>
+      <EndProperty Name="TicketTag">
+        <ScalarProperty Name="TicketTagId" ColumnName="TicketTags_TicketTagId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

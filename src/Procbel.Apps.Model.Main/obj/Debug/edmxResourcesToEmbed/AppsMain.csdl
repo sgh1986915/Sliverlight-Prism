@@ -1,0 +1,1391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AppsMain" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AppsMainContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Sites" EntityType="AppsMain.Site" />
+    <EntitySet Name="Customers" EntityType="AppsMain.Customer" />
+    <EntitySet Name="Suppliers" EntityType="AppsMain.Supplier" />
+    <EntitySet Name="Employees" EntityType="AppsMain.Employee" />
+    <EntitySet Name="Images" EntityType="AppsMain.Image" />
+    <EntitySet Name="FactTags" EntityType="AppsMain.FactTag" />
+    <EntitySet Name="Assets" EntityType="AppsMain.Asset" />
+    <EntitySet Name="DimDates" EntityType="AppsMain.DimDate" />
+    <EntitySet Name="Locations" EntityType="AppsMain.Location" />
+    <EntitySet Name="InfoTags" EntityType="AppsMain.InfoTag" />
+    <EntitySet Name="ReaderTags" EntityType="AppsMain.ReaderTag" />
+    <EntitySet Name="Products" EntityType="AppsMain.Product" />
+    <EntitySet Name="ProductCategories" EntityType="AppsMain.ProductCategory" />
+    <EntitySet Name="productAssortments" EntityType="AppsMain.productAssortment" />
+    <EntitySet Name="ProductBoxes" EntityType="AppsMain.ProductBox" />
+    <EntitySet Name="EmployeeShifts" EntityType="AppsMain.EmployeeShifts" />
+    <EntitySet Name="ReaderTagAntenas" EntityType="AppsMain.ReaderTagAntena" />
+    <EntitySet Name="DimTime" EntityType="AppsMain.DimTime" />
+    <AssociationSet Name="SiteEmployee" Association="AppsMain.SiteEmployee">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="SiteFactTag" Association="AppsMain.SiteFactTag">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="SiteCustomer" Association="AppsMain.SiteCustomer">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="SiteSupplier" Association="AppsMain.SiteSupplier">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="SiteAsset" Association="AppsMain.SiteAsset">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Asset" EntitySet="Assets" />
+    </AssociationSet>
+    <AssociationSet Name="SiteImage" Association="AppsMain.SiteImage">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="SiteLocation" Association="AppsMain.SiteLocation">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="SiteProduct" Association="AppsMain.SiteProduct">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="SiteProductBox" Association="AppsMain.SiteProductBox">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="ProductBox" EntitySet="ProductBoxes" />
+    </AssociationSet>
+    <AssociationSet Name="InfoTagLocation" Association="AppsMain.InfoTagLocation">
+      <End Role="InfoTag" EntitySet="InfoTags" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="ReaderTagReaderTagAntena" Association="AppsMain.ReaderTagReaderTagAntena">
+      <End Role="ReaderTag" EntitySet="ReaderTags" />
+      <End Role="ReaderTagAntena" EntitySet="ReaderTagAntenas" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCategoryProduct" Association="AppsMain.ProductCategoryProduct">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCategoryFactTag" Association="AppsMain.ProductCategoryFactTag">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="productAssortmentFactTag" Association="AppsMain.productAssortmentFactTag">
+      <End Role="productAssortment" EntitySet="productAssortments" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="ProductBoxFactTag" Association="AppsMain.ProductBoxFactTag">
+      <End Role="ProductBox" EntitySet="ProductBoxes" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeEmployeeShifts" Association="AppsMain.EmployeeEmployeeShifts">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
+    </AssociationSet>
+    <EntitySet Name="TicketAttachments" EntityType="AppsMain.TicketAttachment" />
+    <EntitySet Name="TicketComments" EntityType="AppsMain.TicketComment" />
+    <EntitySet Name="TicketEventNotifications" EntityType="AppsMain.TicketEventNotification" />
+    <EntitySet Name="Tickets" EntityType="AppsMain.Ticket" />
+    <EntitySet Name="TicketTags" EntityType="AppsMain.TicketTag" />
+    <EntitySet Name="Settings" EntityType="AppsMain.Setting" />
+    <AssociationSet Name="FK_TicketAttachments_Tickets" Association="AppsMain.FK_TicketAttachments_Tickets">
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="TicketAttachment" EntitySet="TicketAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketComments_Tickets" Association="AppsMain.FK_TicketComments_Tickets">
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="TicketComment" EntitySet="TicketComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketEventNotifications_TicketComments" Association="AppsMain.FK_TicketEventNotifications_TicketComments">
+      <End Role="TicketComment" EntitySet="TicketComments" />
+      <End Role="TicketEventNotification" EntitySet="TicketEventNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="SiteTicket" Association="AppsMain.SiteTicket">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="SiteSetting" Association="AppsMain.SiteSetting">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Setting" EntitySet="Settings" />
+    </AssociationSet>
+    <EntitySet Name="TicketTypeSet" EntityType="AppsMain.TicketType" />
+    <EntitySet Name="TicketCategorySet" EntityType="AppsMain.TicketCategory" />
+    <AssociationSet Name="TicketCategoryTicket" Association="AppsMain.TicketCategoryTicket">
+      <End Role="TicketCategory" EntitySet="TicketCategorySet" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="TicketTypeTicket" Association="AppsMain.TicketTypeTicket">
+      <End Role="TicketType" EntitySet="TicketTypeSet" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <EntitySet Name="TicketStatusSet" EntityType="AppsMain.TicketStatus" />
+    <AssociationSet Name="TicketStatusTicket" Association="AppsMain.TicketStatusTicket">
+      <End Role="TicketStatus" EntitySet="TicketStatusSet" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <EntitySet Name="Activity" EntityType="AppsMain.Activity" />
+    <EntitySet Name="Company" EntityType="AppsMain.Company" />
+    <EntitySet Name="Contact" EntityType="AppsMain.Contact" />
+    <EntitySet Name="Opportunity" EntityType="AppsMain.Opportunity" />
+    <EntitySet Name="SalesTrend" EntityType="AppsMain.SalesTrend" />
+    <AssociationSet Name="FK_Activity_Opportunity" Association="AppsMain.FK_Activity_Opportunity">
+      <End Role="Opportunity" EntitySet="Opportunity" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Company" Association="AppsMain.FK_Contact_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Opportunity_Company" Association="AppsMain.FK_Opportunity_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesTrend_Company" Association="AppsMain.FK_SalesTrend_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="SalesTrend" EntitySet="SalesTrend" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeActivity" Association="AppsMain.EmployeeActivity">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="ImageContact" Association="AppsMain.ImageContact">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="ImageProduct" Association="AppsMain.ImageProduct">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductOpportunity" Association="AppsMain.ProductOpportunity">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="ImageEmployee" Association="AppsMain.ImageEmployee">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="SiteCompany" Association="AppsMain.SiteCompany">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <EntitySet Name="LocationTypes" EntityType="AppsMain.LocationType" />
+    <EntitySet Name="LocationHierarchyLevels" EntityType="AppsMain.LocationHierarchyLevel" />
+    <AssociationSet Name="LocationHierarchyParent" Association="AppsMain.LocationHierarchyParent">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="LocationParent" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="ImageLocation" Association="AppsMain.ImageLocation">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="CompanyCustomer" Association="AppsMain.CompanyCustomer">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="CompanySupplier" Association="AppsMain.CompanySupplier">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="ContactOpportunity" Association="AppsMain.ContactOpportunity">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <EntitySet Name="ProductCatalogStructures" EntityType="AppsMain.ProductCatalogStructure" />
+    <EntitySet Name="ProductCatalogs" EntityType="AppsMain.ProductCatalog" />
+    <EntitySet Name="DocumentSet" EntityType="AppsMain.Document" />
+    <AssociationSet Name="LocationLocationType" Association="AppsMain.LocationLocationType">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="LocationType" EntitySet="LocationTypes" />
+    </AssociationSet>
+    <AssociationSet Name="LocationLocationHierarchyLevel" Association="AppsMain.LocationLocationHierarchyLevel">
+      <End EntitySet="Locations" Role="Location" />
+      <End EntitySet="LocationHierarchyLevels" Role="LocationHierarchyLevel" />
+    </AssociationSet>
+    <AssociationSet Name="ImageCompany" Association="AppsMain.ImageCompany">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="SiteLocationType" Association="AppsMain.SiteLocationType">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="LocationType" EntitySet="LocationTypes" />
+    </AssociationSet>
+    <AssociationSet Name="SiteOpportunity" Association="AppsMain.SiteOpportunity">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="TicketTicketTag" Association="AppsMain.TicketTicketTag">
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="TicketTag" EntitySet="TicketTags" />
+    </AssociationSet>
+    <EntitySet Name="Code" EntityType="AppsMain.Code" />
+    <AssociationSet Name="FK_Code_Code" Association="AppsMain.FK_Code_Code">
+      <End Role="Code" EntitySet="Code" />
+      <End Role="Code1" EntitySet="Code" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Employees" Relationship="AppsMain.SiteEmployee" FromRole="Site" ToRole="Employee" />
+    <NavigationProperty Name="FactTags" Relationship="AppsMain.SiteFactTag" FromRole="Site" ToRole="FactTag" />
+    <NavigationProperty Name="Customers" Relationship="AppsMain.SiteCustomer" FromRole="Site" ToRole="Customer" />
+    <NavigationProperty Name="Suppliers" Relationship="AppsMain.SiteSupplier" FromRole="Site" ToRole="Supplier" />
+    <NavigationProperty Name="Assets" Relationship="AppsMain.SiteAsset" FromRole="Site" ToRole="Asset" />
+    <NavigationProperty Name="Image" Relationship="AppsMain.SiteImage" FromRole="Site" ToRole="Image" />
+    <NavigationProperty Name="Locations" Relationship="AppsMain.SiteLocation" FromRole="Site" ToRole="Location" />
+    <NavigationProperty Name="Products" Relationship="AppsMain.SiteProduct" FromRole="Site" ToRole="Product" />
+    <NavigationProperty Name="ProductBoxes" Relationship="AppsMain.SiteProductBox" FromRole="Site" ToRole="ProductBox" />
+    <NavigationProperty Name="Ticket" Relationship="AppsMain.SiteTicket" FromRole="Site" ToRole="Ticket" />
+    <NavigationProperty Name="Settings" Relationship="AppsMain.SiteSetting" FromRole="Site" ToRole="Setting" />
+    <NavigationProperty Name="Companies" Relationship="AppsMain.SiteCompany" FromRole="Site" ToRole="Company" />
+    <Property Type="Int32" Name="ImageId" Nullable="true" />
+    <NavigationProperty Name="LocationTypes" Relationship="AppsMain.SiteLocationType" FromRole="Site" ToRole="LocationType" />
+    <NavigationProperty Name="Opportunities" Relationship="AppsMain.SiteOpportunity" FromRole="Site" ToRole="Opportunity" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteCustomer" FromRole="Customer" ToRole="Site" />
+    <Property Type="String" Name="Propiedad1" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Decimal" Name="Credito" Precision="19" Scale="4" />
+    <NavigationProperty Name="Company" Relationship="AppsMain.CompanyCustomer" FromRole="Customer" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteSupplier" FromRole="Supplier" ToRole="Site" />
+    <NavigationProperty Name="Company" Relationship="AppsMain.CompanySupplier" FromRole="Supplier" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="String" Name="IdentificationTagId" Nullable="true" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="3" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteEmployee" FromRole="Employee" ToRole="Site" />
+    <NavigationProperty Name="EmployeeShifts" Relationship="AppsMain.EmployeeEmployeeShifts" FromRole="Employee" ToRole="EmployeeShifts" />
+    <Property Type="String" Name="Position" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" />
+    <NavigationProperty Name="Activities" Relationship="AppsMain.EmployeeActivity" FromRole="Employee" ToRole="Activity" />
+    <NavigationProperty Name="Image" Relationship="AppsMain.ImageEmployee" FromRole="Employee" ToRole="Image" />
+    <Property Type="Int32" Name="ImageId" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Content" Nullable="true" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="Extension" Nullable="true" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MimeType" Nullable="true" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Size" Nullable="false" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteImage" FromRole="Image" ToRole="Site" />
+    <NavigationProperty Name="Contacts" Relationship="AppsMain.ImageContact" FromRole="Image" ToRole="Contact" />
+    <NavigationProperty Name="Products" Relationship="AppsMain.ImageProduct" FromRole="Image" ToRole="Product" />
+    <NavigationProperty Name="Employees" Relationship="AppsMain.ImageEmployee" FromRole="Image" ToRole="Employee" />
+    <NavigationProperty Name="Locations" Relationship="AppsMain.ImageLocation" FromRole="Image" ToRole="Location" />
+    <NavigationProperty Name="Companies" Relationship="AppsMain.ImageCompany" FromRole="Image" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="FactTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="Int32" Name="DimDateId" Nullable="false" />
+    <Property Type="Int32" Name="DimTimeId" Nullable="false" />
+    <Property Type="String" Name="TagId" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="LocationId" Nullable="false" />
+    <Property Type="Int32" Name="ProductId" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="true" />
+    <Property Type="Int32" Name="ProductCategoryId" Nullable="true" />
+    <Property Type="Int32" Name="productAssortmentId" Nullable="true" />
+    <Property Type="Int32" Name="ProductBoxId" Nullable="true" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteFactTag" FromRole="FactTag" ToRole="Site" />
+    <NavigationProperty Name="ProductCategory" Relationship="AppsMain.ProductCategoryFactTag" FromRole="FactTag" ToRole="ProductCategory" />
+    <NavigationProperty Name="productAssortment" Relationship="AppsMain.productAssortmentFactTag" FromRole="FactTag" ToRole="productAssortment" />
+    <NavigationProperty Name="ProductBox" Relationship="AppsMain.ProductBoxFactTag" FromRole="FactTag" ToRole="ProductBox" />
+  </EntityType>
+  <EntityType Name="Asset">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteAsset" FromRole="Asset" ToRole="Site" />
+  </EntityType>
+  <EntityType Name="DimDate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="FullDate" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DateName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DateNameUS" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DateNameEU" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DayOfWeek" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DayOfWeekName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DayOfWeekNameSpanish" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DayOfWeekNameChinese" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DayOfMonth" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DayOfYear" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WeekdayWeekend" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WeekOfYear" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MonthName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MonthNameSpanish" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MonthNameChinese" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MonthOfYear" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IsLastDayOfMonth" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CalendarQuarter" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="CalendarYear" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CalendarYearMonth" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CalendarYearQtr" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FiscalMonthOfYear" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FiscalQuarter" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="FiscalYear" Nullable="false" />
+    <Property Type="String" Name="FiscalYearMonth" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FiscalYearQtr" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="GeographyPoint" Name="SpaceCenter" Nullable="true" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteLocation" FromRole="Location" ToRole="Site" />
+    <NavigationProperty Name="InfoTags" Relationship="AppsMain.InfoTagLocation" FromRole="Location" ToRole="InfoTag" />
+    <NavigationProperty Name="LocationParent" Relationship="AppsMain.LocationHierarchyParent" FromRole="LocationParent" ToRole="Location" />
+    <Property Type="Int32" Name="parentId" Nullable="true" />
+    <Property Type="Int16" Name="hierarchyLevel" Nullable="false" />
+    <Property Type="String" Name="fullPath" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Image" Relationship="AppsMain.ImageLocation" FromRole="Location" ToRole="Image" />
+    <Property Type="Int32" Name="ImageId" Nullable="true" />
+    <Property Type="GeometryMultiPolygon" Name="MapPath" />
+    <Property Type="Int32" Name="HierarchyLevelId" Nullable="false" />
+    <NavigationProperty Name="LocationTypes" Relationship="AppsMain.LocationLocationType" FromRole="Location" ToRole="LocationType" />
+    <NavigationProperty Name="LocationHierarchyLevel" Relationship="AppsMain.LocationLocationHierarchyLevel" FromRole="Location" ToRole="LocationHierarchyLevel" />
+    <Property Type="String" Name="ShapeFileUri" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="ShapeFileDataUri" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="InfoTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="TagId" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="LocationId" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="DateEnd" Nullable="false" Precision="3" />
+    <Property Type="GeographyPoint" Name="SpaceRead" Nullable="true" />
+    <Property Type="Boolean" Name="isCompleted" Nullable="false" DefaultValue="false" />
+    <Property Type="Boolean" Name="isSync" Nullable="false" DefaultValue="false" />
+    <NavigationProperty Name="Location" Relationship="AppsMain.InfoTagLocation" FromRole="InfoTag" ToRole="Location" />
+  </EntityType>
+  <EntityType Name="ReaderTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Model" Nullable="true" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="IP" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Port" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Com" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="CanWrite" Nullable="false" DefaultValue="False" />
+    <Property Type="Boolean" Name="OnDemand" Nullable="false" DefaultValue="False" />
+    <NavigationProperty Name="ReaderTagAntenas" Relationship="AppsMain.ReaderTagReaderTagAntena" FromRole="ReaderTag" ToRole="ReaderTagAntena" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="String" Name="ProductNumber" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="EnglishName" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="FrenchName" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="ChineseName" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="ProductCategoryId" Nullable="true" />
+    <Property Type="AppsMain.ProductType" Name="ProductType" Nullable="false" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteProduct" FromRole="Product" ToRole="Site" />
+    <NavigationProperty Name="ProductCategory" Relationship="AppsMain.ProductCategoryProduct" FromRole="Product" ToRole="ProductCategory" />
+    <Property Type="String" Name="Features" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="UnitPrice" Precision="19" Scale="4" />
+    <NavigationProperty Name="Image" Relationship="AppsMain.ImageProduct" FromRole="Product" ToRole="Image" />
+    <Property Type="Int32" Name="ImageId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="400" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Opportunities" Relationship="AppsMain.ProductOpportunity" FromRole="Product" ToRole="Opportunity" />
+    <Property Type="String" Name="EnglishDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FrenchDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ChineseDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ArabicDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HebrewDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ThaiDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GermanDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JapaneseDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TurkishDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="NameEnglish" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="NameChinese" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="AppsMain.ProductCategoryProduct" FromRole="ProductCategory" ToRole="Product" />
+    <NavigationProperty Name="FactTags" Relationship="AppsMain.ProductCategoryFactTag" FromRole="ProductCategory" ToRole="FactTag" />
+  </EntityType>
+  <EntityType Name="productAssortment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="NameEnglish" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="NameChinese" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="FactTags" Relationship="AppsMain.productAssortmentFactTag" FromRole="productAssortment" ToRole="FactTag" />
+  </EntityType>
+  <EntityType Name="ProductBox">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="NameEnglish" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="NameChinese" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="Double" Name="NetWeight" Nullable="false" />
+    <Property Type="AppsMain.ProductType" Name="ProductType" Nullable="false" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteProductBox" FromRole="ProductBox" ToRole="Site" />
+    <NavigationProperty Name="FactTags" Relationship="AppsMain.ProductBoxFactTag" FromRole="ProductBox" ToRole="FactTag" />
+  </EntityType>
+  <EntityType Name="EmployeeShifts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="Int32" Name="DimTimeId" Nullable="false" />
+    <Property Type="Int32" Name="DimDateId" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="AppsMain.EmployeeEmployeeShifts" FromRole="EmployeeShifts" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="ReaderTagAntena">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AntenaArray" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ReaderTagId" Nullable="false" />
+    <NavigationProperty Name="ReaderTag" Relationship="AppsMain.ReaderTagReaderTagAntena" FromRole="ReaderTagAntena" ToRole="ReaderTag" />
+  </EntityType>
+  <EntityType Name="DimTime">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int16" Name="Id" Nullable="false" />
+    <Property Type="Byte" Name="hour_of_day_24" />
+    <Property Type="Byte" Name="hour_of_day_12" />
+    <Property Type="String" Name="am_pm" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="Byte" Name="minute_of_hour" />
+    <Property Type="Byte" Name="half_hour" />
+    <Property Type="Byte" Name="half_hour_of_day" />
+    <Property Type="Byte" Name="quarter_hour" />
+    <Property Type="Byte" Name="quarter_hour_of_day" />
+    <Property Type="String" Name="string_representation_24" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="string_representation_12" MaxLength="5" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <Association Name="SiteEmployee">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteFactTag">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.FactTag" Role="FactTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteCustomer">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteSupplier">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Supplier" Role="Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteAsset">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Asset" Role="Asset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Asset">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteImage">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="*" />
+    <End Type="AppsMain.Image" Role="Image" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Site">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteLocation">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Location" Role="Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteProduct">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteProductBox">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.ProductBox" Role="ProductBox" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductBox">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InfoTagLocation">
+    <End Type="AppsMain.InfoTag" Role="InfoTag" Multiplicity="*" />
+    <End Type="AppsMain.Location" Role="Location" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoTag">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReaderTagReaderTagAntena">
+    <End Type="AppsMain.ReaderTag" Role="ReaderTag" Multiplicity="1" />
+    <End Type="AppsMain.ReaderTagAntena" Role="ReaderTagAntena" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReaderTag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReaderTagAntena">
+        <PropertyRef Name="ReaderTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCategoryProduct">
+    <End Type="AppsMain.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+    <End Type="AppsMain.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCategoryFactTag">
+    <End Type="AppsMain.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+    <End Type="AppsMain.FactTag" Role="FactTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productAssortmentFactTag">
+    <End Type="AppsMain.productAssortment" Role="productAssortment" Multiplicity="0..1" />
+    <End Type="AppsMain.FactTag" Role="FactTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productAssortment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="productAssortmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductBoxFactTag">
+    <End Type="AppsMain.ProductBox" Role="ProductBox" Multiplicity="0..1" />
+    <End Type="AppsMain.FactTag" Role="FactTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductBox">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="ProductBoxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeEmployeeShifts">
+    <End Type="AppsMain.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="AppsMain.EmployeeShifts" Role="EmployeeShifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeShifts">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EnumType Name="ProductType">
+    <Member Name="MateriaPrima" Value="1" />
+    <Member Name="Terminado" Value="2" />
+  </EnumType>
+  <EntityType Name="TicketAttachment">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Type="Int32" Name="TicketId" />
+    <Property Type="Int32" Name="FileId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="FileName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FileSize" Nullable="false" />
+    <Property Type="String" Name="FileType" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UploadedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="UploadedDate" Nullable="false" Precision="3" />
+    <Property Type="Binary" Name="FileContents" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="FileDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsPending" Nullable="false" />
+    <NavigationProperty Name="Ticket" Relationship="AppsMain.FK_TicketAttachments_Tickets" FromRole="TicketAttachment" ToRole="Ticket" />
+    <Property Type="String" Name="FileUrl" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TicketComment">
+    <Key>
+      <PropertyRef Name="TicketId" />
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Type="Int32" Name="TicketId" Nullable="false" />
+    <Property Type="Int32" Name="CommentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CommentEvent" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsHtml" Nullable="false" />
+    <Property Type="String" Name="CommentedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CommentedDate" Nullable="false" Precision="3" />
+    <Property Type="Guid" Name="Version" Nullable="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="Ticket" Relationship="AppsMain.FK_TicketComments_Tickets" FromRole="TicketComment" ToRole="Ticket" />
+    <NavigationProperty Name="TicketEventNotifications" Relationship="AppsMain.FK_TicketEventNotifications_TicketComments" FromRole="TicketComment" ToRole="TicketEventNotification" />
+  </EntityType>
+  <EntityType Name="TicketEventNotification">
+    <Key>
+      <PropertyRef Name="TicketId" />
+      <PropertyRef Name="CommentId" />
+      <PropertyRef Name="NotifyUser" />
+    </Key>
+    <Property Type="Int32" Name="TicketId" Nullable="false" />
+    <Property Type="Int32" Name="CommentId" Nullable="false" />
+    <Property Type="String" Name="NotifyUser" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NotifyUserDisplayName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NotifyEmail" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NotifyUserReason" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="DeliveryAttempts" Nullable="false" />
+    <Property Type="DateTime" Name="LastDeliveryAttemptDate" Precision="3" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NextDeliveryAttemptDate" Precision="3" />
+    <Property Type="String" Name="EventGeneratedByUser" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TicketComment" Relationship="AppsMain.FK_TicketEventNotifications_TicketComments" FromRole="TicketEventNotification" ToRole="TicketComment" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="TicketId" />
+    </Key>
+    <Property Type="Int32" Name="TicketId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Details" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsHtml" Nullable="false" />
+    <Property Type="String" Name="TagList" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Owner" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AssignedTo" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CurrentStatusDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CurrentStatusSetBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastUpdateBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastUpdateDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Priority" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="AffectsCustomer" Nullable="false" />
+    <Property Type="Boolean" Name="PublishedToKb" Nullable="false" />
+    <Property Type="Guid" Name="Version" Nullable="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="TicketAttachments" Relationship="AppsMain.FK_TicketAttachments_Tickets" FromRole="Ticket" ToRole="TicketAttachment" />
+    <NavigationProperty Name="TicketComments" Relationship="AppsMain.FK_TicketComments_Tickets" FromRole="Ticket" ToRole="TicketComment" />
+    <Property Type="Int32" Name="DimCreatedDateId" Nullable="false" />
+    <Property Type="Int32" Name="DimCreatedTimeId" Nullable="false" />
+    <Property Type="Int32" Name="DimCurrentStatusDateId" Nullable="false" />
+    <Property Type="Int32" Name="DimCurrentStatusTimeId" Nullable="false" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteTicket" FromRole="Ticket" ToRole="Site" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <NavigationProperty Name="TicketCategory" Relationship="AppsMain.TicketCategoryTicket" FromRole="Ticket" ToRole="TicketCategory" />
+    <Property Type="Int32" Name="TicketCategoryTicketCategoryId" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="TicketType" Relationship="AppsMain.TicketTypeTicket" FromRole="Ticket" ToRole="TicketType" />
+    <Property Type="Int32" Name="TicketTypeTicketTypeId" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="TicketStatus" Relationship="AppsMain.TicketStatusTicket" FromRole="Ticket" ToRole="TicketStatus" />
+    <Property Type="Int32" Name="TicketStatusTicketStatusId" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="TicketTags" Relationship="AppsMain.TicketTicketTag" FromRole="Ticket" ToRole="TicketTag" />
+  </EntityType>
+  <EntityType Name="TicketTag">
+    <Key>
+      <PropertyRef Name="TicketTagId" />
+    </Key>
+    <Property Type="Int32" Name="TicketTagId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="TagName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tickets" Relationship="AppsMain.TicketTicketTag" FromRole="TicketTag" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="SettingName" />
+    </Key>
+    <Property Type="String" Name="SettingName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SettingValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DefaultValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SettingType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SettingDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteSetting" FromRole="Setting" ToRole="Site" />
+    <Property Type="Int32" Name="SiteId" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_TicketAttachments_Tickets">
+    <End Type="AppsMain.Ticket" Role="Ticket" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AppsMain.TicketAttachment" Role="TicketAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="TicketId" />
+      </Principal>
+      <Dependent Role="TicketAttachment">
+        <PropertyRef Name="TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketComments_Tickets">
+    <End Type="AppsMain.Ticket" Role="Ticket" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AppsMain.TicketComment" Role="TicketComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="TicketId" />
+      </Principal>
+      <Dependent Role="TicketComment">
+        <PropertyRef Name="TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketEventNotifications_TicketComments">
+    <End Type="AppsMain.TicketComment" Role="TicketComment" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AppsMain.TicketEventNotification" Role="TicketEventNotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketComment">
+        <PropertyRef Name="TicketId" />
+        <PropertyRef Name="CommentId" />
+      </Principal>
+      <Dependent Role="TicketEventNotification">
+        <PropertyRef Name="TicketId" />
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteTicket">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Ticket" Role="Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteSetting">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="0..1" />
+    <End Type="AppsMain.Setting" Role="Setting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Setting">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TicketType">
+    <Key>
+      <PropertyRef Name="TicketTypeId" />
+    </Key>
+    <Property Type="Int32" Name="TicketTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="TypeName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tickets" Relationship="AppsMain.TicketTypeTicket" FromRole="TicketType" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="TicketCategory">
+    <Key>
+      <PropertyRef Name="TicketCategoryId" />
+    </Key>
+    <Property Type="Int32" Name="TicketCategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tickets" Relationship="AppsMain.TicketCategoryTicket" FromRole="TicketCategory" ToRole="Ticket" />
+  </EntityType>
+  <Association Name="TicketCategoryTicket">
+    <End Type="AppsMain.TicketCategory" Role="TicketCategory" Multiplicity="1" />
+    <End Type="AppsMain.Ticket" Role="Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketCategory">
+        <PropertyRef Name="TicketCategoryId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="TicketCategoryTicketCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TicketTypeTicket">
+    <End Type="AppsMain.TicketType" Role="TicketType" Multiplicity="1" />
+    <End Type="AppsMain.Ticket" Role="Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketType">
+        <PropertyRef Name="TicketTypeId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="TicketTypeTicketTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TicketStatus">
+    <Key>
+      <PropertyRef Name="TicketStatusId" />
+    </Key>
+    <Property Type="Int32" Name="TicketStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="StatusName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="ImportanceSize" Nullable="true" />
+    <Property Type="Boolean" Name="Editable" DefaultValue="False" />
+    <NavigationProperty Name="Tickets" Relationship="AppsMain.TicketStatusTicket" FromRole="TicketStatus" ToRole="Ticket" />
+  </EntityType>
+  <Association Name="TicketStatusTicket">
+    <End Type="AppsMain.TicketStatus" Role="TicketStatus" Multiplicity="1" />
+    <End Type="AppsMain.Ticket" Role="Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketStatus">
+        <PropertyRef Name="TicketStatusId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="TicketStatusTicketStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Type="Int32" Name="ActivityID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Type" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DueDate" Precision="3" />
+    <Property Type="Int32" Name="Status" />
+    <Property Type="Int32" Name="Priority" />
+    <Property Type="String" Name="Notes" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OpportunityID" />
+    <Property Type="DateTime" Name="DateCreated" Precision="3" />
+    <NavigationProperty Name="Opportunity" Relationship="AppsMain.FK_Activity_Opportunity" FromRole="Activity" ToRole="Opportunity" />
+    <NavigationProperty Name="Employee" Relationship="AppsMain.EmployeeActivity" FromRole="Activity" ToRole="Employee" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="true" />
+    <Property Type="Int32" Name="DimDateCreatedId" Nullable="false" />
+    <Property Type="Int32" Name="DimTimeCreatedId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Type="Int32" Name="CompanyID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Postcode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Website" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Revenue" Precision="19" Scale="4" />
+    <Property Type="String" Name="NASDAQ" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Industry" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" />
+    <NavigationProperty Name="Contact" Relationship="AppsMain.FK_Contact_Company" FromRole="Company" ToRole="Contact" />
+    <NavigationProperty Name="Opportunity" Relationship="AppsMain.FK_Opportunity_Company" FromRole="Company" ToRole="Opportunity" />
+    <NavigationProperty Name="SalesTrend" Relationship="AppsMain.FK_SalesTrend_Company" FromRole="Company" ToRole="SalesTrend" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteCompany" FromRole="Company" ToRole="Site" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="AppsMain.CompanyCustomer" FromRole="Company" ToRole="Customer" />
+    <NavigationProperty Name="Supplier" Relationship="AppsMain.CompanySupplier" FromRole="Company" ToRole="Supplier" />
+    <NavigationProperty Name="Image" Relationship="AppsMain.ImageCompany" FromRole="Company" ToRole="Image" />
+    <Property Type="Int32" Name="ImageId" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Type="Int32" Name="ContactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Position" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Postcode" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Birthday" Precision="3" />
+    <Property Type="Boolean" Name="IsEmployee" />
+    <Property Type="String" Name="Division" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Facebook" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Twitter" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GooglePlus" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Blog" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsImportantPerson" />
+    <Property Type="Int32" Name="ImageID" />
+    <Property Type="Int32" Name="CompanyID" />
+    <Property Type="Boolean" Name="IsActive" />
+    <Property Type="Boolean" Name="IsMale" />
+    <NavigationProperty Name="Company" Relationship="AppsMain.FK_Contact_Company" FromRole="Contact" ToRole="Company" />
+    <NavigationProperty Name="Image" Relationship="AppsMain.ImageContact" FromRole="Contact" ToRole="Image" />
+    <NavigationProperty Name="Opportunity" Relationship="AppsMain.ContactOpportunity" FromRole="Contact" ToRole="Opportunity" />
+  </EntityType>
+  <EntityType Name="Opportunity">
+    <Key>
+      <PropertyRef Name="OpportunityID" />
+    </Key>
+    <Property Type="Int32" Name="OpportunityID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Quantity" />
+    <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+    <Property Type="String" Name="Lead" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Status" />
+    <Property Type="Int32" Name="Stage" />
+    <Property Type="Int32" Name="SuccessProbability" />
+    <Property Type="String" Name="WonLostReason" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="DiscountPercent" />
+    <Property Type="String" Name="DiscountReason" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="EstimationCloseDate" Precision="3" />
+    <Property Type="Int32" Name="Priority" />
+    <Property Type="Int32" Name="ProductID" />
+    <Property Type="Int32" Name="ContactID" />
+    <Property Type="Int32" Name="CompanyID" />
+    <Property Type="DateTime" Name="DateCreated" Precision="3" />
+    <NavigationProperty Name="Activity" Relationship="AppsMain.FK_Activity_Opportunity" FromRole="Opportunity" ToRole="Activity" />
+    <NavigationProperty Name="Company" Relationship="AppsMain.FK_Opportunity_Company" FromRole="Opportunity" ToRole="Company" />
+    <NavigationProperty Name="Product" Relationship="AppsMain.ProductOpportunity" FromRole="Opportunity" ToRole="Product" />
+    <NavigationProperty Name="Contact" Relationship="AppsMain.ContactOpportunity" FromRole="Opportunity" ToRole="Contact" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteOpportunity" FromRole="Opportunity" ToRole="Site" />
+    <Property Type="Int32" Name="DimDateCreatedId" Nullable="false" />
+    <Property Type="Int32" Name="DimTimeCreatedId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalesTrend">
+    <Key>
+      <PropertyRef Name="SalesTrendID" />
+    </Key>
+    <Property Type="Int32" Name="SalesTrendID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="Amount" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="Date" Precision="3" />
+    <Property Type="Int32" Name="CompanyID" />
+    <NavigationProperty Name="Company" Relationship="AppsMain.FK_SalesTrend_Company" FromRole="SalesTrend" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK_Activity_Opportunity">
+    <End Type="AppsMain.Opportunity" Role="Opportunity" Multiplicity="0..1" />
+    <End Type="AppsMain.Activity" Role="Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Opportunity">
+        <PropertyRef Name="OpportunityID" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="OpportunityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Company">
+    <End Type="AppsMain.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="AppsMain.Contact" Role="Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Opportunity_Company">
+    <End Type="AppsMain.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="AppsMain.Opportunity" Role="Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesTrend_Company">
+    <End Type="AppsMain.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="AppsMain.SalesTrend" Role="SalesTrend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="SalesTrend">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeActivity">
+    <End Type="AppsMain.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="AppsMain.Activity" Role="Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageContact">
+    <End Type="AppsMain.Image" Role="Image" Multiplicity="0..1" />
+    <End Type="AppsMain.Contact" Role="Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageProduct">
+    <End Type="AppsMain.Image" Role="Image" Multiplicity="1" />
+    <End Type="AppsMain.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductOpportunity">
+    <End Type="AppsMain.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="AppsMain.Opportunity" Role="Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageEmployee">
+    <End Type="AppsMain.Image" Role="Image" Multiplicity="0..1" />
+    <End Type="AppsMain.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteCompany">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Company" Role="Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LocationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Locations" Relationship="AppsMain.LocationLocationType" FromRole="LocationType" ToRole="Location" />
+    <NavigationProperty Name="Site" Relationship="AppsMain.SiteLocationType" FromRole="LocationType" ToRole="Site" />
+  </EntityType>
+  <EntityType Name="LocationHierarchyLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Location" Relationship="AppsMain.LocationLocationHierarchyLevel" FromRole="LocationHierarchyLevel" ToRole="Location" />
+    <Property Type="String" Name="IconUri" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="LocationHierarchyParent">
+    <End Type="AppsMain.Location" Role="Location" Multiplicity="0..1" />
+    <End Type="AppsMain.Location" Role="LocationParent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocationParent">
+        <PropertyRef Name="parentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageLocation">
+    <End Type="AppsMain.Image" Role="Image" Multiplicity="0..1" />
+    <End Type="AppsMain.Location" Role="Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompanyCustomer">
+    <End Type="AppsMain.Company" Role="Company" Multiplicity="1" />
+    <End Type="AppsMain.Customer" Role="Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompanySupplier">
+    <End Type="AppsMain.Company" Role="Company" Multiplicity="1" />
+    <End Type="AppsMain.Supplier" Role="Supplier" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContactOpportunity">
+    <End Type="AppsMain.Contact" Role="Contact" Multiplicity="0..1" />
+    <End Type="AppsMain.Opportunity" Role="Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="ContactID" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="ContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProductCatalogStructure">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ProductCatalog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="EnglishName" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="FrenchName" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="ChineseName" Nullable="true" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EnglishDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FrenchDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ChineseDescription" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DocumentPath" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Content" Nullable="true" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="Extension" Nullable="true" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MimeType" Nullable="true" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Size" Nullable="false" />
+  </EntityType>
+  <Association Name="LocationLocationType">
+    <End Type="AppsMain.Location" Role="Location" Multiplicity="*" />
+    <End Type="AppsMain.LocationType" Role="LocationType" Multiplicity="*" />
+  </Association>
+  <Association Name="LocationLocationHierarchyLevel">
+    <End Type="AppsMain.Location" Multiplicity="*" Role="Location" />
+    <End Type="AppsMain.LocationHierarchyLevel" Multiplicity="1" Role="LocationHierarchyLevel" />
+    <ReferentialConstraint>
+      <Principal Role="LocationHierarchyLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="HierarchyLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageCompany">
+    <End Type="AppsMain.Image" Role="Image" Multiplicity="0..1" />
+    <End Type="AppsMain.Company" Role="Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteLocationType">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.LocationType" Role="LocationType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocationType">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteOpportunity">
+    <End Type="AppsMain.Site" Role="Site" Multiplicity="1" />
+    <End Type="AppsMain.Opportunity" Role="Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TicketTicketTag">
+    <End Type="AppsMain.Ticket" Role="Ticket" Multiplicity="*" />
+    <End Type="AppsMain.TicketTag" Role="TicketTag" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Code">
+    <Key>
+      <PropertyRef Name="CodeID" />
+    </Key>
+    <Property Type="Int32" Name="CodeID" Nullable="false" />
+    <Property Type="String" Name="CodeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CodeName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AssocText" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="AssocValue" />
+    <Property Type="DateTime" Name="ChangeDate" Precision="3" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ParentID" />
+    <NavigationProperty Name="Code1" Relationship="AppsMain.FK_Code_Code" FromRole="Code" ToRole="Code1" />
+    <NavigationProperty Name="Code2" Relationship="AppsMain.FK_Code_Code" FromRole="Code1" ToRole="Code" />
+  </EntityType>
+  <Association Name="FK_Code_Code">
+    <End Type="AppsMain.Code" Role="Code" Multiplicity="0..1" />
+    <End Type="AppsMain.Code" Role="Code1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Code">
+        <PropertyRef Name="CodeID" />
+      </Principal>
+      <Dependent Role="Code1">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

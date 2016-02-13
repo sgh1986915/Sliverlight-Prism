@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5F78032-1667-40FB-B5DE-64EEE4524D55}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Procbel.Apps.Silverlight.Web</RootNamespace>
+    <AssemblyName>Procbel.Apps.Silverlight.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+    <SilverlightApplicationList>{FE49EA54-88B4-4064-8CEB-916863C4D92E}|..\Procbel.Apps.Silverlight\Procbel.Apps.Silverlight.csproj|ClientBin|False,{C4F16224-E36F-4E9A-BA40-015031711AAA}|..\Procbel.Apps.Silverlight.Modules.Inicio\Procbel.Apps.Silverlight.Modules.Inicio.csproj|ClientBin|False,{E7E061B0-816E-44CA-981F-E022D41F4449}|..\Procbel.Apps.Silverlight.Modules.Ventas\Procbel.Apps.Silverlight.Modules.Ventas.csproj|ClientBin|False,{62A6C3CC-840F-41ED-9A5F-AAC2E8BA5672}|..\Procbel.Apps.Silverlight.Modules.Companies\Procbel.Apps.Silverlight.Modules.Companies.csproj|ClientBin|False,{7C0606EC-77D3-447C-AA5A-7262C9C8D435}|..\Procbel.Apps.Silverlight.Modules.Contacts\Procbel.Apps.Silverlight.Modules.Contacts.csproj|ClientBin|False,{54DE5DFF-C20E-4815-B47A-D682C17AFEB4}|..\Procbel.Apps.Silverlight.Modules.Activities\Procbel.Apps.Silverlight.Modules.Activities.csproj|ClientBin|False,{43655EDB-041A-4691-AEAA-F7DEDCCA72FB}|..\Procbel.Apps.Silverlight.Modules.Incident\Procbel.Apps.Silverlight.Modules.Incident.csproj|ClientBin|False,{F48CE0B0-12E6-4858-AB30-F4107CA5F998}|..\Procbel.Apps.Silverlight.Modules.Calidad\Procbel.Apps.Silverlight.Modules.Calidad.csproj|ClientBin|False,{7B224458-EDA8-4DFB-949E-A2AFBB8D8692}|..\Procbel.Apps.Silverlight.Modules.Opportunities\Procbel.Apps.Silverlight.Modules.Opportunities.csproj|ClientBin|False</SilverlightApplicationList>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceModel.DomainServices.EntityFramework">
+      <HintPath>..\packages\RIAServices.EntityFramework.4.2.0\lib\Net40\Microsoft.ServiceModel.DomainServices.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.DomainServices.EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Telerik.Windows.RadUploadHandler, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\CRM.mdf" />
+    <Content Include="App_Data\CRM_log.LDF">
+      <DependentUpon>CRM.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\PROCBELAPPS.MDF" />
+    <Content Include="App_Data\PROCBELAPPS_log.ldf">
+      <DependentUpon>PROCBELAPPS.MDF</DependentUpon>
+    </Content>
+    <Content Include="BMApiKey.txt" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Activities.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Calidad.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Companies.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Contacts.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Incidencias.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Inicio.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Opportunities.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.Modules.Ventas.xap" />
+    <Content Include="ClientBin\Procbel.Apps.Silverlight.xap" />
+    <Content Include="favicon.ico" />
+    <Content Include="index.aspx" />
+    <Content Include="index.html" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocumentUpload.ashx.cs">
+      <DependentUpon>DocumentUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Resources\ValidationErrorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationErrorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\RegistrationDataResources.Designer.cs">
+      <DependentUpon>RegistrationDataResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Services\AppsmainDomainService.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\RegistrationData.cs" />
+    <Compile Include="Services\CRMDomainService.cs" />
+    <Compile Include="Services\IncidentDomainService.cs" />
+    <Compile Include="Services\UserRegistrationService.cs" />
+    <Compile Include="Models\Shared\User.shared.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ValidationErrorResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationErrorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RegistrationDataResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegistrationDataResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DocumentFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.ServiceModel.DomainServices.Client.zip" />
+    <Content Include="ClientBin\System.ServiceModel.DomainServices.Client.Web.zip" />
+    <Content Include="ClientBin\System.ServiceModel.Web.Extensions.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.Diagrams.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Diagrams.Core.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.Data.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.DataVisualization.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.DomainServices.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.Navigation.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Data.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.Input.zip" />
+    <Content Include="ClientBin\System.Windows.Data.zip" />
+    <Content Include="ClientBin\Microsoft.CSharp.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.GridView.zip" />
+    <Content Include="ClientBin\Telerik.Windows.Controls.ScheduleView.zip" />
+    <Content Include="ClientBin\System.ComponentModel.Composition.zip" />
+    <Content Include="DocumentUpload.ashx" />
+    <None Include="Properties\PublishProfiles\demo561.procbel.com.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Procbel.Apps.Model.CRM\Procbel.Apps.Model.CRM.csproj">
+      <Project>{96849308-e86b-47f1-8962-b6770013dc2d}</Project>
+      <Name>Procbel.Apps.Model.CRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Procbel.Apps.Model.Main\Procbel.Apps.Model.Main.csproj">
+      <Project>{e39627aa-4a55-4938-8b5d-bdf49e1411c2}</Project>
+      <Name>Procbel.Apps.Model.Main</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

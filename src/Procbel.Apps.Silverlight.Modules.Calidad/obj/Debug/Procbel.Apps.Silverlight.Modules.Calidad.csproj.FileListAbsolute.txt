@@ -1,0 +1,14 @@
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\obj\Debug\Views\CalidadSubMenuView.g.cs
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\obj\Debug\Views\CalidadView.g.cs
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\obj\Debug\Procbel.Apps.Silverlight.Modules.Calidad.g.resources
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\obj\Debug\Procbel.Apps.Silverlight.Modules.Calidad.csprojResolveAssemblyReference.cache
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\Bin\Debug\Procbel.Apps.Silverlight.Modules.Calidad.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\Bin\Debug\Procbel.Apps.Silverlight.Modules.Calidad.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\Bin\Debug\AppManifest.xaml
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\Bin\Debug\Procbel.Apps.Silverlight.Modules.Calidad.xap
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\Bin\Debug\Procbel.Apps.Silverlight.Modules.CalidadTestPage.html
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\Bin\Debug\Procbel.Apps.Silverlight.Theme.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\Bin\Debug\Procbel.Apps.Silverlight.Theme.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\obj\Debug\Procbel.Apps.Silverlight.Modules.Calidad.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\obj\Debug\Procbel.Apps.Silverlight.Modules.Calidad.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Calidad\obj\Debug\XapCacheFile.xml

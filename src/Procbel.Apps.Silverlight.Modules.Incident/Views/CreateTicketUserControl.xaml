@@ -1,0 +1,219 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Incidencias.Views.CreateTicketUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:Procbel.Apps.Silverlight.Modules.Incidencias.Views"
+    xmlns:infra="clr-namespace:Procbel.Apps.Silverlight.Infrastructure;assembly=Procbel.Apps.Silverlight.Infrastructure"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:behavior="clr-namespace:Procbel.Apps.Silverlight.Modules.Incidencias.Infrastructure.Behavior"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    Margin="0,0,-8,0"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/CommonStyles.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadDataFormStyle.xaml"/>
+                <ResourceDictionary>
+                    <infra:ApplicationResources x:Key="ApplicationResources"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <!--<Style TargetType="telerik:RadButton">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="MinWidth" Value="120"/>
+            </Style>-->
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="0,30,0,0" d:DesignWidth="416" d:DesignHeight="576">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="8,36,8,0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,30,5,0" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" Margin="0,0,50,0" 
+                                       Tag="{Binding Strings.SaveButton, Source={StaticResource ApplicationResources}}"
+                            Command="{Binding Path=CreateCommand}">
+                        <telerik:RadButton.RenderTransform>
+                            <CompositeTransform TranslateY="-21"/>
+                        </telerik:RadButton.RenderTransform>
+                        <Path Stretch="Fill" Fill="{StaticResource MainBrush}"
+                      Data="M223.667,387 L226.5,383.917 L233.667,390.333 L244.792,376.833 L248,379.667 L234,396.667 z"
+                      Height="24" Width="24"/>
+                    </telerik:RadButton>
+                    <telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" 
+                           Command="{Binding Path=CancelCommand}" Tag="{Binding Strings.CancelButton, Source={StaticResource ApplicationResources}}">
+                        <telerik:RadButton.RenderTransform>
+                            <CompositeTransform TranslateY="-21"/>
+                        </telerik:RadButton.RenderTransform>
+                        <Path Stretch="Fill" Fill="{StaticResource MainBrush}" 
+                  Data="M331.5,380 L334.833,376.667 L341.833,383.333 L348.667,376.667 L352,379.667 L345.667,386.167 L352.167,393.167 L348.667,396.667 L342,390.167 L335.167,397 L331.667,393.833 L338.167,386.5 z"
+                  Height="24.634" Width="24.667" VerticalAlignment="Top" HorizontalAlignment="Right" />
+                    </telerik:RadButton>
+                </StackPanel>
+                
+            </Grid>
+            <StackPanel Margin="8,40,8,0">
+                <Grid Height="55">
+                    <TextBlock Text="{Binding Strings.Title, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+
+                    <TextBox Text="{Binding ActiveTicketObject.Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, ValidatesOnDataErrors=True}" 
+				         TextWrapping="Wrap" 
+                         FontFamily="Segoe UI" FontSize="12" Foreground="{StaticResource MainBrush}" Height="40" 
+                         AcceptsReturn="True"  VerticalAlignment="Bottom">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="TextChanged">
+                                <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="LostFocus">
+                                <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </TextBox>
+
+                    <!--<telerik:RadComboBox ItemsSource="{Binding DataView, ElementName=productsDataSource}" 
+                                                 SelectedValuePath="ProductID" 
+                                                 SelectedValue="{Binding ProductID, Mode=TwoWay}"
+                                                 Style="{StaticResource RadComboBoxStyle}" FontFamily="Segoe UI Light" FontSize="24" Margin="0" VerticalAlignment="Bottom" Height="40">
+                    <telerik:RadComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </telerik:RadComboBox.ItemTemplate>
+                    <telerik:RadComboBox.SelectionBoxTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </telerik:RadComboBox.SelectionBoxTemplate>
+
+                </telerik:RadComboBox>-->
+                </Grid>
+                <Grid Margin="0,16,0,0">
+                    <StackPanel Orientation="Vertical" d:LayoutOverrides="Height">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Strings.Types, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" 
+                               FontFamily="Segoe UI Semibold" FontSize="11" 
+                               Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" />
+                                <telerik:RadComboBox 
+                                    ItemsSource="{Binding ListingTicketTypes}" 
+                                    SelectedItem="{Binding Path=TicketTypeSelectedItem, Mode=TwoWay}"
+                                    SelectedValuePath="TicketTypeId"
+                                    DisplayMemberPath="TypeName"
+                                    SelectedValue="{Binding Path=ActiveTicketObject.TicketTypeTicketTypeId, Mode=TwoWay}"
+                                    Height="40" Style="{StaticResource RadComboBoxStyle}" VerticalAlignment="Bottom">
+                                    
+                                </telerik:RadComboBox>
+                            </StackPanel>
+                            <StackPanel Margin="5,0,0,0" Grid.Column="1">
+                                <TextBlock Text="{Binding Strings.Category, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" 
+                               FontFamily="Segoe UI Semibold" FontSize="11" 
+                               Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" />
+                                <telerik:RadComboBox 
+                                    ItemsSource="{Binding ListingTicketCategory}" 
+                                    SelectedItem="{Binding Path=TicketCategorySelectedItem, Mode=TwoWay}"
+                                    SelectedValuePath="TicketCategoryId"
+                                    SelectedValue="{Binding Path=ActiveTicketObject.TicketCategoryTicketCategoryId, Mode=TwoWay}"
+				                    DisplayMemberPath="CategoryName"
+                                    Height="40" Style="{StaticResource RadComboBoxStyle}" VerticalAlignment="Bottom">
+
+                                </telerik:RadComboBox>
+                            </StackPanel>
+                            <StackPanel Margin="5,0,0,0" Grid.Column="2">
+                                <TextBlock Text="{Binding Strings.Priority, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" 
+                               FontFamily="Segoe UI Semibold" FontSize="11" 
+                               Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" />
+                                <telerik:RadComboBox 
+                                     ItemsSource="{Binding Path=ListingPriority}"
+                                     SelectedItem="{Binding Path=PrioritySelectedItem, Mode=TwoWay}"
+                                     SelectedValuePath="CodeName"
+                                     SelectedValue="{Binding Path=ActiveTicketObject.Priority, Mode=TwoWay}"
+				                     DisplayMemberPath="CodeName"
+                                     Height="40" Style="{StaticResource RadComboBoxStyle}" VerticalAlignment="Bottom">
+                                </telerik:RadComboBox>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Strings.Owner, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" 
+                                               FontFamily="Segoe UI Semibold" FontSize="11" 
+                                               Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" />
+                                    <telerik:RadComboBox Height="40" Style="{StaticResource RadComboBoxStyle}" VerticalAlignment="Bottom"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                    <CheckBox Content="Affects Customer" VerticalAlignment="Center" IsChecked="{Binding Path=ActiveTicketObject.AffectsCustomer, Mode=TwoWay}"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="{Binding Strings.TagList, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+
+                            <!--<TextBox Text="{Binding ActiveTicketObject.TagList}"/>-->
+                            <telerik:RadAutoCompleteBox  HorizontalAlignment="Stretch" 
+                                                         SelectionMode="Multiple"
+                                                         WatermarkContent="Type tag name"
+												         TextSearchMode="Contains"
+                                                         TextSearchPath="TagName"
+                                                         AutoCompleteMode="Suggest"
+                                                         ItemsSource="{Binding Path=TicketTagList}"/>
+
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="{Binding Strings.Detail, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+
+                            <!--<TextBox Text="{Binding ActiveTicketObject.TagList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, ValidatesOnDataErrors=True}" 
+				         TextWrapping="Wrap" 
+                         FontFamily="Segoe UI" FontSize="12" Foreground="{StaticResource MainBrush}" Height="40" 
+                         AcceptsReturn="True"  VerticalAlignment="Bottom">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="TextChanged">
+                                        <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="LostFocus">
+                                        <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>-->
+<!--Data Providers-->
+            <telerik:HtmlDataProvider x:Name="HtmlProvider" RichTextBox="{Binding ElementName=richTextBox}"
+                                      Html="{Binding Path=ActiveTicketObject.Details, Mode=TwoWay}" Grid.Row="4"/>
+                            <telerik:RadRichTextBox x:Name="richTextBox" Foreground="White" Height="100" Background="Transparent"
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="1">
+                                <telerik:RadRichTextBox.Document>
+                                    <telerik:RadDocument>
+                                        <telerik:Section>
+                                            <telerik:Paragraph/>
+                                        </telerik:Section>
+                                    </telerik:RadDocument>
+                                </telerik:RadRichTextBox.Document>
+                            </telerik:RadRichTextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

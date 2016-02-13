@@ -1,0 +1,7 @@
+﻿Issues
+
+1. Some file inside the Helpers folder are duplicated with Procbel.Apps.Silverlight.Infrastructure's Helpers.
+
+We don't need to put the Helpers's utilities within the Shell.Those belong to the Infrastructure not Shell.
+
+Modules should not add a reference to the Shell. On tigh coupled.

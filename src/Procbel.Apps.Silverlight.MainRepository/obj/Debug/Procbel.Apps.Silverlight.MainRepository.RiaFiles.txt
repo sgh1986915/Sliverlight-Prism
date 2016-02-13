@@ -1,0 +1,3 @@
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.MainRepository
+Generated_Code\Procbel.Apps.Silverlight.Web.g.cs
+Generated_Code\Models\Shared\User.shared.cs

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba5769e1c8274e428f79c828e9c7de31" Name="Main" ZoomLevel="102" >
+        <EntityTypeShape EntityType="AppsMain.Site" Width="1.5" PointX="6.75" PointY="12.125" />
+        <EntityTypeShape EntityType="AppsMain.Customer" Width="1.625" PointX="4.25" PointY="16.25" />
+        <EntityTypeShape EntityType="AppsMain.Supplier" Width="1.5" PointX="1.75" PointY="16.5" />
+        <EntityTypeShape EntityType="AppsMain.Employee" Width="1.5" PointX="3.625" PointY="8.875" />
+        <EntityTypeShape EntityType="AppsMain.Image" Width="1.5" PointX="6.75" PointY="7.625" />
+        <EntityTypeShape EntityType="AppsMain.FactTag" Width="1.75" PointX="9.5" PointY="14" />
+        <EntityTypeShape EntityType="AppsMain.DimDate" Width="1.5" PointX="7.875" PointY="0.75" />
+        <EntityTypeShape EntityType="AppsMain.Location" Width="2.5" PointX="4.5" PointY="0.5" />
+        <EntityTypeShape EntityType="AppsMain.InfoTag" Width="1.5" PointX="1.5" PointY="0.5" />
+        <EntityTypeShape EntityType="AppsMain.ReaderTag" Width="1.5" PointX="12.375" PointY="5.625" />
+        <EntityTypeShape EntityType="AppsMain.ProductCategory" Width="1.75" PointX="15.375" PointY="10.5" />
+        <EntityTypeShape EntityType="AppsMain.productAssortment" Width="1.875" PointX="12.25" PointY="14.875" />
+        <EntityTypeShape EntityType="AppsMain.ProductBox" Width="1.5" PointX="8.75" PointY="19" />
+        <EntityTypeShape EntityType="AppsMain.EmployeeShifts" Width="1.5" PointX="1.5" PointY="8.5" />
+        <EntityTypeShape EntityType="AppsMain.ReaderTagAntena" Width="1.875" PointX="10" PointY="5.625" />
+        <EntityTypeShape EntityType="AppsMain.DimTime" Width="1.5" PointX="9.75" PointY="0.75" />
+        <AssociationConnector Association="AppsMain.SiteEmployee" />
+        <AssociationConnector Association="AppsMain.SiteFactTag" />
+        <AssociationConnector Association="AppsMain.SiteCustomer" />
+        <AssociationConnector Association="AppsMain.SiteSupplier" />
+        <AssociationConnector Association="AppsMain.SiteImage" />
+        <AssociationConnector Association="AppsMain.SiteLocation" />
+        <AssociationConnector Association="AppsMain.SiteProductBox" />
+        <AssociationConnector Association="AppsMain.InfoTagLocation" />
+        <AssociationConnector Association="AppsMain.ReaderTagReaderTagAntena" />
+        <AssociationConnector Association="AppsMain.ProductCategoryFactTag" />
+        <AssociationConnector Association="AppsMain.productAssortmentFactTag" />
+        <AssociationConnector Association="AppsMain.ProductBoxFactTag" />
+        <AssociationConnector Association="AppsMain.EmployeeEmployeeShifts" />
+        <EntityTypeShape EntityType="AppsMain.Setting" Width="2.25" PointX="12.625" PointY="0.75" />
+        <AssociationConnector Association="AppsMain.SiteSetting" />
+        <AssociationConnector Association="AppsMain.ImageEmployee" />
+        <EntityTypeShape EntityType="AppsMain.LocationType" Width="1.5" PointX="1.5" PointY="3.625" />
+        <EntityTypeShape EntityType="AppsMain.LocationHierarchyLevel" Width="2.125" PointX="1.125" PointY="6.25" />
+        <AssociationConnector Association="AppsMain.LocationHierarchyParent" />
+        <AssociationConnector Association="AppsMain.ImageLocation" />
+        <EntityTypeShape EntityType="AppsMain.Company" Width="1.5" PointX="16.375" PointY="14.625" />
+        <AssociationConnector Association="AppsMain.SiteCompany" />
+        <AssociationConnector Association="AppsMain.CompanyCustomer" />
+        <AssociationConnector Association="AppsMain.CompanySupplier" />
+        <AssociationConnector Association="AppsMain.LocationLocationType" />
+        <AssociationConnector Association="AppsMain.LocationLocationHierarchyLevel" />
+        <AssociationConnector Association="AppsMain.ImageCompany" />
+        <AssociationConnector Association="AppsMain.SiteLocationType" />
+        <EntityTypeShape EntityType="AppsMain.Code" Width="1.5" PointX="0.5" PointY="12.75" />
+        <AssociationConnector Association="AppsMain.FK_Code_Code" />
+        </Diagram>
+      <Diagram DiagramId="c0fcfa4429ce4fbb898ed4a9167ac1eb" Name="Incident" ZoomLevel="74" >
+        <EntityTypeShape EntityType="AppsMain.TicketAttachment" Width="2" PointX="15.625" PointY="2.5" />
+        <EntityTypeShape EntityType="AppsMain.TicketComment" Width="1.5" PointX="5.75" PointY="4.625" />
+        <EntityTypeShape EntityType="AppsMain.TicketEventNotification" Width="2" PointX="2.75" PointY="2.875" />
+        <EntityTypeShape EntityType="AppsMain.Ticket" Width="2.375" PointX="8.5" PointY="1.125" />
+        <EntityTypeShape EntityType="AppsMain.TicketTag" Width="1.75" PointX="13.5" PointY="6.875" />
+        <AssociationConnector Association="AppsMain.FK_TicketAttachments_Tickets" />
+        <AssociationConnector Association="AppsMain.FK_TicketComments_Tickets" />
+        <AssociationConnector Association="AppsMain.FK_TicketEventNotifications_TicketComments" />
+        <EntityTypeShape EntityType="AppsMain.TicketType" Width="1.5" PointX="12.25" PointY="2.375" />
+        <EntityTypeShape EntityType="AppsMain.TicketCategory" Width="1.5" PointX="12.25" PointY="0.5" />
+        <AssociationConnector Association="AppsMain.TicketCategoryTicket" />
+        <AssociationConnector Association="AppsMain.TicketTypeTicket" />
+        <EntityTypeShape EntityType="AppsMain.TicketStatus" Width="1.75" PointX="12.375" PointY="4.375" />
+        <AssociationConnector Association="AppsMain.TicketStatusTicket" />
+        <AssociationConnector Association="AppsMain.TicketTicketTag" />
+      </Diagram>
+      <Diagram DiagramId="d3907c1e287c41e79a76c7ee62372718" Name="Crm" ZoomLevel="100" >
+        <EntityTypeShape EntityType="AppsMain.Activity" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="AppsMain.Company" Width="1.5" PointX="3.125" PointY="8.375" />
+        <EntityTypeShape EntityType="AppsMain.Contact" Width="1.5" PointX="0.5" PointY="6.75" />
+        <EntityTypeShape EntityType="AppsMain.Opportunity" Width="2.125" PointX="7.75" PointY="3.25" />
+        <EntityTypeShape EntityType="AppsMain.SalesTrend" Width="1.5" PointX="3.125" PointY="5.125" />
+        <AssociationConnector Association="AppsMain.FK_Activity_Opportunity" />
+        <AssociationConnector Association="AppsMain.FK_Contact_Company" />
+        <AssociationConnector Association="AppsMain.FK_Opportunity_Company" />
+        <AssociationConnector Association="AppsMain.FK_SalesTrend_Company" />
+        <AssociationConnector Association="AppsMain.ContactOpportunity" />
+        </Diagram>
+      <Diagram DiagramId="06e84fc2ebe141f1b5489c2cf2b1081c" Name="Product" ZoomLevel="71" >
+        <EntityTypeShape EntityType="AppsMain.Product" Width="2.25" PointX="4.125" PointY="3.5" />
+        <EntityTypeShape EntityType="AppsMain.ProductCatalogStructure" Width="2.25" PointX="4.125" PointY="0.75" />
+        <EntityTypeShape EntityType="AppsMain.ProductCatalog" Width="2.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="AppsMain.Site" Width="1.5" PointX="9.75" PointY="7.875" />
+        <AssociationConnector Association="AppsMain.SiteProduct" />
+        <EntityTypeShape EntityType="AppsMain.ProductCategory" Width="2" PointX="0.875" PointY="5.875" />
+        <AssociationConnector Association="AppsMain.ProductCategoryProduct" />
+        <EntityTypeShape EntityType="AppsMain.Image" Width="1.5" PointX="9.75" PointY="3.875" />
+        <AssociationConnector Association="AppsMain.SiteImage" />
+        <AssociationConnector Association="AppsMain.ImageProduct" />
+        <EntityTypeShape EntityType="AppsMain.Opportunity" Width="1.5" PointX="7.375" PointY="0.625" />
+        <AssociationConnector Association="AppsMain.ProductOpportunity" />
+        <EntityTypeShape EntityType="AppsMain.Document" Width="2" PointX="12.125" PointY="1.75" />
+        <AssociationConnector Association="AppsMain.SiteOpportunity" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

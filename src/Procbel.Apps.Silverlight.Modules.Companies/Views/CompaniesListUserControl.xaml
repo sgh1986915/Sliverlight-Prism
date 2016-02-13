@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Companies.Views.CompaniesListUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:infra="clr-namespace:Procbel.Apps.Silverlight.Infrastructure;assembly=Procbel.Apps.Silverlight.Infrastructure"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:telerikRia="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.DomainServices"
+    xmlns:CommonConv="clr-namespace:Procbel.Apps.Silverlight.Infrastructure.Converters;assembly=Procbel.Apps.Silverlight.Infrastructure"             
+    xmlns:helpers="clr-namespace:Procbel.Apps.Silverlight.Helpers"  d:DesignHeight="300" d:DesignWidth="500"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    mc:Ignorable="d" >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/CommonStyles.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadDataFormStyle.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadGridViewStyle.xaml"/>
+                <ResourceDictionary>
+                    <infra:ApplicationResources x:Key="ApplicationResources"/>
+                    <CommonConv:ObjectToUpperCaseStringConverter x:Key="ToUpperCaseConverter"></CommonConv:ObjectToUpperCaseStringConverter>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+           
+        </ResourceDictionary>
+      
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <telerik:RadGridView ItemsSource="{Binding Companies}" ColumnWidth="*" Grid.Row="1"
+                             helpers:GridViewColumnHelper.HideGroupedColumns="True"
+                             helpers:GridViewColumnHelper.HideNonImportantColumns="{Binding IsInOverviewState}"
+							 SelectedItem="{Binding SelectedCompany, Mode=TwoWay}"
+							 AutoExpandGroups="True" AutoGenerateColumns="False">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn  Header="{Binding Strings.Name, Source={StaticResource ApplicationResources},Converter={StaticResource ToUpperCaseConverter}}"  DataMemberBinding="{Binding Name}"
+											IsGroupable="False" Width="4*"
+                                            helpers:GridViewColumnHelper.IsImportant="True" >
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"  Foreground="{StaticResource text}"></TextBlock>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="{Binding Strings.Country, Source={StaticResource ApplicationResources}, Converter={StaticResource ToUpperCaseConverter}}" DataMemberBinding="{Binding Country}"
+											IsGroupable="False" Width="3*">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Country}"  Foreground="{StaticResource text}"></TextBlock>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:CountFunction ResultFormatString="{}{0:n0} Companies"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn  Header="{Binding Strings.City, Source={StaticResource ApplicationResources}, Converter={StaticResource ToUpperCaseConverter}}"  DataMemberBinding="{Binding City}" 
+											IsGroupable="False" Width="2*">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding City}"  Foreground="{StaticResource text}"></TextBlock>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                                             
+                <telerik:GridViewDataColumn Header="{Binding Strings.Region, Source={StaticResource ApplicationResources}, Converter={StaticResource ToUpperCaseConverter}}" DataMemberBinding="{Binding State}" 
+											IsGroupable="False" Width="2*">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding State}"  Foreground="{StaticResource text}"></TextBlock>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="{Binding Strings.Industry, Source={StaticResource ApplicationResources}, Converter={StaticResource ToUpperCaseConverter}}" DataMemberBinding="{Binding Industry}"
+											IsGroupable="False" Width="2*">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Industry}"  Foreground="{StaticResource text}"></TextBlock>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="{Binding Strings.Revenue, Source={StaticResource ApplicationResources}, Converter={StaticResource ToUpperCaseConverter}}" DataMemberBinding="{Binding Revenue}" DataFormatString="{}{0:C}"
+											IsGroupable="False" Width="3*" CellStyle="{StaticResource RevenueCellStyle}">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Revenue}"  Foreground="{StaticResource text}"></TextBlock>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+
+        <Grid Height="30" VerticalAlignment="Top" Margin="4,0,8,0">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Strings.Companies, Source={StaticResource ApplicationResources}}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="{StaticResource text}" />
+            <telerik:RadToggleButton x:Name="radToggleButton" Style="{StaticResource ExpandDetailsButtonStyle}" 
+                                 HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,3,3,0">
+                <i:Interaction.Triggers>
+                    <ei:DataTrigger Binding="{Binding IsChecked, ElementName=radToggleButton}" Value="True">
+                        <i:InvokeCommandAction Command="{Binding SwitchToVisualStateCommand}" CommandParameter="List" />
+                    </ei:DataTrigger>
+                    <ei:DataTrigger Binding="{Binding IsChecked, ElementName=radToggleButton}" Value="False">
+                        <i:InvokeCommandAction Command="{Binding SwitchToVisualStateCommand}" CommandParameter="Overview" />
+                    </ei:DataTrigger>
+                </i:Interaction.Triggers>
+
+                <Grid>
+                    <Path Stretch="Fill" Fill="{StaticResource text}" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Data="F1 M23,33 L27.5,33 L37,24 L27.5,15 L23,15 L32.1875,24.0625 z" 
+                      Height="10" Width="8" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <CompositeTransform TranslateX="-2"/>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path Stretch="Fill" Fill="{StaticResource text}"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Data="F1 M23,33 L27.5,33 L37,24 L27.5,15 L23,15 L32.1875,24.0625 z" 
+                      Height="10" Width="8" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <CompositeTransform TranslateX="2"/>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+            </telerik:RadToggleButton>
+        </Grid>
+
+    </Grid>
+</UserControl>

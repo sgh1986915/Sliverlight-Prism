@@ -1,0 +1,158 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Companies.Views.CompanyContactsUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:helpers="clr-namespace:Procbel.Apps.Silverlight.Infrastructure.Helpers;assembly=Procbel.Apps.Silverlight.Infrastructure"
+    mc:Ignorable="d"
+    xmlns:infra="clr-namespace:Procbel.Apps.Silverlight.Infrastructure;assembly=Procbel.Apps.Silverlight.Infrastructure"
+    d:DesignHeight="496" d:DesignWidth="600">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/CommonStyles.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/ListBoxStyle.xaml"/>
+                <!--
+				<ResourceDictionary Source="/CRM.Theme;component/Styles/RadTreeViewStyle.xaml"/>
+				-->
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadButtonStyle.xaml"/>
+                <ResourceDictionary>
+                    <infra:ApplicationResources x:Key="ApplicationResources"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Fill="{StaticResource AccentBrush}" StrokeThickness="0" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top"/>
+        <Grid Height="30" VerticalAlignment="Top" Margin="4,0,8,0" MaxWidth="500">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Strings.Contacts, Source={StaticResource ApplicationResources}}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="{StaticResource text}" />
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,-16" Orientation="Horizontal">
+                <telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" Tag="VIEW SELECTED"
+								   Margin="0,0,0,0"
+								   Command="{Binding GoToContactCommand}"
+								   CommandParameter="{Binding CompaniesViewModel.SelectedCompanyContacts.CurrentItem}">
+                    <telerik:RadButton.RenderTransform>
+                        <CompositeTransform TranslateY="-21"/>
+                    </telerik:RadButton.RenderTransform>
+                    <Path Data="M17.167011,5.1210322 C14.68173,5.1210327 12.667011,7.1357512 12.667011,9.6210327 C12.667011,12.106314 14.68173,14.121033 17.167011,14.121033 C19.652292,14.121033 21.667011,12.106314 21.667011,9.6210327 C21.667011,7.1357512 19.652292,5.1210327 17.167011,5.1210322 z M17.767992,0 C22.989,0 34.98,6.3286805 34.98,9.4540081 C34.98,12.579335 22.989,18.908995 17.767992,18.908995 C17.686399,18.908995 17.293604,18.909 17.212009,18.909 C11.991,18.909 8.4203715E-16,14.038979 0,9.4549904 C-8.4203715E-16,4.8710022 11.991,5.2452087E-06 17.212009,5.2452087E-06 C17.293604,5.2452087E-06 17.686399,0 17.767992,0 z" Fill="{StaticResource text}" Height="19" Stretch="Fill" UseLayoutRounding="False" Width="31"/>
+                </telerik:RadButton>
+                <!--
+        		<telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" Tag="EDIT"
+                                   Click="RadButton_Click">
+        			<telerik:RadButton.RenderTransform>
+        				<CompositeTransform TranslateY="-21"/>
+        			</telerik:RadButton.RenderTransform>
+        			<Path Stretch="Fill" Fill="{StaticResource MainBrush}" 
+        				Data="F1 M 382.058,296.917L 384.4,299.25C 384.782,299.628 384.666,300.047 384.142,300.175L 381.088,300.94C 380.564,301.07 380.244,300.75 380.374,300.227L 381.132,297.175C 381.26,296.656 381.679,296.539 382.058,296.917 Z M 407.681,273.667C 410.288,276.274 408.282,278.836 408.282,278.836L 407.003,280.289C 406.627,280.664 406.01,280.659 405.629,280.276L 401.072,275.719C 400.694,275.339 400.687,274.722 401.062,274.346L 402.515,273.071C 402.515,273.071 405.08,271.065 407.681,273.667 Z M 399.551,277.242L 404.103,281.8C 404.486,282.182 404.486,282.805 404.103,283.182L 389.533,297.753C 389.155,298.136 388.53,298.136 388.153,297.753L 383.593,293.196C 383.213,292.815 383.213,292.196 383.593,291.813L 398.17,277.242C 398.549,276.862 399.17,276.862 399.551,277.242 Z " 
+        				Height="24.634" Width="24.667" />
+        		</telerik:RadButton>
+				-->
+            </StackPanel>
+        </Grid>
+
+        <!--<telerik:RadDomainDataSource x:Name="contactsDataSource" QueryName="GetContactsByCompanyID" AutoLoad="True" DomainContext="{Binding ContactRepository.Context}"  >
+            <telerik:RadDomainDataSource.QueryParameters>
+            	<telerik:QueryParameter ParameterName="companyID" Value="{Binding SelectedCompany.CompanyID}"/>
+            </telerik:RadDomainDataSource.QueryParameters>
+        </telerik:RadDomainDataSource>-->
+
+        <Grid Margin="8,64,8,0" VerticalAlignment="Top" MaxWidth="500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!--Top Rectangle-->
+            <Rectangle Opacity="0.6" Height="6" Margin="-32,0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.995,0.5" StartPoint="-0.01,0.5">
+                        <GradientStop Offset="0"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.15"/>
+                        <GradientStop Color="#FFFEFEFE" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <CompositeTransform TranslateY="4"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+            <ListBox ItemsSource="{Binding CompaniesViewModel.SelectedCompanyContacts}" Grid.Row="1">
+                <ListBox.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="24" Opacity="0.7"/>
+                </ListBox.Effect>
+            </ListBox>
+            <!--
+            <telerik:RadTreeView Grid.Row="1" x:Name="treeView" 
+                                 ItemsSource="{Binding DataView, ElementName=contactsDataSource}" 
+								 ItemTemplate="{StaticResource HeaderTemplate}" 
+								 ItemEditTemplate="{StaticResource EditTemplate}">
+                <telerik:RadTreeView.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="24" Opacity="0.7"/>
+                </telerik:RadTreeView.Effect>
+            </telerik:RadTreeView>
+-->
+            <!--Bottom Rectangle-->
+            <Rectangle Height="6" Opacity="0.6" Margin="-32,0" Grid.Row="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.995,0.5" StartPoint="-0.01,0.5">
+                        <GradientStop Offset="0"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.15"/>
+                        <GradientStop Color="#FFFEFEFE" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <CompositeTransform TranslateY="-4"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+        <StackPanel Grid.Column="1" Margin="32,64,64,0" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
+                <Border Width="44" Height="40" BorderThickness="0" Background="{StaticResource AccentBrush}">
+                    <TextBlock Text="{Binding Metadata.AllContacts}" FontFamily="Segoe UI Light" FontSize="36" Foreground="{StaticResource text}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <TextBlock TextWrapping="Wrap" Text="ALL" Foreground="{StaticResource text}"  FontFamily="Segoe UI" FontWeight="Bold" 
+                               VerticalAlignment="Top" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
+                <Border Width="44" Height="40" BorderThickness="0" Background="{StaticResource ValidationBrush}">
+                    <TextBlock Text="{Binding Metadata.ImportantContacts}" FontFamily="Segoe UI Light" FontSize="36" Foreground="{StaticResource text}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Strings.Important, Source={StaticResource ApplicationResources}}" Foreground="{StaticResource text}"  FontFamily="Segoe UI" FontWeight="Bold" 
+                               VerticalAlignment="Top" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
+                <Border Width="44" Height="40" BorderThickness="0" Background="{StaticResource AccentBrush}">
+                    <TextBlock Text="{Binding Metadata.ActiveContacts}" FontFamily="Segoe UI Light" FontSize="36" Foreground="{StaticResource text}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Strings.Active, Source={StaticResource ApplicationResources}}" Foreground="{StaticResource text}"  FontFamily="Segoe UI" FontWeight="Bold" 
+                               VerticalAlignment="Top" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,8 @@
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\bin\Debug\Procbel.Apps.Model.AdventureWorks2008R2.dll.config
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\bin\Debug\Procbel.Apps.Model.AdventureWorks2008R2.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\bin\Debug\Procbel.Apps.Model.AdventureWorks2008R2.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\bin\Debug\EntityFramework.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\bin\Debug\Microsoft.ServiceModel.DomainServices.EntityFramework.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\bin\Debug\EntityFramework.xml
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\obj\Debug\Procbel.Apps.Model.AdventureWorks2008R2.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.AdventureWorks2008R2\obj\Debug\Procbel.Apps.Model.AdventureWorks2008R2.pdb

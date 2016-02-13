@@ -1,0 +1,4 @@
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Infrastructure\Procbel.Apps.Silverlight.Infrastructure.csproj,635150914177421875,
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.MainRepository\Procbel.Apps.Silverlight.MainRepository.csproj,635150914177734375,D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Web\Procbel.Apps.Silverlight.Web.csproj
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Repository\Procbel.Apps.Silverlight.Repository.csproj,635150914181318359,D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Web\Procbel.Apps.Silverlight.Web.csproj
+D:\Anton\Sliverlight Prism\src\Procbel.Theme\Procbel.Apps.Silverlight.Theme.csproj,635150914188046875,

@@ -1,0 +1,1362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppsMain.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AppsMainStoreContainer">
+    <EntitySet Name="Sites" EntityType="AppsMain.Store.Sites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="AppsMain.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Suppliers" EntityType="AppsMain.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="AppsMain.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Images" EntityType="AppsMain.Store.Images" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactTags" EntityType="AppsMain.Store.FactTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Assets" EntityType="AppsMain.Store.Assets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimDates" EntityType="AppsMain.Store.DimDates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="AppsMain.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InfoTags" EntityType="AppsMain.Store.InfoTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReaderTags" EntityType="AppsMain.Store.ReaderTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="AppsMain.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCategories" EntityType="AppsMain.Store.ProductCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="productAssortments" EntityType="AppsMain.Store.productAssortments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductBoxes" EntityType="AppsMain.Store.ProductBoxes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeShifts" EntityType="AppsMain.Store.EmployeeShifts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReaderTagAntenas" EntityType="AppsMain.Store.ReaderTagAntenas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimTime" EntityType="AppsMain.Store.DimTime" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketAttachments" EntityType="AppsMain.Store.TicketAttachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketComments" EntityType="AppsMain.Store.TicketComments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketEventNotifications" EntityType="AppsMain.Store.TicketEventNotifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tickets" EntityType="AppsMain.Store.Tickets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketTags" EntityType="AppsMain.Store.TicketTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Settings" EntityType="AppsMain.Store.Settings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketTypeSet" EntityType="AppsMain.Store.TicketTypeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketCategorySet" EntityType="AppsMain.Store.TicketCategorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketStatusSet" EntityType="AppsMain.Store.TicketStatusSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Activity" EntityType="AppsMain.Store.Activity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="AppsMain.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contact" EntityType="AppsMain.Store.Contact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Opportunity" EntityType="AppsMain.Store.Opportunity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesTrend" EntityType="AppsMain.Store.SalesTrend" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationTypes" EntityType="AppsMain.Store.LocationTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationHierarchyLevels" EntityType="AppsMain.Store.LocationHierarchyLevels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCatalogStructures" EntityType="AppsMain.Store.ProductCatalogStructures" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCatalogs" EntityType="AppsMain.Store.ProductCatalogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentSet" EntityType="AppsMain.Store.DocumentSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Code" EntityType="AppsMain.Store.Code" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationLocationType" EntityType="AppsMain.Store.LocationLocationType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketTicketTag" EntityType="AppsMain.Store.TicketTicketTag" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="SiteEmployee" Association="AppsMain.Store.SiteEmployee">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="SiteFactTag" Association="AppsMain.Store.SiteFactTag">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="SiteCustomer" Association="AppsMain.Store.SiteCustomer">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="SiteSupplier" Association="AppsMain.Store.SiteSupplier">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="SiteAsset" Association="AppsMain.Store.SiteAsset">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Asset" EntitySet="Assets" />
+    </AssociationSet>
+    <AssociationSet Name="SiteImage" Association="AppsMain.Store.SiteImage">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="SiteLocation" Association="AppsMain.Store.SiteLocation">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="SiteProduct" Association="AppsMain.Store.SiteProduct">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="SiteProductBox" Association="AppsMain.Store.SiteProductBox">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="ProductBox" EntitySet="ProductBoxes" />
+    </AssociationSet>
+    <AssociationSet Name="InfoTagLocation" Association="AppsMain.Store.InfoTagLocation">
+      <End Role="InfoTag" EntitySet="InfoTags" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="ReaderTagReaderTagAntena" Association="AppsMain.Store.ReaderTagReaderTagAntena">
+      <End Role="ReaderTag" EntitySet="ReaderTags" />
+      <End Role="ReaderTagAntena" EntitySet="ReaderTagAntenas" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCategoryProduct" Association="AppsMain.Store.ProductCategoryProduct">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCategoryFactTag" Association="AppsMain.Store.ProductCategoryFactTag">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="productAssortmentFactTag" Association="AppsMain.Store.productAssortmentFactTag">
+      <End Role="productAssortment" EntitySet="productAssortments" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="ProductBoxFactTag" Association="AppsMain.Store.ProductBoxFactTag">
+      <End Role="ProductBox" EntitySet="ProductBoxes" />
+      <End Role="FactTag" EntitySet="FactTags" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeEmployeeShifts" Association="AppsMain.Store.EmployeeEmployeeShifts">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketAttachments_Tickets" Association="AppsMain.Store.FK_TicketAttachments_Tickets">
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="TicketAttachment" EntitySet="TicketAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketComments_Tickets" Association="AppsMain.Store.FK_TicketComments_Tickets">
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="TicketComment" EntitySet="TicketComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketEventNotifications_TicketComments" Association="AppsMain.Store.FK_TicketEventNotifications_TicketComments">
+      <End Role="TicketComment" EntitySet="TicketComments" />
+      <End Role="TicketEventNotification" EntitySet="TicketEventNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="SiteTicket" Association="AppsMain.Store.SiteTicket">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="SiteSetting" Association="AppsMain.Store.SiteSetting">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Setting" EntitySet="Settings" />
+    </AssociationSet>
+    <AssociationSet Name="TicketCategoryTicket" Association="AppsMain.Store.TicketCategoryTicket">
+      <End Role="TicketCategory" EntitySet="TicketCategorySet" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="TicketTypeTicket" Association="AppsMain.Store.TicketTypeTicket">
+      <End Role="TicketType" EntitySet="TicketTypeSet" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="TicketStatusTicket" Association="AppsMain.Store.TicketStatusTicket">
+      <End Role="TicketStatus" EntitySet="TicketStatusSet" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Activity_Opportunity" Association="AppsMain.Store.FK_Activity_Opportunity">
+      <End Role="Opportunity" EntitySet="Opportunity" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Company" Association="AppsMain.Store.FK_Contact_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Opportunity_Company" Association="AppsMain.Store.FK_Opportunity_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesTrend_Company" Association="AppsMain.Store.FK_SalesTrend_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="SalesTrend" EntitySet="SalesTrend" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeActivity" Association="AppsMain.Store.EmployeeActivity">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="ImageContact" Association="AppsMain.Store.ImageContact">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="ImageProduct" Association="AppsMain.Store.ImageProduct">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductOpportunity" Association="AppsMain.Store.ProductOpportunity">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="ImageEmployee" Association="AppsMain.Store.ImageEmployee">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="SiteCompany" Association="AppsMain.Store.SiteCompany">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="LocationHierarchyParent" Association="AppsMain.Store.LocationHierarchyParent">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="LocationParent" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="ImageLocation" Association="AppsMain.Store.ImageLocation">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="CompanyCustomer" Association="AppsMain.Store.CompanyCustomer">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="CompanySupplier" Association="AppsMain.Store.CompanySupplier">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="ContactOpportunity" Association="AppsMain.Store.ContactOpportunity">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocationLocationType_Location" Association="AppsMain.Store.FK_LocationLocationType_Location">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="LocationLocationType" EntitySet="LocationLocationType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocationLocationType_LocationType" Association="AppsMain.Store.FK_LocationLocationType_LocationType">
+      <End Role="LocationType" EntitySet="LocationTypes" />
+      <End Role="LocationLocationType" EntitySet="LocationLocationType" />
+    </AssociationSet>
+    <AssociationSet Name="LocationLocationHierarchyLevel" Association="AppsMain.Store.LocationLocationHierarchyLevel">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="LocationHierarchyLevel" EntitySet="LocationHierarchyLevels" />
+    </AssociationSet>
+    <AssociationSet Name="ImageCompany" Association="AppsMain.Store.ImageCompany">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="SiteLocationType" Association="AppsMain.Store.SiteLocationType">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="LocationType" EntitySet="LocationTypes" />
+    </AssociationSet>
+    <AssociationSet Name="SiteOpportunity" Association="AppsMain.Store.SiteOpportunity">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketTicketTag_Ticket" Association="AppsMain.Store.FK_TicketTicketTag_Ticket">
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="TicketTicketTag" EntitySet="TicketTicketTag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketTicketTag_TicketTag" Association="AppsMain.Store.FK_TicketTicketTag_TicketTag">
+      <End Role="TicketTag" EntitySet="TicketTags" />
+      <End Role="TicketTicketTag" EntitySet="TicketTicketTag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Code_Code" Association="AppsMain.Store.FK_Code_Code">
+      <End Role="Code" EntitySet="Code" />
+      <End Role="Code1" EntitySet="Code" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Sites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
+    <Property Name="ImageId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="Propiedad1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Credito" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="IdentificationTagId" Type="nchar" Nullable="true" MaxLength="30" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="BirthDate" Type="datetime" Nullable="true" />
+    <Property Name="Position" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="true" />
+    <Property Name="ImageId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Content" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Extension" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MimeType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Size" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="DimDateId" Type="int" Nullable="false" />
+    <Property Name="DimTimeId" Type="int" Nullable="false" />
+    <Property Name="TagId" Type="nchar" Nullable="false" MaxLength="30" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="true" />
+    <Property Name="EmployeeId" Type="int" Nullable="true" />
+    <Property Name="ProductCategoryId" Type="int" Nullable="true" />
+    <Property Name="productAssortmentId" Type="int" Nullable="true" />
+    <Property Name="ProductBoxId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Assets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DimDates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FullDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateNameUS" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateNameEU" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DayOfWeek" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DayOfWeekName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DayOfWeekNameSpanish" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DayOfWeekNameChinese" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DayOfMonth" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DayOfYear" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WeekdayWeekend" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WeekOfYear" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MonthName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MonthNameSpanish" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MonthNameChinese" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MonthOfYear" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsLastDayOfMonth" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CalendarQuarter" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CalendarYear" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CalendarYearMonth" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CalendarYearQtr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FiscalMonthOfYear" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FiscalQuarter" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FiscalYear" Type="smallint" Nullable="false" />
+    <Property Name="FiscalYearMonth" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FiscalYearQtr" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpaceCenter" Type="geography" Nullable="true" SRID="4326" />
+    <Property Name="parentId" Type="int" Nullable="true" />
+    <Property Name="hierarchyLevel" Type="smallint" Nullable="false" />
+    <Property Name="fullPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImageId" Type="int" Nullable="true" />
+    <Property Name="MapPath" Type="geometry" Nullable="true" SRID="0" />
+    <Property Name="HierarchyLevelId" Type="int" Nullable="false" />
+    <Property Name="ShapeFileUri" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ShapeFileDataUri" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="InfoTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TagId" Type="nchar" Nullable="false" MaxLength="30" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="DateEnd" Type="datetime" Nullable="false" />
+    <Property Name="SpaceRead" Type="geography" Nullable="true" SRID="4326" />
+    <Property Name="isCompleted" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="isSync" Type="bit" Nullable="false" DefaultValue="false" />
+  </EntityType>
+  <EntityType Name="ReaderTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="Model" Type="nchar" Nullable="true" MaxLength="20" />
+    <Property Name="IP" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Port" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Com" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CanWrite" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="OnDemand" Type="bit" Nullable="false" DefaultValue="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="ProductNumber" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
+    <Property Name="EnglishName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="FrenchName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="ChineseName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="ProductCategoryId" Type="int" Nullable="true" />
+    <Property Name="ProductType" Type="int" Nullable="false" />
+    <Property Name="Features" Type="nvarchar" Nullable="true" MaxLength="600" />
+    <Property Name="UnitPrice" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="ImageId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="EnglishDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="FrenchDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="ChineseDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="ArabicDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="HebrewDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="ThaiDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="GermanDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="JapaneseDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="TurkishDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="ProductCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
+    <Property Name="NameEnglish" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="NameChinese" Type="nchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="productAssortments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
+    <Property Name="NameEnglish" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="NameChinese" Type="nchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductBoxes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
+    <Property Name="NameEnglish" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="NameChinese" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="NetWeight" Type="float" Nullable="false" />
+    <Property Name="ProductType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeShifts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="DimTimeId" Type="int" Nullable="false" />
+    <Property Name="DimDateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReaderTagAntenas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AntenaArray" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReaderTagId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DimTime">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" Nullable="false" />
+    <Property Name="hour_of_day_24" Type="tinyint" Nullable="true" />
+    <Property Name="hour_of_day_12" Type="tinyint" Nullable="true" />
+    <Property Name="am_pm" Type="char" Nullable="true" MaxLength="2" />
+    <Property Name="minute_of_hour" Type="tinyint" Nullable="true" />
+    <Property Name="half_hour" Type="tinyint" Nullable="true" />
+    <Property Name="half_hour_of_day" Type="tinyint" Nullable="true" />
+    <Property Name="quarter_hour" Type="tinyint" Nullable="true" />
+    <Property Name="quarter_hour_of_day" Type="tinyint" Nullable="true" />
+    <Property Name="string_representation_24" Type="char" Nullable="true" MaxLength="5" />
+    <Property Name="string_representation_12" Type="char" Nullable="true" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="TicketAttachments">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="TicketId" Type="int" Nullable="true" />
+    <Property Name="FileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="FileSize" Type="int" Nullable="false" />
+    <Property Name="FileType" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="UploadedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UploadedDate" Type="datetime" Nullable="false" />
+    <Property Name="FileContents" Type="varbinary(max)" Nullable="false" />
+    <Property Name="FileDescription" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="IsPending" Type="bit" Nullable="false" />
+    <Property Name="FileUrl" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TicketComments">
+    <Key>
+      <PropertyRef Name="TicketId" />
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="TicketId" Type="int" Nullable="false" />
+    <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommentEvent" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsHtml" Type="bit" Nullable="false" />
+    <Property Name="CommentedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CommentedDate" Type="datetime" Nullable="false" />
+    <Property Name="Version" Type="uniqueidentifier" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TicketEventNotifications">
+    <Key>
+      <PropertyRef Name="TicketId" />
+      <PropertyRef Name="CommentId" />
+      <PropertyRef Name="NotifyUser" />
+    </Key>
+    <Property Name="TicketId" Type="int" Nullable="false" />
+    <Property Name="CommentId" Type="int" Nullable="false" />
+    <Property Name="NotifyUser" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="NotifyUserDisplayName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="NotifyEmail" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="NotifyUserReason" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="DeliveryAttempts" Type="int" Nullable="false" />
+    <Property Name="LastDeliveryAttemptDate" Type="datetime" Nullable="true" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NextDeliveryAttemptDate" Type="datetime" Nullable="true" />
+    <Property Name="EventGeneratedByUser" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tickets">
+    <Key>
+      <PropertyRef Name="TicketId" />
+    </Key>
+    <Property Name="TicketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsHtml" Type="bit" Nullable="false" />
+    <Property Name="TagList" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Owner" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="AssignedTo" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="CurrentStatusDate" Type="datetime" Nullable="false" />
+    <Property Name="CurrentStatusSetBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="LastUpdateBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+    <Property Name="Priority" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="AffectsCustomer" Type="bit" Nullable="false" />
+    <Property Name="PublishedToKb" Type="bit" Nullable="false" />
+    <Property Name="Version" Type="uniqueidentifier" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="DimCreatedDateId" Type="int" Nullable="false" />
+    <Property Name="DimCreatedTimeId" Type="int" Nullable="false" />
+    <Property Name="DimCurrentStatusDateId" Type="int" Nullable="false" />
+    <Property Name="DimCurrentStatusTimeId" Type="int" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="TicketCategoryTicketCategoryId" Type="int" Nullable="false" />
+    <Property Name="TicketTypeTicketTypeId" Type="int" Nullable="false" />
+    <Property Name="TicketStatusTicketStatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TicketTags">
+    <Key>
+      <PropertyRef Name="TicketTagId" />
+    </Key>
+    <Property Name="TicketTagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TagName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="SettingName" />
+    </Key>
+    <Property Name="SettingName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SettingValue" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DefaultValue" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SettingType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SettingDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SiteId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TicketTypeSet">
+    <Key>
+      <PropertyRef Name="TicketTypeId" />
+    </Key>
+    <Property Name="TicketTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TicketCategorySet">
+    <Key>
+      <PropertyRef Name="TicketCategoryId" />
+    </Key>
+    <Property Name="TicketCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TicketStatusSet">
+    <Key>
+      <PropertyRef Name="TicketStatusId" />
+    </Key>
+    <Property Name="TicketStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ImportanceSize" Type="smallint" Nullable="true" />
+    <Property Name="Editable" Type="bit" Nullable="true" DefaultValue="false" />
+  </EntityType>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="true" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="DueDate" Type="datetime" Nullable="true" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="Priority" Type="int" Nullable="true" />
+    <Property Name="Notes" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="OpportunityID" Type="int" Nullable="true" />
+    <Property Name="DateCreated" Type="datetime" Nullable="true" />
+    <Property Name="EmployeeId" Type="int" Nullable="true" />
+    <Property Name="DimDateCreatedId" Type="int" Nullable="false" />
+    <Property Name="DimTimeCreatedId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Postcode" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Notes" Type="nvarchar" Nullable="true" MaxLength="600" />
+    <Property Name="Revenue" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="NASDAQ" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Industry" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" Nullable="true" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="ImageId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Position" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Postcode" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" Nullable="true" MaxLength="600" />
+    <Property Name="Birthday" Type="datetime" Nullable="true" />
+    <Property Name="IsEmployee" Type="bit" Nullable="true" />
+    <Property Name="Division" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Facebook" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Twitter" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="GooglePlus" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Blog" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="IsImportantPerson" Type="bit" Nullable="true" />
+    <Property Name="ImageID" Type="int" Nullable="true" />
+    <Property Name="CompanyID" Type="int" Nullable="true" />
+    <Property Name="IsActive" Type="bit" Nullable="true" />
+    <Property Name="IsMale" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Opportunity">
+    <Key>
+      <PropertyRef Name="OpportunityID" />
+    </Key>
+    <Property Name="OpportunityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Quantity" Type="int" Nullable="true" />
+    <Property Name="Price" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Lead" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="Stage" Type="int" Nullable="true" />
+    <Property Name="SuccessProbability" Type="int" Nullable="true" />
+    <Property Name="WonLostReason" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="DiscountPercent" Type="int" Nullable="true" />
+    <Property Name="DiscountReason" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="EstimationCloseDate" Type="datetime" Nullable="true" />
+    <Property Name="Priority" Type="int" Nullable="true" />
+    <Property Name="ProductID" Type="int" Nullable="true" />
+    <Property Name="ContactID" Type="int" Nullable="true" />
+    <Property Name="CompanyID" Type="int" Nullable="true" />
+    <Property Name="DateCreated" Type="datetime" Nullable="true" />
+    <Property Name="DimDateCreatedId" Type="int" Nullable="false" />
+    <Property Name="DimTimeCreatedId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalesTrend">
+    <Key>
+      <PropertyRef Name="SalesTrendID" />
+    </Key>
+    <Property Name="SalesTrendID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="CompanyID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LocationTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LocationHierarchyLevels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IconUri" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCatalogStructures">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCatalogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
+    <Property Name="EnglishName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="FrenchName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="ChineseName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="EnglishDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="FrenchDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="ChineseDescription" Type="nvarchar" Nullable="true" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DocumentSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentPath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Content" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Extension" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MimeType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Size" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Code">
+    <Key>
+      <PropertyRef Name="CodeID" />
+    </Key>
+    <Property Name="CodeID" Type="int" Nullable="false" />
+    <Property Name="CodeType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CodeName" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Description" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="AssocText" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="AssocValue" Type="int" Nullable="true" />
+    <Property Name="ChangeDate" Type="datetime" Nullable="true" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ParentID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LocationLocationType">
+    <Key>
+      <PropertyRef Name="Locations_Id" />
+      <PropertyRef Name="LocationTypes_Id" />
+    </Key>
+    <Property Name="Locations_Id" Type="int" Nullable="false" />
+    <Property Name="LocationTypes_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TicketTicketTag">
+    <Key>
+      <PropertyRef Name="Tickets_TicketId" />
+      <PropertyRef Name="TicketTags_TicketTagId" />
+    </Key>
+    <Property Name="Tickets_TicketId" Type="int" Nullable="false" />
+    <Property Name="TicketTags_TicketTagId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="SiteEmployee">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Employee" Type="AppsMain.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteFactTag">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="FactTag" Type="AppsMain.Store.FactTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteCustomer">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Customer" Type="AppsMain.Store.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteSupplier">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Supplier" Type="AppsMain.Store.Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteAsset">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Asset" Type="AppsMain.Store.Assets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Asset">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteImage">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="*" />
+    <End Role="Image" Type="AppsMain.Store.Images" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Site">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteLocation">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Location" Type="AppsMain.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteProduct">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Product" Type="AppsMain.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteProductBox">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="ProductBox" Type="AppsMain.Store.ProductBoxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductBox">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InfoTagLocation">
+    <End Role="InfoTag" Type="AppsMain.Store.InfoTags" Multiplicity="*" />
+    <End Role="Location" Type="AppsMain.Store.Locations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoTag">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReaderTagReaderTagAntena">
+    <End Role="ReaderTag" Type="AppsMain.Store.ReaderTags" Multiplicity="1" />
+    <End Role="ReaderTagAntena" Type="AppsMain.Store.ReaderTagAntenas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReaderTag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReaderTagAntena">
+        <PropertyRef Name="ReaderTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCategoryProduct">
+    <End Role="ProductCategory" Type="AppsMain.Store.ProductCategories" Multiplicity="0..1" />
+    <End Role="Product" Type="AppsMain.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCategoryFactTag">
+    <End Role="ProductCategory" Type="AppsMain.Store.ProductCategories" Multiplicity="0..1" />
+    <End Role="FactTag" Type="AppsMain.Store.FactTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productAssortmentFactTag">
+    <End Role="productAssortment" Type="AppsMain.Store.productAssortments" Multiplicity="0..1" />
+    <End Role="FactTag" Type="AppsMain.Store.FactTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productAssortment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="productAssortmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductBoxFactTag">
+    <End Role="ProductBox" Type="AppsMain.Store.ProductBoxes" Multiplicity="0..1" />
+    <End Role="FactTag" Type="AppsMain.Store.FactTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductBox">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FactTag">
+        <PropertyRef Name="ProductBoxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeEmployeeShifts">
+    <End Role="Employee" Type="AppsMain.Store.Employees" Multiplicity="1" />
+    <End Role="EmployeeShifts" Type="AppsMain.Store.EmployeeShifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeShifts">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketAttachments_Tickets">
+    <End Role="Ticket" Type="AppsMain.Store.Tickets" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TicketAttachment" Type="AppsMain.Store.TicketAttachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="TicketId" />
+      </Principal>
+      <Dependent Role="TicketAttachment">
+        <PropertyRef Name="TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketComments_Tickets">
+    <End Role="Ticket" Type="AppsMain.Store.Tickets" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TicketComment" Type="AppsMain.Store.TicketComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="TicketId" />
+      </Principal>
+      <Dependent Role="TicketComment">
+        <PropertyRef Name="TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketEventNotifications_TicketComments">
+    <End Role="TicketComment" Type="AppsMain.Store.TicketComments" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TicketEventNotification" Type="AppsMain.Store.TicketEventNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketComment">
+        <PropertyRef Name="TicketId" />
+        <PropertyRef Name="CommentId" />
+      </Principal>
+      <Dependent Role="TicketEventNotification">
+        <PropertyRef Name="TicketId" />
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteTicket">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Ticket" Type="AppsMain.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteSetting">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="0..1" />
+    <End Role="Setting" Type="AppsMain.Store.Settings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Setting">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TicketCategoryTicket">
+    <End Role="TicketCategory" Type="AppsMain.Store.TicketCategorySet" Multiplicity="1" />
+    <End Role="Ticket" Type="AppsMain.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketCategory">
+        <PropertyRef Name="TicketCategoryId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="TicketCategoryTicketCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TicketTypeTicket">
+    <End Role="TicketType" Type="AppsMain.Store.TicketTypeSet" Multiplicity="1" />
+    <End Role="Ticket" Type="AppsMain.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketType">
+        <PropertyRef Name="TicketTypeId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="TicketTypeTicketTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TicketStatusTicket">
+    <End Role="TicketStatus" Type="AppsMain.Store.TicketStatusSet" Multiplicity="1" />
+    <End Role="Ticket" Type="AppsMain.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketStatus">
+        <PropertyRef Name="TicketStatusId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="TicketStatusTicketStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Activity_Opportunity">
+    <End Role="Opportunity" Type="AppsMain.Store.Opportunity" Multiplicity="0..1" />
+    <End Role="Activity" Type="AppsMain.Store.Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Opportunity">
+        <PropertyRef Name="OpportunityID" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="OpportunityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Company">
+    <End Role="Company" Type="AppsMain.Store.Company" Multiplicity="0..1" />
+    <End Role="Contact" Type="AppsMain.Store.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Opportunity_Company">
+    <End Role="Company" Type="AppsMain.Store.Company" Multiplicity="0..1" />
+    <End Role="Opportunity" Type="AppsMain.Store.Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesTrend_Company">
+    <End Role="Company" Type="AppsMain.Store.Company" Multiplicity="0..1" />
+    <End Role="SalesTrend" Type="AppsMain.Store.SalesTrend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="SalesTrend">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeActivity">
+    <End Role="Employee" Type="AppsMain.Store.Employees" Multiplicity="0..1" />
+    <End Role="Activity" Type="AppsMain.Store.Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageContact">
+    <End Role="Image" Type="AppsMain.Store.Images" Multiplicity="0..1" />
+    <End Role="Contact" Type="AppsMain.Store.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageProduct">
+    <End Role="Image" Type="AppsMain.Store.Images" Multiplicity="1" />
+    <End Role="Product" Type="AppsMain.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductOpportunity">
+    <End Role="Product" Type="AppsMain.Store.Products" Multiplicity="0..1" />
+    <End Role="Opportunity" Type="AppsMain.Store.Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageEmployee">
+    <End Role="Image" Type="AppsMain.Store.Images" Multiplicity="0..1" />
+    <End Role="Employee" Type="AppsMain.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteCompany">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Company" Type="AppsMain.Store.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocationHierarchyParent">
+    <End Role="Location" Type="AppsMain.Store.Locations" Multiplicity="0..1" />
+    <End Role="LocationParent" Type="AppsMain.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocationParent">
+        <PropertyRef Name="parentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageLocation">
+    <End Role="Image" Type="AppsMain.Store.Images" Multiplicity="0..1" />
+    <End Role="Location" Type="AppsMain.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompanyCustomer">
+    <End Role="Company" Type="AppsMain.Store.Company" Multiplicity="1" />
+    <End Role="Customer" Type="AppsMain.Store.Customers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompanySupplier">
+    <End Role="Company" Type="AppsMain.Store.Company" Multiplicity="1" />
+    <End Role="Supplier" Type="AppsMain.Store.Suppliers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContactOpportunity">
+    <End Role="Contact" Type="AppsMain.Store.Contact" Multiplicity="0..1" />
+    <End Role="Opportunity" Type="AppsMain.Store.Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="ContactID" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="ContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocationLocationHierarchyLevel">
+    <End Role="Location" Type="AppsMain.Store.Locations" Multiplicity="*" />
+    <End Role="LocationHierarchyLevel" Type="AppsMain.Store.LocationHierarchyLevels" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="LocationHierarchyLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="HierarchyLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageCompany">
+    <End Role="Image" Type="AppsMain.Store.Images" Multiplicity="0..1" />
+    <End Role="Company" Type="AppsMain.Store.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteLocationType">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="LocationType" Type="AppsMain.Store.LocationTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocationType">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SiteOpportunity">
+    <End Role="Site" Type="AppsMain.Store.Sites" Multiplicity="1" />
+    <End Role="Opportunity" Type="AppsMain.Store.Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Code_Code">
+    <End Role="Code" Type="AppsMain.Store.Code" Multiplicity="0..1" />
+    <End Role="Code1" Type="AppsMain.Store.Code" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Code">
+        <PropertyRef Name="CodeID" />
+      </Principal>
+      <Dependent Role="Code1">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocationLocationType_Location">
+    <End Role="Location" Type="AppsMain.Store.Locations" Multiplicity="1" />
+    <End Role="LocationLocationType" Type="AppsMain.Store.LocationLocationType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocationLocationType">
+        <PropertyRef Name="Locations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocationLocationType_LocationType">
+    <End Role="LocationLocationType" Type="AppsMain.Store.LocationLocationType" Multiplicity="*" />
+    <End Role="LocationType" Type="AppsMain.Store.LocationTypes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="LocationType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocationLocationType">
+        <PropertyRef Name="LocationTypes_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketTicketTag_Ticket">
+    <End Role="Ticket" Type="AppsMain.Store.Tickets" Multiplicity="1" />
+    <End Role="TicketTicketTag" Type="AppsMain.Store.TicketTicketTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="TicketId" />
+      </Principal>
+      <Dependent Role="TicketTicketTag">
+        <PropertyRef Name="Tickets_TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketTicketTag_TicketTag">
+    <End Role="TicketTicketTag" Type="AppsMain.Store.TicketTicketTag" Multiplicity="*" />
+    <End Role="TicketTag" Type="AppsMain.Store.TicketTags" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TicketTag">
+        <PropertyRef Name="TicketTagId" />
+      </Principal>
+      <Dependent Role="TicketTicketTag">
+        <PropertyRef Name="TicketTags_TicketTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

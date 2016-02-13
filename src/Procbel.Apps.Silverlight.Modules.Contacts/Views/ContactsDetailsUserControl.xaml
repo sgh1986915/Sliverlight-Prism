@@ -1,0 +1,282 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Contacts.Views.ContactsDetailsUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:converters="clr-namespace:Procbel.Apps.Silverlight.Infrastructure.Converters;assembly=Procbel.Apps.Silverlight.Infrastructure"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:infra="clr-namespace:Procbel.Apps.Silverlight.Infrastructure;assembly=Procbel.Apps.Silverlight.Infrastructure"
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d" d:DesignWidth="540" d:DesignHeight="600">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/CommonStyles.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadDataFormStyle.xaml"/>
+                <ResourceDictionary>
+                    <infra:ApplicationResources x:Key="ApplicationResources"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:ObjectToUpperCaseStringConverter x:Key="ObjectToUpperCaseStringConverter" />
+            <telerik:BooleanToVisibilityConverter x:Key="BooleantToVisibilityConverter" />
+
+            <DataTemplate x:Key="contactsReadOnlyTemplate">
+                <Grid d:DesignWidth="464" d:DesignHeight="448">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--<Rectangle StrokeThickness="0" Fill="Black" Opacity="0.12" HorizontalAlignment="Left" Margin="66,98,0,0" Width="32" Grid.Row="0" Grid.RowSpan="5" VerticalAlignment="Stretch"/>-->
+                    <StackPanel Margin="105,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" FontFamily="Segoe UI Light" FontSize="32" Foreground="{StaticResource MainBrush}" d:LayoutOverrides="Width" />
+                            <TextBlock Visibility="{Binding IsImportantPerson, Converter={StaticResource BooleantToVisibilityConverter}}" TextWrapping="Wrap" Text="IMPORTANT" Foreground="{StaticResource ValidationBrush}" d:LayoutOverrides="Width" VerticalAlignment="Top"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding Position, Converter={StaticResource ObjectToUpperCaseStringConverter}}" FontFamily="Segoe UI Semibold" Foreground="{StaticResource StrongBrush}" Margin="0,-4,0,0" />
+                    </StackPanel>
+                    <Border Width="98" Height="98" BorderThickness="3" BorderBrush="{StaticResource AccentBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF202020">
+                        <telerik:RadTransitionControl Content="{Binding Image.ImagePath, FallbackValue=/Images/ProfilePics/defaultContact.jpg}" Duration="0:0:0.3">
+                            <telerik:RadTransitionControl.Transition>
+                                <telerik:MotionBlurredZoomTransition/>
+                            </telerik:RadTransitionControl.Transition>
+                            <telerik:RadTransitionControl.ContentTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding .}" />
+                                </DataTemplate>
+                            </telerik:RadTransitionControl.ContentTemplate>
+                        </telerik:RadTransitionControl>
+                    </Border>
+                    <Border BorderThickness="0,0,0,3" BorderBrush="#99000000" Margin="0,8,0,0" Grid.Row="1" Visibility="Collapsed">
+                        <Border.Background>
+                            <RadialGradientBrush Center="0.796,0" GradientOrigin="0.796,0" RadiusY="1.442" RadiusX="1.733">
+                                <GradientStop Color="#06000000"/>
+                                <GradientStop Color="#66000000" Offset="0.578"/>
+                            </RadialGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Grid Margin="8,8,0,0" Grid.Row="2" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!--Application Resource that indicate the description-->
+                        <TextBlock Text="{Binding Strings.Company, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.Division, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.Address, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.City, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.State, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.Country, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.PostCode, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="6" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.Phone, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,4" />
+                        <TextBlock Text="{Binding Strings.Email, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="8" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.Facebook, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="9" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.Twitter, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+                        <TextBlock Text="{Binding Strings.Blog, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="12" Foreground="{StaticResource StrongBrush}" Grid.Row="11" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,0,2" />
+
+                        <TextBlock Text="{Binding Company.Name}" TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="24" Foreground="{StaticResource BasicBrush}" Grid.Column="1" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding Division}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource BasicBrush}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding Address}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource BasicBrush}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Margin="15,36,0,0" />
+                        <TextBlock Text="{Binding City, Converter={StaticResource ObjectToUpperCaseStringConverter}}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource BasicBrush}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding State, Converter={StaticResource ObjectToUpperCaseStringConverter}}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource BasicBrush}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding Country, Converter={StaticResource ObjectToUpperCaseStringConverter}}" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource BasicBrush}" Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding Postcode, Converter={StaticResource ObjectToUpperCaseStringConverter}}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource BasicBrush}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding Phone}" FontFamily="Segoe UI" FontSize="36" Foreground="{StaticResource BasicBrush}" Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" Margin="15,36,0,0" />
+                        <TextBlock Text="{Binding Email}" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource AccentBrush}" Grid.Column="1" Grid.Row="8" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding Facebook}" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource AccentBrush}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <TextBlock Text="{Binding Twitter}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource AccentBrush}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Bottom" Margin="15,0,0,0" />
+                        <HyperlinkButton  NavigateUri="{Binding Blog}" TargetName="_blank" IsTabStop="False" Grid.Column="1" Grid.Row="11" VerticalAlignment="Bottom" Margin="15,0,0,0">
+                            <TextBlock Text="{Binding Blog}" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource AccentBrush}" />
+                        </HyperlinkButton>
+
+                    </Grid>
+                    <ScrollViewer x:Name="scrollViewer" Grid.Row="3" Style="{StaticResource ScrollViewerStyle}" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="105,8,8,8">
+                        <TextBlock TextWrapping="Wrap" Foreground="{StaticResource BasicBrush}"
+                			FontSize="13" FontFamily="Segoe UI" 
+                			Text="{Binding Notes}" 
+                			VerticalAlignment="Top" LineHeight="20" />
+                    </ScrollViewer>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="contactsEditTemplate" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--<Rectangle StrokeThickness="0" Fill="Black" Opacity="0.12" HorizontalAlignment="Left" Margin="66,98,0,0" Width="32" Grid.Row="0" Grid.RowSpan="5" VerticalAlignment="Stretch"/>-->
+                    <StackPanel Margin="105,0,0,0" VerticalAlignment="Bottom">
+                        <TextBox Text="{Binding Name, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}" FontFamily="Segoe UI Light" FontSize="28" Foreground="{StaticResource MainBrush}" />
+                        <TextBox Text="{Binding Position, Mode=TwoWay}" FontFamily="Segoe UI Semibold" Foreground="{StaticResource StrongBrush}" Margin="0,2,0,0" />
+                    </StackPanel>
+                    <Border Width="98" Height="98" BorderThickness="3" BorderBrush="{StaticResource AccentBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF202020">
+                        <telerik:RadTransitionControl Content="{Binding Image.ImagePath, FallbackValue=/Images/ProfilePics/defaultContact.jpg}" Duration="0:0:0.3">
+                            <telerik:RadTransitionControl.Transition>
+                                <telerik:MotionBlurredZoomTransition/>
+                            </telerik:RadTransitionControl.Transition>
+                            <telerik:RadTransitionControl.ContentTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding .}" />
+                                </DataTemplate>
+                            </telerik:RadTransitionControl.ContentTemplate>
+                        </telerik:RadTransitionControl>
+                    </Border>
+
+                    <Border BorderThickness="0,0,0,3" BorderBrush="#99000000" Margin="0,8,0,0" Grid.Row="1" Visibility="Collapsed">
+                        <Border.Background>
+                            <RadialGradientBrush Center="0.796,0" GradientOrigin="0.796,0" RadiusY="1.442" RadiusX="1.733">
+                                <GradientStop Color="#06000000"/>
+                                <GradientStop Color="#66000000" Offset="0.578"/>
+                            </RadialGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Grid Margin="0,8,0,24" Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{Binding Strings.Description, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Margin="8,0,0,0" d:LayoutOverrides="Height" />
+
+
+                        <TextBox TextWrapping="Wrap" Foreground="{StaticResource BasicBrush}"
+                			FontSize="13" FontFamily="Segoe UI" Text="{Binding Notes, Mode=TwoWay}" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="0,2,0,0" Grid.Row="1" />
+
+
+                    </Grid>
+                    <Grid Margin="8,8,0,0" d:LayoutOverrides="Height" Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Strings.Company, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" />
+                        <TextBlock Text="{Binding Strings.Division, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="1" />
+                        <TextBlock Text="{Binding Strings.Address, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="2" />
+                        <TextBlock Text="{Binding Strings.City, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="3" />
+                        <TextBlock Text="{Binding Strings.State, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="4" />
+                        <TextBlock Text="{Binding Strings.Country, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="5" />
+                        <TextBlock Text="{Binding Strings.PostCode, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="6" />
+                        <TextBlock Text="{Binding Strings.Phone, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="7" />
+                        <TextBlock Text="{Binding Strings.Mail, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="8" />
+                        <TextBlock Text="{Binding Strings.Facebook, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="9" />
+                        <TextBlock Text="{Binding Strings.Twitter, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="10" />
+                        <TextBlock Text="{Binding Strings.Google, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="11" />
+                        <TextBlock Text="{Binding Strings.Blog, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="12" />
+                        <TextBlock Text="{Binding Strings.Important, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" Grid.Row="13" />
+
+                        <!--<TextBlock Text="{Binding Company.Name}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Margin="0,0,0,2" />-->
+                        <telerik:RadComboBox ItemsSource="{Binding DataView, ElementName=companiesDataSource}" 
+                                                 SelectedValuePath="CompanyID" 
+                                                 SelectedValue="{Binding CompanyID, Mode=TwoWay}" Grid.Column="1"
+                                                 Style="{StaticResource RadComboBoxStyle}" FontFamily="Segoe UI Light" FontSize="24" Margin="0,0,0,2" VerticalAlignment="Bottom" Height="40">
+                            <telerik:RadComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </telerik:RadComboBox.ItemTemplate>
+                            <telerik:RadComboBox.SelectionBoxTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </telerik:RadComboBox.SelectionBoxTemplate>
+                        </telerik:RadComboBox>
+                        <TextBox Text="{Binding Division, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="1" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Address, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="2" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding City, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="3" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding State, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="4" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Country, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="5" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Postcode, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="6" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Phone, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="7" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Email, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="8" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Facebook, Mode=TwoWay}" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="9" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Twitter, Mode=TwoWay}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="10" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding GooglePlus, Mode=TwoWay}" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="11" Margin="0,0,0,2" />
+                        <TextBox Text="{Binding Blog, Mode=TwoWay}" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="12" Margin="0,0,0,2" />
+                        <CheckBox IsChecked="{Binding IsImportantPerson, Mode=TwoWay}" FontFamily="Segoe UI" FontSize="14" Foreground="{StaticResource MainBrush}" Grid.Column="1" Grid.Row="13" Margin="0,0,0,2" />
+                    </Grid>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadDomainDataSource DomainContext="{Binding ContactRepository.Context}" QueryName="GetCompanies" x:Name="companiesDataSource" AutoLoad="True"/>
+
+        <telerik:RadDataForm x:Name="dataForm"
+							 ItemsSource="{Binding Contacts}" 
+                             CommandButtonsVisibility="Cancel,Commit" 
+                             AutoGenerateFields="False"
+                             ValidationSummaryVisibility="Collapsed"
+							 EditEnded="RadDataForm_EditEnded"
+							 CurrentItemChanged="OnDataFormCurrentItemChanged"
+                             LabelPosition="Above"
+                             ReadOnlyTemplate="{StaticResource contactsReadOnlyTemplate}"
+                             EditTemplate="{StaticResource contactsEditTemplate}"
+                             NewItemTemplate="{StaticResource contactsEditTemplate}" 
+                             VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="7,0" Orientation="Horizontal">
+            <telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" Margin="0,0,40,0" Tag="ADD"
+                               Command="telerik:RadDataFormCommands.AddNew" CommandTarget="{Binding ElementName=dataForm}">
+                <telerik:RadButton.RenderTransform>
+                    <CompositeTransform TranslateY="-21"/>
+                </telerik:RadButton.RenderTransform>
+                <Path Stretch="Fill" Fill="{StaticResource MainBrush}"
+                      Data="F1 M 22,12L 26,12L 26,22L 36,22L 36,26L 26,26L 26,36L 22,36L 22,26L 12,26L 12,22L 22,22L 22,12 Z " 
+                      Height="24" Width="24"/>
+            </telerik:RadButton>
+            <telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" 
+                           Command="telerik:RadDataFormCommands.BeginEdit" CommandTarget="{Binding ElementName=dataForm}" Tag="EDIT">
+                <telerik:RadButton.RenderTransform>
+                    <CompositeTransform TranslateY="-21"/>
+                </telerik:RadButton.RenderTransform>
+                <Path Stretch="Fill" Fill="{StaticResource MainBrush}" 
+                  Data="F1 M 382.058,296.917L 384.4,299.25C 384.782,299.628 384.666,300.047 384.142,300.175L 381.088,300.94C 380.564,301.07 380.244,300.75 380.374,300.227L 381.132,297.175C 381.26,296.656 381.679,296.539 382.058,296.917 Z M 407.681,273.667C 410.288,276.274 408.282,278.836 408.282,278.836L 407.003,280.289C 406.627,280.664 406.01,280.659 405.629,280.276L 401.072,275.719C 400.694,275.339 400.687,274.722 401.062,274.346L 402.515,273.071C 402.515,273.071 405.08,271.065 407.681,273.667 Z M 399.551,277.242L 404.103,281.8C 404.486,282.182 404.486,282.805 404.103,283.182L 389.533,297.753C 389.155,298.136 388.53,298.136 388.153,297.753L 383.593,293.196C 383.213,292.815 383.213,292.196 383.593,291.813L 398.17,277.242C 398.549,276.862 399.17,276.862 399.551,277.242 Z " 
+                  Height="24.634" Width="24.667" VerticalAlignment="Top" HorizontalAlignment="Right" />
+            </telerik:RadButton>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

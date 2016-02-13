@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdventureWorksDW2008R2ModelStoreContainer" CdmEntityContainer="AdventureWorksDW2008R2Entities">
+    <EntitySetMapping Name="DatabaseLog">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DatabaseLog">
+        <MappingFragment StoreEntitySet="DatabaseLog">
+          <ScalarProperty Name="DatabaseLogID" ColumnName="DatabaseLogID" />
+          <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+          <ScalarProperty Name="DatabaseUser" ColumnName="DatabaseUser" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="Schema" ColumnName="Schema" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+          <ScalarProperty Name="TSQL" ColumnName="TSQL" />
+          <ScalarProperty Name="XmlEvent" ColumnName="XmlEvent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimAccount">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimAccount">
+        <MappingFragment StoreEntitySet="DimAccount">
+          <ScalarProperty Name="AccountKey" ColumnName="AccountKey" />
+          <ScalarProperty Name="ParentAccountKey" ColumnName="ParentAccountKey" />
+          <ScalarProperty Name="AccountCodeAlternateKey" ColumnName="AccountCodeAlternateKey" />
+          <ScalarProperty Name="ParentAccountCodeAlternateKey" ColumnName="ParentAccountCodeAlternateKey" />
+          <ScalarProperty Name="AccountDescription" ColumnName="AccountDescription" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="CustomMembers" ColumnName="CustomMembers" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+          <ScalarProperty Name="CustomMemberOptions" ColumnName="CustomMemberOptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimCurrency">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimCurrency">
+        <MappingFragment StoreEntitySet="DimCurrency">
+          <ScalarProperty Name="CurrencyKey" ColumnName="CurrencyKey" />
+          <ScalarProperty Name="CurrencyAlternateKey" ColumnName="CurrencyAlternateKey" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimCustomer">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimCustomer">
+        <MappingFragment StoreEntitySet="DimCustomer">
+          <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+          <ScalarProperty Name="GeographyKey" ColumnName="GeographyKey" />
+          <ScalarProperty Name="CustomerAlternateKey" ColumnName="CustomerAlternateKey" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NameStyle" ColumnName="NameStyle" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="YearlyIncome" ColumnName="YearlyIncome" />
+          <ScalarProperty Name="TotalChildren" ColumnName="TotalChildren" />
+          <ScalarProperty Name="NumberChildrenAtHome" ColumnName="NumberChildrenAtHome" />
+          <ScalarProperty Name="EnglishEducation" ColumnName="EnglishEducation" />
+          <ScalarProperty Name="SpanishEducation" ColumnName="SpanishEducation" />
+          <ScalarProperty Name="FrenchEducation" ColumnName="FrenchEducation" />
+          <ScalarProperty Name="EnglishOccupation" ColumnName="EnglishOccupation" />
+          <ScalarProperty Name="SpanishOccupation" ColumnName="SpanishOccupation" />
+          <ScalarProperty Name="FrenchOccupation" ColumnName="FrenchOccupation" />
+          <ScalarProperty Name="HouseOwnerFlag" ColumnName="HouseOwnerFlag" />
+          <ScalarProperty Name="NumberCarsOwned" ColumnName="NumberCarsOwned" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DateFirstPurchase" ColumnName="DateFirstPurchase" />
+          <ScalarProperty Name="CommuteDistance" ColumnName="CommuteDistance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimDate">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimDate">
+        <MappingFragment StoreEntitySet="DimDate">
+          <ScalarProperty Name="DateKey" ColumnName="DateKey" />
+          <ScalarProperty Name="FullDateAlternateKey" ColumnName="FullDateAlternateKey" />
+          <ScalarProperty Name="DayNumberOfWeek" ColumnName="DayNumberOfWeek" />
+          <ScalarProperty Name="EnglishDayNameOfWeek" ColumnName="EnglishDayNameOfWeek" />
+          <ScalarProperty Name="SpanishDayNameOfWeek" ColumnName="SpanishDayNameOfWeek" />
+          <ScalarProperty Name="FrenchDayNameOfWeek" ColumnName="FrenchDayNameOfWeek" />
+          <ScalarProperty Name="DayNumberOfMonth" ColumnName="DayNumberOfMonth" />
+          <ScalarProperty Name="DayNumberOfYear" ColumnName="DayNumberOfYear" />
+          <ScalarProperty Name="WeekNumberOfYear" ColumnName="WeekNumberOfYear" />
+          <ScalarProperty Name="EnglishMonthName" ColumnName="EnglishMonthName" />
+          <ScalarProperty Name="SpanishMonthName" ColumnName="SpanishMonthName" />
+          <ScalarProperty Name="FrenchMonthName" ColumnName="FrenchMonthName" />
+          <ScalarProperty Name="MonthNumberOfYear" ColumnName="MonthNumberOfYear" />
+          <ScalarProperty Name="CalendarQuarter" ColumnName="CalendarQuarter" />
+          <ScalarProperty Name="CalendarYear" ColumnName="CalendarYear" />
+          <ScalarProperty Name="CalendarSemester" ColumnName="CalendarSemester" />
+          <ScalarProperty Name="FiscalQuarter" ColumnName="FiscalQuarter" />
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="FiscalSemester" ColumnName="FiscalSemester" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimDepartmentGroup">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimDepartmentGroup">
+        <MappingFragment StoreEntitySet="DimDepartmentGroup">
+          <ScalarProperty Name="DepartmentGroupKey" ColumnName="DepartmentGroupKey" />
+          <ScalarProperty Name="ParentDepartmentGroupKey" ColumnName="ParentDepartmentGroupKey" />
+          <ScalarProperty Name="DepartmentGroupName" ColumnName="DepartmentGroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimEmployee">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimEmployee">
+        <MappingFragment StoreEntitySet="DimEmployee">
+          <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+          <ScalarProperty Name="ParentEmployeeKey" ColumnName="ParentEmployeeKey" />
+          <ScalarProperty Name="EmployeeNationalIDAlternateKey" ColumnName="EmployeeNationalIDAlternateKey" />
+          <ScalarProperty Name="ParentEmployeeNationalIDAlternateKey" ColumnName="ParentEmployeeNationalIDAlternateKey" />
+          <ScalarProperty Name="SalesTerritoryKey" ColumnName="SalesTerritoryKey" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="NameStyle" ColumnName="NameStyle" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="EmergencyContactName" ColumnName="EmergencyContactName" />
+          <ScalarProperty Name="EmergencyContactPhone" ColumnName="EmergencyContactPhone" />
+          <ScalarProperty Name="SalariedFlag" ColumnName="SalariedFlag" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PayFrequency" ColumnName="PayFrequency" />
+          <ScalarProperty Name="BaseRate" ColumnName="BaseRate" />
+          <ScalarProperty Name="VacationHours" ColumnName="VacationHours" />
+          <ScalarProperty Name="SickLeaveHours" ColumnName="SickLeaveHours" />
+          <ScalarProperty Name="CurrentFlag" ColumnName="CurrentFlag" />
+          <ScalarProperty Name="SalesPersonFlag" ColumnName="SalesPersonFlag" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimGeography">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimGeography">
+        <MappingFragment StoreEntitySet="DimGeography">
+          <ScalarProperty Name="GeographyKey" ColumnName="GeographyKey" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateProvinceCode" ColumnName="StateProvinceCode" />
+          <ScalarProperty Name="StateProvinceName" ColumnName="StateProvinceName" />
+          <ScalarProperty Name="CountryRegionCode" ColumnName="CountryRegionCode" />
+          <ScalarProperty Name="EnglishCountryRegionName" ColumnName="EnglishCountryRegionName" />
+          <ScalarProperty Name="SpanishCountryRegionName" ColumnName="SpanishCountryRegionName" />
+          <ScalarProperty Name="FrenchCountryRegionName" ColumnName="FrenchCountryRegionName" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="SalesTerritoryKey" ColumnName="SalesTerritoryKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimOrganization">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimOrganization">
+        <MappingFragment StoreEntitySet="DimOrganization">
+          <ScalarProperty Name="OrganizationKey" ColumnName="OrganizationKey" />
+          <ScalarProperty Name="ParentOrganizationKey" ColumnName="ParentOrganizationKey" />
+          <ScalarProperty Name="PercentageOfOwnership" ColumnName="PercentageOfOwnership" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+          <ScalarProperty Name="CurrencyKey" ColumnName="CurrencyKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimProduct">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimProduct">
+        <MappingFragment StoreEntitySet="DimProduct">
+          <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+          <ScalarProperty Name="ProductAlternateKey" ColumnName="ProductAlternateKey" />
+          <ScalarProperty Name="ProductSubcategoryKey" ColumnName="ProductSubcategoryKey" />
+          <ScalarProperty Name="WeightUnitMeasureCode" ColumnName="WeightUnitMeasureCode" />
+          <ScalarProperty Name="SizeUnitMeasureCode" ColumnName="SizeUnitMeasureCode" />
+          <ScalarProperty Name="EnglishProductName" ColumnName="EnglishProductName" />
+          <ScalarProperty Name="SpanishProductName" ColumnName="SpanishProductName" />
+          <ScalarProperty Name="FrenchProductName" ColumnName="FrenchProductName" />
+          <ScalarProperty Name="StandardCost" ColumnName="StandardCost" />
+          <ScalarProperty Name="FinishedGoodsFlag" ColumnName="FinishedGoodsFlag" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="SafetyStockLevel" ColumnName="SafetyStockLevel" />
+          <ScalarProperty Name="ReorderPoint" ColumnName="ReorderPoint" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SizeRange" ColumnName="SizeRange" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="DaysToManufacture" ColumnName="DaysToManufacture" />
+          <ScalarProperty Name="ProductLine" ColumnName="ProductLine" />
+          <ScalarProperty Name="DealerPrice" ColumnName="DealerPrice" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="LargePhoto" ColumnName="LargePhoto" />
+          <ScalarProperty Name="EnglishDescription" ColumnName="EnglishDescription" />
+          <ScalarProperty Name="FrenchDescription" ColumnName="FrenchDescription" />
+          <ScalarProperty Name="ChineseDescription" ColumnName="ChineseDescription" />
+          <ScalarProperty Name="ArabicDescription" ColumnName="ArabicDescription" />
+          <ScalarProperty Name="HebrewDescription" ColumnName="HebrewDescription" />
+          <ScalarProperty Name="ThaiDescription" ColumnName="ThaiDescription" />
+          <ScalarProperty Name="GermanDescription" ColumnName="GermanDescription" />
+          <ScalarProperty Name="JapaneseDescription" ColumnName="JapaneseDescription" />
+          <ScalarProperty Name="TurkishDescription" ColumnName="TurkishDescription" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimProductCategory">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimProductCategory">
+        <MappingFragment StoreEntitySet="DimProductCategory">
+          <ScalarProperty Name="ProductCategoryKey" ColumnName="ProductCategoryKey" />
+          <ScalarProperty Name="ProductCategoryAlternateKey" ColumnName="ProductCategoryAlternateKey" />
+          <ScalarProperty Name="EnglishProductCategoryName" ColumnName="EnglishProductCategoryName" />
+          <ScalarProperty Name="SpanishProductCategoryName" ColumnName="SpanishProductCategoryName" />
+          <ScalarProperty Name="FrenchProductCategoryName" ColumnName="FrenchProductCategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimProductSubcategory">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimProductSubcategory">
+        <MappingFragment StoreEntitySet="DimProductSubcategory">
+          <ScalarProperty Name="ProductSubcategoryKey" ColumnName="ProductSubcategoryKey" />
+          <ScalarProperty Name="ProductSubcategoryAlternateKey" ColumnName="ProductSubcategoryAlternateKey" />
+          <ScalarProperty Name="EnglishProductSubcategoryName" ColumnName="EnglishProductSubcategoryName" />
+          <ScalarProperty Name="SpanishProductSubcategoryName" ColumnName="SpanishProductSubcategoryName" />
+          <ScalarProperty Name="FrenchProductSubcategoryName" ColumnName="FrenchProductSubcategoryName" />
+          <ScalarProperty Name="ProductCategoryKey" ColumnName="ProductCategoryKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimPromotion">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimPromotion">
+        <MappingFragment StoreEntitySet="DimPromotion">
+          <ScalarProperty Name="PromotionKey" ColumnName="PromotionKey" />
+          <ScalarProperty Name="PromotionAlternateKey" ColumnName="PromotionAlternateKey" />
+          <ScalarProperty Name="EnglishPromotionName" ColumnName="EnglishPromotionName" />
+          <ScalarProperty Name="SpanishPromotionName" ColumnName="SpanishPromotionName" />
+          <ScalarProperty Name="FrenchPromotionName" ColumnName="FrenchPromotionName" />
+          <ScalarProperty Name="DiscountPct" ColumnName="DiscountPct" />
+          <ScalarProperty Name="EnglishPromotionType" ColumnName="EnglishPromotionType" />
+          <ScalarProperty Name="SpanishPromotionType" ColumnName="SpanishPromotionType" />
+          <ScalarProperty Name="FrenchPromotionType" ColumnName="FrenchPromotionType" />
+          <ScalarProperty Name="EnglishPromotionCategory" ColumnName="EnglishPromotionCategory" />
+          <ScalarProperty Name="SpanishPromotionCategory" ColumnName="SpanishPromotionCategory" />
+          <ScalarProperty Name="FrenchPromotionCategory" ColumnName="FrenchPromotionCategory" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="MinQty" ColumnName="MinQty" />
+          <ScalarProperty Name="MaxQty" ColumnName="MaxQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimReseller">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimReseller">
+        <MappingFragment StoreEntitySet="DimReseller">
+          <ScalarProperty Name="ResellerKey" ColumnName="ResellerKey" />
+          <ScalarProperty Name="GeographyKey" ColumnName="GeographyKey" />
+          <ScalarProperty Name="ResellerAlternateKey" ColumnName="ResellerAlternateKey" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+          <ScalarProperty Name="ResellerName" ColumnName="ResellerName" />
+          <ScalarProperty Name="NumberEmployees" ColumnName="NumberEmployees" />
+          <ScalarProperty Name="OrderFrequency" ColumnName="OrderFrequency" />
+          <ScalarProperty Name="OrderMonth" ColumnName="OrderMonth" />
+          <ScalarProperty Name="FirstOrderYear" ColumnName="FirstOrderYear" />
+          <ScalarProperty Name="LastOrderYear" ColumnName="LastOrderYear" />
+          <ScalarProperty Name="ProductLine" ColumnName="ProductLine" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AnnualSales" ColumnName="AnnualSales" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="MinPaymentType" ColumnName="MinPaymentType" />
+          <ScalarProperty Name="MinPaymentAmount" ColumnName="MinPaymentAmount" />
+          <ScalarProperty Name="AnnualRevenue" ColumnName="AnnualRevenue" />
+          <ScalarProperty Name="YearOpened" ColumnName="YearOpened" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimSalesReason">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimSalesReason">
+        <MappingFragment StoreEntitySet="DimSalesReason">
+          <ScalarProperty Name="SalesReasonKey" ColumnName="SalesReasonKey" />
+          <ScalarProperty Name="SalesReasonAlternateKey" ColumnName="SalesReasonAlternateKey" />
+          <ScalarProperty Name="SalesReasonName" ColumnName="SalesReasonName" />
+          <ScalarProperty Name="SalesReasonReasonType" ColumnName="SalesReasonReasonType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimSalesTerritory">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimSalesTerritory">
+        <MappingFragment StoreEntitySet="DimSalesTerritory">
+          <ScalarProperty Name="SalesTerritoryKey" ColumnName="SalesTerritoryKey" />
+          <ScalarProperty Name="SalesTerritoryAlternateKey" ColumnName="SalesTerritoryAlternateKey" />
+          <ScalarProperty Name="SalesTerritoryRegion" ColumnName="SalesTerritoryRegion" />
+          <ScalarProperty Name="SalesTerritoryCountry" ColumnName="SalesTerritoryCountry" />
+          <ScalarProperty Name="SalesTerritoryGroup" ColumnName="SalesTerritoryGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimScenario">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.DimScenario">
+        <MappingFragment StoreEntitySet="DimScenario">
+          <ScalarProperty Name="ScenarioKey" ColumnName="ScenarioKey" />
+          <ScalarProperty Name="ScenarioName" ColumnName="ScenarioName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactAdditionalInternationalProductDescription">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactAdditionalInternationalProductDescription">
+        <MappingFragment StoreEntitySet="FactAdditionalInternationalProductDescription">
+          <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+          <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactCallCenter">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactCallCenter">
+        <MappingFragment StoreEntitySet="FactCallCenter">
+          <ScalarProperty Name="FactCallCenterID" ColumnName="FactCallCenterID" />
+          <ScalarProperty Name="DateKey" ColumnName="DateKey" />
+          <ScalarProperty Name="WageType" ColumnName="WageType" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="LevelOneOperators" ColumnName="LevelOneOperators" />
+          <ScalarProperty Name="LevelTwoOperators" ColumnName="LevelTwoOperators" />
+          <ScalarProperty Name="TotalOperators" ColumnName="TotalOperators" />
+          <ScalarProperty Name="Calls" ColumnName="Calls" />
+          <ScalarProperty Name="AutomaticResponses" ColumnName="AutomaticResponses" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="IssuesRaised" ColumnName="IssuesRaised" />
+          <ScalarProperty Name="AverageTimePerIssue" ColumnName="AverageTimePerIssue" />
+          <ScalarProperty Name="ServiceGrade" ColumnName="ServiceGrade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactCurrencyRate">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactCurrencyRate">
+        <MappingFragment StoreEntitySet="FactCurrencyRate">
+          <ScalarProperty Name="CurrencyKey" ColumnName="CurrencyKey" />
+          <ScalarProperty Name="DateKey" ColumnName="DateKey" />
+          <ScalarProperty Name="AverageRate" ColumnName="AverageRate" />
+          <ScalarProperty Name="EndOfDayRate" ColumnName="EndOfDayRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactFinance">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactFinance">
+        <MappingFragment StoreEntitySet="FactFinance">
+          <ScalarProperty Name="FinanceKey" ColumnName="FinanceKey" />
+          <ScalarProperty Name="DateKey" ColumnName="DateKey" />
+          <ScalarProperty Name="OrganizationKey" ColumnName="OrganizationKey" />
+          <ScalarProperty Name="DepartmentGroupKey" ColumnName="DepartmentGroupKey" />
+          <ScalarProperty Name="ScenarioKey" ColumnName="ScenarioKey" />
+          <ScalarProperty Name="AccountKey" ColumnName="AccountKey" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactInternetSales">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactInternetSales">
+        <MappingFragment StoreEntitySet="FactInternetSales">
+          <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+          <ScalarProperty Name="OrderDateKey" ColumnName="OrderDateKey" />
+          <ScalarProperty Name="DueDateKey" ColumnName="DueDateKey" />
+          <ScalarProperty Name="ShipDateKey" ColumnName="ShipDateKey" />
+          <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+          <ScalarProperty Name="PromotionKey" ColumnName="PromotionKey" />
+          <ScalarProperty Name="CurrencyKey" ColumnName="CurrencyKey" />
+          <ScalarProperty Name="SalesTerritoryKey" ColumnName="SalesTerritoryKey" />
+          <ScalarProperty Name="SalesOrderNumber" ColumnName="SalesOrderNumber" />
+          <ScalarProperty Name="SalesOrderLineNumber" ColumnName="SalesOrderLineNumber" />
+          <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+          <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ExtendedAmount" ColumnName="ExtendedAmount" />
+          <ScalarProperty Name="UnitPriceDiscountPct" ColumnName="UnitPriceDiscountPct" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="ProductStandardCost" ColumnName="ProductStandardCost" />
+          <ScalarProperty Name="TotalProductCost" ColumnName="TotalProductCost" />
+          <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+          <ScalarProperty Name="TaxAmt" ColumnName="TaxAmt" />
+          <ScalarProperty Name="Freight" ColumnName="Freight" />
+          <ScalarProperty Name="CarrierTrackingNumber" ColumnName="CarrierTrackingNumber" />
+          <ScalarProperty Name="CustomerPONumber" ColumnName="CustomerPONumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactResellerSales">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactResellerSales">
+        <MappingFragment StoreEntitySet="FactResellerSales">
+          <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+          <ScalarProperty Name="OrderDateKey" ColumnName="OrderDateKey" />
+          <ScalarProperty Name="DueDateKey" ColumnName="DueDateKey" />
+          <ScalarProperty Name="ShipDateKey" ColumnName="ShipDateKey" />
+          <ScalarProperty Name="ResellerKey" ColumnName="ResellerKey" />
+          <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+          <ScalarProperty Name="PromotionKey" ColumnName="PromotionKey" />
+          <ScalarProperty Name="CurrencyKey" ColumnName="CurrencyKey" />
+          <ScalarProperty Name="SalesTerritoryKey" ColumnName="SalesTerritoryKey" />
+          <ScalarProperty Name="SalesOrderNumber" ColumnName="SalesOrderNumber" />
+          <ScalarProperty Name="SalesOrderLineNumber" ColumnName="SalesOrderLineNumber" />
+          <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+          <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ExtendedAmount" ColumnName="ExtendedAmount" />
+          <ScalarProperty Name="UnitPriceDiscountPct" ColumnName="UnitPriceDiscountPct" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="ProductStandardCost" ColumnName="ProductStandardCost" />
+          <ScalarProperty Name="TotalProductCost" ColumnName="TotalProductCost" />
+          <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+          <ScalarProperty Name="TaxAmt" ColumnName="TaxAmt" />
+          <ScalarProperty Name="Freight" ColumnName="Freight" />
+          <ScalarProperty Name="CarrierTrackingNumber" ColumnName="CarrierTrackingNumber" />
+          <ScalarProperty Name="CustomerPONumber" ColumnName="CustomerPONumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactSalesQuota">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactSalesQuota">
+        <MappingFragment StoreEntitySet="FactSalesQuota">
+          <ScalarProperty Name="SalesQuotaKey" ColumnName="SalesQuotaKey" />
+          <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+          <ScalarProperty Name="DateKey" ColumnName="DateKey" />
+          <ScalarProperty Name="CalendarYear" ColumnName="CalendarYear" />
+          <ScalarProperty Name="CalendarQuarter" ColumnName="CalendarQuarter" />
+          <ScalarProperty Name="SalesAmountQuota" ColumnName="SalesAmountQuota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactSurveyResponse">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.FactSurveyResponse">
+        <MappingFragment StoreEntitySet="FactSurveyResponse">
+          <ScalarProperty Name="SurveyResponseKey" ColumnName="SurveyResponseKey" />
+          <ScalarProperty Name="DateKey" ColumnName="DateKey" />
+          <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+          <ScalarProperty Name="ProductCategoryKey" ColumnName="ProductCategoryKey" />
+          <ScalarProperty Name="EnglishProductCategoryName" ColumnName="EnglishProductCategoryName" />
+          <ScalarProperty Name="ProductSubcategoryKey" ColumnName="ProductSubcategoryKey" />
+          <ScalarProperty Name="EnglishProductSubcategoryName" ColumnName="EnglishProductSubcategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProspectiveBuyer">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.ProspectiveBuyer">
+        <MappingFragment StoreEntitySet="ProspectiveBuyer">
+          <ScalarProperty Name="ProspectiveBuyerKey" ColumnName="ProspectiveBuyerKey" />
+          <ScalarProperty Name="ProspectAlternateKey" ColumnName="ProspectAlternateKey" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="YearlyIncome" ColumnName="YearlyIncome" />
+          <ScalarProperty Name="TotalChildren" ColumnName="TotalChildren" />
+          <ScalarProperty Name="NumberChildrenAtHome" ColumnName="NumberChildrenAtHome" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="HouseOwnerFlag" ColumnName="HouseOwnerFlag" />
+          <ScalarProperty Name="NumberCarsOwned" ColumnName="NumberCarsOwned" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateProvinceCode" ColumnName="StateProvinceCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="Unknown" ColumnName="Unknown" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vAssocSeqLineItems">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.vAssocSeqLineItems">
+        <MappingFragment StoreEntitySet="vAssocSeqLineItems">
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vAssocSeqOrders">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.vAssocSeqOrders">
+        <MappingFragment StoreEntitySet="vAssocSeqOrders">
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="IncomeGroup" ColumnName="IncomeGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vDMPrep">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.vDMPrep">
+        <MappingFragment StoreEntitySet="vDMPrep">
+          <ScalarProperty Name="EnglishProductCategoryName" ColumnName="EnglishProductCategoryName" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="IncomeGroup" ColumnName="IncomeGroup" />
+          <ScalarProperty Name="CalendarYear" ColumnName="CalendarYear" />
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vTargetMail">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.vTargetMail">
+        <MappingFragment StoreEntitySet="vTargetMail">
+          <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+          <ScalarProperty Name="GeographyKey" ColumnName="GeographyKey" />
+          <ScalarProperty Name="CustomerAlternateKey" ColumnName="CustomerAlternateKey" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NameStyle" ColumnName="NameStyle" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="YearlyIncome" ColumnName="YearlyIncome" />
+          <ScalarProperty Name="TotalChildren" ColumnName="TotalChildren" />
+          <ScalarProperty Name="NumberChildrenAtHome" ColumnName="NumberChildrenAtHome" />
+          <ScalarProperty Name="EnglishEducation" ColumnName="EnglishEducation" />
+          <ScalarProperty Name="SpanishEducation" ColumnName="SpanishEducation" />
+          <ScalarProperty Name="FrenchEducation" ColumnName="FrenchEducation" />
+          <ScalarProperty Name="EnglishOccupation" ColumnName="EnglishOccupation" />
+          <ScalarProperty Name="SpanishOccupation" ColumnName="SpanishOccupation" />
+          <ScalarProperty Name="FrenchOccupation" ColumnName="FrenchOccupation" />
+          <ScalarProperty Name="HouseOwnerFlag" ColumnName="HouseOwnerFlag" />
+          <ScalarProperty Name="NumberCarsOwned" ColumnName="NumberCarsOwned" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DateFirstPurchase" ColumnName="DateFirstPurchase" />
+          <ScalarProperty Name="CommuteDistance" ColumnName="CommuteDistance" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="BikeBuyer" ColumnName="BikeBuyer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vTimeSeries">
+      <EntityTypeMapping TypeName="AdventureWorksDW2008R2Model.vTimeSeries">
+        <MappingFragment StoreEntitySet="vTimeSeries">
+          <ScalarProperty Name="ModelRegion" ColumnName="ModelRegion" />
+          <ScalarProperty Name="TimeIndex" ColumnName="TimeIndex" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CalendarYear" ColumnName="CalendarYear" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="ReportingDate" ColumnName="ReportingDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FactInternetSalesReason" TypeName="AdventureWorksDW2008R2Model.FactInternetSalesReason" StoreEntitySet="FactInternetSalesReason">
+      <EndProperty Name="DimSalesReason">
+        <ScalarProperty Name="SalesReasonKey" ColumnName="SalesReasonKey" />
+      </EndProperty>
+      <EndProperty Name="FactInternetSales">
+        <ScalarProperty Name="SalesOrderNumber" ColumnName="SalesOrderNumber" />
+        <ScalarProperty Name="SalesOrderLineNumber" ColumnName="SalesOrderLineNumber" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="spFinanceData" FunctionName="AdventureWorksDW2008R2Model.Store.spFinanceData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AdventureWorksDW2008R2Model.spFinanceData_Result">
+          <ScalarProperty Name="AccountKey" ColumnName="AccountKey" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="JanSales" ColumnName="JanSales" />
+          <ScalarProperty Name="FebSales" ColumnName="FebSales" />
+          <ScalarProperty Name="MarSales" ColumnName="MarSales" />
+          <ScalarProperty Name="AprSales" ColumnName="AprSales" />
+          <ScalarProperty Name="MaySales" ColumnName="MaySales" />
+          <ScalarProperty Name="JuneSales" ColumnName="JuneSales" />
+          <ScalarProperty Name="JulySales" ColumnName="JulySales" />
+          <ScalarProperty Name="AugSales" ColumnName="AugSales" />
+          <ScalarProperty Name="SeptSales" ColumnName="SeptSales" />
+          <ScalarProperty Name="OctSales" ColumnName="OctSales" />
+          <ScalarProperty Name="NovSales" ColumnName="NovSales" />
+          <ScalarProperty Name="DecSales" ColumnName="DecSales" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSalesByRegion" FunctionName="AdventureWorksDW2008R2Model.Store.spSalesByRegion" />
+    <FunctionImportMapping FunctionImportName="spTopUsInternetCustomers" FunctionName="AdventureWorksDW2008R2Model.Store.spTopUsInternetCustomers" />
+    <FunctionImportMapping FunctionImportName="spTopUsInternetProducts" FunctionName="AdventureWorksDW2008R2Model.Store.spTopUsInternetProducts" />
+  </EntityContainerMapping>
+</Mapping>

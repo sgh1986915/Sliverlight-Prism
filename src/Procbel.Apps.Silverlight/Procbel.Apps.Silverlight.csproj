@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE49EA54-88B4-4064-8CEB-916863C4D92E}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Procbel.Apps.Silverlight</RootNamespace>
+    <AssemblyName>Procbel.Apps.Silverlight</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>en-US,fr-FR,es-ES
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Procbel.Apps.Silverlight.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Procbel.Apps.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\SL5\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\SL5\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\SL5\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\packages\Prism.MEFExtensions.4.1.0.0\lib\SL5\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\SL30\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.Composition.Initialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Windows.Controls.Data.DataForm.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input" />
+    <Reference Include="System.ServiceModel.DomainServices.Client">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web.Extensions" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\SL5\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Windows.Controls" />
+    <Reference Include="System.Windows.Controls.Navigation" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls, Version=2013.2.724.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCSL\2013.2.724.1050\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams, Version=2013.2.724.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCSL\2013.2.724.1050\Telerik.Windows.Controls.Diagrams.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Diagrams.Core, Version=2013.2.724.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCSL\2013.2.724.1050\Telerik.Windows.Diagrams.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Procbel.Apps.Silverlight.Web\Resources\RegistrationDataResources.Designer.cs">
+      <Link>Web\Resources\RegistrationDataResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrationDataResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\Procbel.Apps.Silverlight.Web\Resources\ValidationErrorResources.Designer.cs">
+      <Link>Web\Resources\ValidationErrorResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationErrorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ApplicationNavigator.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helpers\AssemblyCache.cs" />
+    <Compile Include="Helpers\DependenciesEnsurer.cs" />
+    <Compile Include="Helpers\SynchronousDownloader.cs" />
+    <Compile Include="Models\LoginInfo.cs" />
+    <Compile Include="Models\User.partial.cs" />
+    <Compile Include="Models\RegistrationData.partial.cs" />
+    <Compile Include="Helpers\DataFieldExtensions.cs" />
+    <Compile Include="Helpers\NotOperatorValueConverter.cs" />
+    <Compile Include="Helpers\TargetNullValueConverter.cs" />
+    <Compile Include="ModuleLoaders\AtomicModuleLoader.cs" />
+    <Compile Include="ModuleLoaders\AtomicModuleLoadOperation.cs" />
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ApplicationViewModel.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Views\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HeaderView.xaml.cs">
+      <DependentUpon>HeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MainMenuView.xaml.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="ModulesCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\RadBusyIndicatorstyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8Touch\System.Windows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8Touch\Telerik.Windows.Controls.Diagrams.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8Touch\Telerik.Windows.Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Views\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Views\HeaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Views\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Libs\System.Windows.Controls.Data.DataForm.Toolkit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Procbel.Apps.Silverlight.Web\Resources\RegistrationDataResources.resx">
+      <Link>Web\Resources\RegistrationDataResources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegistrationDataResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Procbel.Apps.Silverlight.Web\Resources\ValidationErrorResources.resx">
+      <Link>Web\Resources\ValidationErrorResources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationErrorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Procbel.Apps.Silverlight.Infrastructure\Procbel.Apps.Silverlight.Infrastructure.csproj">
+      <Project>{4a011d97-af8c-479d-b8a4-f09d0e34d616}</Project>
+      <Name>Procbel.Apps.Silverlight.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Procbel.Apps.Silverlight.MainRepository\Procbel.Apps.Silverlight.MainRepository.csproj">
+      <Project>{91dcbcf0-675a-448b-a561-af532bf80e04}</Project>
+      <Name>Procbel.Apps.Silverlight.MainRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Procbel.Apps.Silverlight.Repository\Procbel.Apps.Silverlight.Repository.csproj">
+      <Project>{19c56ef3-b4b3-4140-81b8-d42c01a2e3d1}</Project>
+      <Name>Procbel.Apps.Silverlight.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Procbel.Theme\Procbel.Apps.Silverlight.Theme.csproj">
+      <Project>{c84bc690-ad7a-4ae6-bad2-4caa343c9d44}</Project>
+      <Name>Procbel.Apps.Silverlight.Theme</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Resources\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\back.jpg" />
+    <Resource Include="Assets\Images\sql_azure_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\CompanyLogos\aglenergy.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\cezgroup.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\defaultCompany.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\dong.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\edp.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\enel.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\eon.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\gdfsuez.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\nexteraenergyresources.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\saskpower.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\scedison.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\stanwellcorporation.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\svevind.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\terragenpower.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\transalta.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\transfieldservices.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\trustpower.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\vattenfall.jpg" />
+    <Resource Include="Assets\Images\CompanyLogos\verbund.jpg" />
+    <Resource Include="Assets\Images\Products\1.5-77Windturbine.jpg" />
+    <Resource Include="Assets\Images\Products\1.6-100 Windturbine.jpg" />
+    <Resource Include="Assets\Images\Products\1.6-82.5Windturbine.jpg" />
+    <Resource Include="Assets\Images\Products\130.jpg" />
+    <Resource Include="Assets\Images\Products\140.jpg" />
+    <Resource Include="Assets\Images\Products\145.jpg" />
+    <Resource Include="Assets\Images\Products\150.jpg" />
+    <Resource Include="Assets\Images\Products\2.5-100Windturbine.jpg" />
+    <Resource Include="Assets\Images\Products\2.75-100Windturbine.jpg" />
+    <Resource Include="Assets\Images\Products\2.75-103Windturbine.jpg" />
+    <Resource Include="Assets\Images\Products\4.1-113Windturbine.jpg" />
+    <Resource Include="Assets\Images\Products\78.jpg" />
+    <Resource Include="Assets\Images\Products\80.jpg" />
+    <Resource Include="Assets\Images\Products\83.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\defaultContact.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m01.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m02.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m03.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m04.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m05.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m06.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m07.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m08.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m09.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m10.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m11.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m12.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m13.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m14.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m15.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m16.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m17.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m18.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m19.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m20.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m21.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m22.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m23.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m24.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m25.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m26.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m27.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m28.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m29.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m30.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m31.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m32.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m33.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m34.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m35.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m36.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m37.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m38.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m39.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m40.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m41.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m42.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m43.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m44.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m45.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m46.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m47.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m48.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m49.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m50.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m51.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m52.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m53.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m54.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m55.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m56.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m57.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\m58.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w01.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w02.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w03.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w04.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w05.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w06.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w07.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w08.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w09.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w10.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w11.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w12.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w13.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w14.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w15.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w16.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w17.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w18.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w19.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w20.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w21.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w22.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w23.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w24.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w25.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w26.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w27.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w28.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w29.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w30.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w31.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w32.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w33.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w34.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w35.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w36.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w37.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w38.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w39.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w40.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w41.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w42.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w43.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w44.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w45.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w46.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w47.jpg" />
+    <Resource Include="Assets\Images\ProfilePics\w48.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)Assets\Images\*.jpg" "$(ProjectDir)..\Procbel.Apps.Silverlight.Web\ClientBin\Images\" /s /y /i /r
+xcopy "$(ProjectDir)Assets\Images\*.png" "$(ProjectDir)..\Procbel.Apps.Silverlight.Web\ClientBin\Images\" /s /y /i /r
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

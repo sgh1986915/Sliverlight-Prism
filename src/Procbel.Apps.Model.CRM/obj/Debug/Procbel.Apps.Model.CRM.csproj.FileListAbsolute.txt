@@ -1,0 +1,10 @@
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\bin\Debug\Procbel.Apps.Model.CRM.dll.config
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\bin\Debug\Procbel.Apps.Model.CRM.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\bin\Debug\Procbel.Apps.Model.CRM.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\bin\Debug\EntityFramework.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\bin\Debug\Microsoft.ServiceModel.DomainServices.EntityFramework.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\bin\Debug\System.ServiceModel.DomainServices.Server.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\bin\Debug\EntityFramework.xml
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\obj\Debug\Procbel.Apps.Model.CRM.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\obj\Debug\Procbel.Apps.Model.CRM.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.CRM\obj\Debug\Procbel.Apps.Model.CRM.csprojResolveAssemblyReference.cache

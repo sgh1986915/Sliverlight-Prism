@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Contacts.Views.ContactsListUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"	
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:infra="clr-namespace:Procbel.Apps.Silverlight.Infrastructure;assembly=Procbel.Apps.Silverlight.Infrastructure"
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+
+	d:DesignWidth="640" d:DesignHeight="480"
+    mc:Ignorable="d" >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/CommonStyles.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadGridViewStyle.xaml"/>
+                <ResourceDictionary>
+                    <infra:ApplicationResources x:Key="ApplicationResources"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <telerik:RadDomainDataSource x:Name="contactsDataSource" QueryName="GetContact" AutoLoad="True" DomainContext="{Binding ContactRepository.Context}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="LoadedData">
+                    <ei:ChangePropertyAction TargetObject="{Binding .}" 
+															 PropertyName="Contacts" 
+															 Value="{Binding DataView.SourceCollection, ElementName=contactsDataSource}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </telerik:RadDomainDataSource>
+
+        <!--ItemsSource="{Binding DataView, ElementName=contactsDataSource}"-->
+        <telerik:RadGridView x:Name="gridView" ColumnWidth="*" ItemsSource="{Binding DataView, ElementName=contactsDataSource}"
+							 SelectedItem="{Binding SelectedContact, Mode=TwoWay}" Grid.Row="1"
+							 AutoExpandGroups="True" AutoGenerateColumns="False">
+            <telerik:RadGridView.GroupDescriptors>
+                <telerik:GroupDescriptor Member="Company.Name" SortDirection="Ascending">
+                    <telerik:GroupDescriptor.AggregateFunctions>
+                        <telerik:CountFunction Caption="Count:"/>
+                    </telerik:GroupDescriptor.AggregateFunctions>
+                </telerik:GroupDescriptor>
+            </telerik:RadGridView.GroupDescriptors>
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewImageColumn Header="PHOTO" DataMemberBinding="{Binding Image.ImagePath, FallbackValue=/Images/ProfilePics/defaultContact.jpg}" 
+                                             ImageWidth="43" ImageHeight="43">
+                    <telerik:GridViewImageColumn.CellStyle>
+                        <Style TargetType="telerik:GridViewCell" BasedOn="{StaticResource GridViewCellStyle}">
+                            <Setter Property="Padding" Value="1"/>
+                        </Style>
+                    </telerik:GridViewImageColumn.CellStyle>
+                </telerik:GridViewImageColumn>
+                <telerik:GridViewDataColumn Header="COMPANY" DataMemberBinding="{Binding Company.Name}"  
+                                            />
+                <telerik:GridViewDataColumn Header="NAME" DataMemberBinding="{Binding Name}" 
+                                            />
+                <telerik:GridViewDataColumn Header="POSITION" DataMemberBinding="{Binding Position}" 
+                                            />
+                <telerik:GridViewDataColumn Header="INDUSTRY" DataMemberBinding="{Binding Division}" 
+                                            />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+
+        <Grid Height="30" VerticalAlignment="Top" Margin="4,0,8,0">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Strings.Contacts, Source={StaticResource ApplicationResources}}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="{StaticResource MainBrush}"/>
+        </Grid>
+    </Grid>
+</UserControl>

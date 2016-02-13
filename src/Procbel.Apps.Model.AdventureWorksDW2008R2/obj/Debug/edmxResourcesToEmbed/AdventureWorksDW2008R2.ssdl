@@ -1,0 +1,1455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorksDW2008R2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AdventureWorksDW2008R2ModelStoreContainer">
+    <EntitySet Name="DatabaseLog" EntityType="AdventureWorksDW2008R2Model.Store.DatabaseLog" store:Type="Tables" store:Schema="dbo" store:Name="DatabaseLog">
+      <DefiningQuery>SELECT 
+      [DatabaseLog].[DatabaseLogID] AS [DatabaseLogID], 
+      [DatabaseLog].[PostTime] AS [PostTime], 
+      [DatabaseLog].[DatabaseUser] AS [DatabaseUser], 
+      [DatabaseLog].[Event] AS [Event], 
+      [DatabaseLog].[Schema] AS [Schema], 
+      [DatabaseLog].[Object] AS [Object], 
+      [DatabaseLog].[TSQL] AS [TSQL], 
+      [DatabaseLog].[XmlEvent] AS [XmlEvent]
+      FROM [dbo].[DatabaseLog] AS [DatabaseLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DimAccount" EntityType="AdventureWorksDW2008R2Model.Store.DimAccount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimCurrency" EntityType="AdventureWorksDW2008R2Model.Store.DimCurrency" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimCustomer" EntityType="AdventureWorksDW2008R2Model.Store.DimCustomer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimDate" EntityType="AdventureWorksDW2008R2Model.Store.DimDate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimDepartmentGroup" EntityType="AdventureWorksDW2008R2Model.Store.DimDepartmentGroup" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimEmployee" EntityType="AdventureWorksDW2008R2Model.Store.DimEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimGeography" EntityType="AdventureWorksDW2008R2Model.Store.DimGeography" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimOrganization" EntityType="AdventureWorksDW2008R2Model.Store.DimOrganization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimProduct" EntityType="AdventureWorksDW2008R2Model.Store.DimProduct" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimProductCategory" EntityType="AdventureWorksDW2008R2Model.Store.DimProductCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimProductSubcategory" EntityType="AdventureWorksDW2008R2Model.Store.DimProductSubcategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimPromotion" EntityType="AdventureWorksDW2008R2Model.Store.DimPromotion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimReseller" EntityType="AdventureWorksDW2008R2Model.Store.DimReseller" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimSalesReason" EntityType="AdventureWorksDW2008R2Model.Store.DimSalesReason" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimSalesTerritory" EntityType="AdventureWorksDW2008R2Model.Store.DimSalesTerritory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimScenario" EntityType="AdventureWorksDW2008R2Model.Store.DimScenario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactAdditionalInternationalProductDescription" EntityType="AdventureWorksDW2008R2Model.Store.FactAdditionalInternationalProductDescription" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactCallCenter" EntityType="AdventureWorksDW2008R2Model.Store.FactCallCenter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactCurrencyRate" EntityType="AdventureWorksDW2008R2Model.Store.FactCurrencyRate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactFinance" EntityType="AdventureWorksDW2008R2Model.Store.FactFinance" store:Type="Tables" store:Schema="dbo" store:Name="FactFinance">
+      <DefiningQuery>SELECT 
+      [FactFinance].[FinanceKey] AS [FinanceKey], 
+      [FactFinance].[DateKey] AS [DateKey], 
+      [FactFinance].[OrganizationKey] AS [OrganizationKey], 
+      [FactFinance].[DepartmentGroupKey] AS [DepartmentGroupKey], 
+      [FactFinance].[ScenarioKey] AS [ScenarioKey], 
+      [FactFinance].[AccountKey] AS [AccountKey], 
+      [FactFinance].[Amount] AS [Amount]
+      FROM [dbo].[FactFinance] AS [FactFinance]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FactInternetSales" EntityType="AdventureWorksDW2008R2Model.Store.FactInternetSales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactInternetSalesReason" EntityType="AdventureWorksDW2008R2Model.Store.FactInternetSalesReason" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactResellerSales" EntityType="AdventureWorksDW2008R2Model.Store.FactResellerSales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactSalesQuota" EntityType="AdventureWorksDW2008R2Model.Store.FactSalesQuota" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactSurveyResponse" EntityType="AdventureWorksDW2008R2Model.Store.FactSurveyResponse" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProspectiveBuyer" EntityType="AdventureWorksDW2008R2Model.Store.ProspectiveBuyer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vAssocSeqLineItems" EntityType="AdventureWorksDW2008R2Model.Store.vAssocSeqLineItems" store:Type="Views" store:Schema="dbo" store:Name="vAssocSeqLineItems">
+      <DefiningQuery>SELECT 
+      [vAssocSeqLineItems].[OrderNumber] AS [OrderNumber], 
+      [vAssocSeqLineItems].[LineNumber] AS [LineNumber], 
+      [vAssocSeqLineItems].[Model] AS [Model]
+      FROM [dbo].[vAssocSeqLineItems] AS [vAssocSeqLineItems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vAssocSeqOrders" EntityType="AdventureWorksDW2008R2Model.Store.vAssocSeqOrders" store:Type="Views" store:Schema="dbo" store:Name="vAssocSeqOrders">
+      <DefiningQuery>SELECT 
+      [vAssocSeqOrders].[OrderNumber] AS [OrderNumber], 
+      [vAssocSeqOrders].[CustomerKey] AS [CustomerKey], 
+      [vAssocSeqOrders].[Region] AS [Region], 
+      [vAssocSeqOrders].[IncomeGroup] AS [IncomeGroup]
+      FROM [dbo].[vAssocSeqOrders] AS [vAssocSeqOrders]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vDMPrep" EntityType="AdventureWorksDW2008R2Model.Store.vDMPrep" store:Type="Views" store:Schema="dbo" store:Name="vDMPrep">
+      <DefiningQuery>SELECT 
+      [vDMPrep].[EnglishProductCategoryName] AS [EnglishProductCategoryName], 
+      [vDMPrep].[Model] AS [Model], 
+      [vDMPrep].[CustomerKey] AS [CustomerKey], 
+      [vDMPrep].[Region] AS [Region], 
+      [vDMPrep].[Age] AS [Age], 
+      [vDMPrep].[IncomeGroup] AS [IncomeGroup], 
+      [vDMPrep].[CalendarYear] AS [CalendarYear], 
+      [vDMPrep].[FiscalYear] AS [FiscalYear], 
+      [vDMPrep].[Month] AS [Month], 
+      [vDMPrep].[OrderNumber] AS [OrderNumber], 
+      [vDMPrep].[LineNumber] AS [LineNumber], 
+      [vDMPrep].[Quantity] AS [Quantity], 
+      [vDMPrep].[Amount] AS [Amount]
+      FROM [dbo].[vDMPrep] AS [vDMPrep]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vTargetMail" EntityType="AdventureWorksDW2008R2Model.Store.vTargetMail" store:Type="Views" store:Schema="dbo" store:Name="vTargetMail">
+      <DefiningQuery>SELECT 
+      [vTargetMail].[CustomerKey] AS [CustomerKey], 
+      [vTargetMail].[GeographyKey] AS [GeographyKey], 
+      [vTargetMail].[CustomerAlternateKey] AS [CustomerAlternateKey], 
+      [vTargetMail].[Title] AS [Title], 
+      [vTargetMail].[FirstName] AS [FirstName], 
+      [vTargetMail].[MiddleName] AS [MiddleName], 
+      [vTargetMail].[LastName] AS [LastName], 
+      [vTargetMail].[NameStyle] AS [NameStyle], 
+      [vTargetMail].[BirthDate] AS [BirthDate], 
+      [vTargetMail].[MaritalStatus] AS [MaritalStatus], 
+      [vTargetMail].[Suffix] AS [Suffix], 
+      [vTargetMail].[Gender] AS [Gender], 
+      [vTargetMail].[EmailAddress] AS [EmailAddress], 
+      [vTargetMail].[YearlyIncome] AS [YearlyIncome], 
+      [vTargetMail].[TotalChildren] AS [TotalChildren], 
+      [vTargetMail].[NumberChildrenAtHome] AS [NumberChildrenAtHome], 
+      [vTargetMail].[EnglishEducation] AS [EnglishEducation], 
+      [vTargetMail].[SpanishEducation] AS [SpanishEducation], 
+      [vTargetMail].[FrenchEducation] AS [FrenchEducation], 
+      [vTargetMail].[EnglishOccupation] AS [EnglishOccupation], 
+      [vTargetMail].[SpanishOccupation] AS [SpanishOccupation], 
+      [vTargetMail].[FrenchOccupation] AS [FrenchOccupation], 
+      [vTargetMail].[HouseOwnerFlag] AS [HouseOwnerFlag], 
+      [vTargetMail].[NumberCarsOwned] AS [NumberCarsOwned], 
+      [vTargetMail].[AddressLine1] AS [AddressLine1], 
+      [vTargetMail].[AddressLine2] AS [AddressLine2], 
+      [vTargetMail].[Phone] AS [Phone], 
+      [vTargetMail].[DateFirstPurchase] AS [DateFirstPurchase], 
+      [vTargetMail].[CommuteDistance] AS [CommuteDistance], 
+      [vTargetMail].[Region] AS [Region], 
+      [vTargetMail].[Age] AS [Age], 
+      [vTargetMail].[BikeBuyer] AS [BikeBuyer]
+      FROM [dbo].[vTargetMail] AS [vTargetMail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vTimeSeries" EntityType="AdventureWorksDW2008R2Model.Store.vTimeSeries" store:Type="Views" store:Schema="dbo" store:Name="vTimeSeries">
+      <DefiningQuery>SELECT 
+      [vTimeSeries].[ModelRegion] AS [ModelRegion], 
+      [vTimeSeries].[TimeIndex] AS [TimeIndex], 
+      [vTimeSeries].[Quantity] AS [Quantity], 
+      [vTimeSeries].[Amount] AS [Amount], 
+      [vTimeSeries].[CalendarYear] AS [CalendarYear], 
+      [vTimeSeries].[Month] AS [Month], 
+      [vTimeSeries].[ReportingDate] AS [ReportingDate]
+      FROM [dbo].[vTimeSeries] AS [vTimeSeries]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_DimAccount_DimAccount" Association="AdventureWorksDW2008R2Model.Store.FK_DimAccount_DimAccount">
+      <End Role="DimAccount" EntitySet="DimAccount" />
+      <End Role="DimAccount1" EntitySet="DimAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimCustomer_DimGeography" Association="AdventureWorksDW2008R2Model.Store.FK_DimCustomer_DimGeography">
+      <End Role="DimGeography" EntitySet="DimGeography" />
+      <End Role="DimCustomer" EntitySet="DimCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimDepartmentGroup_DimDepartmentGroup" Association="AdventureWorksDW2008R2Model.Store.FK_DimDepartmentGroup_DimDepartmentGroup">
+      <End Role="DimDepartmentGroup" EntitySet="DimDepartmentGroup" />
+      <End Role="DimDepartmentGroup1" EntitySet="DimDepartmentGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimEmployee_DimEmployee" Association="AdventureWorksDW2008R2Model.Store.FK_DimEmployee_DimEmployee">
+      <End Role="DimEmployee" EntitySet="DimEmployee" />
+      <End Role="DimEmployee1" EntitySet="DimEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimEmployee_DimSalesTerritory" Association="AdventureWorksDW2008R2Model.Store.FK_DimEmployee_DimSalesTerritory">
+      <End Role="DimSalesTerritory" EntitySet="DimSalesTerritory" />
+      <End Role="DimEmployee" EntitySet="DimEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimGeography_DimSalesTerritory" Association="AdventureWorksDW2008R2Model.Store.FK_DimGeography_DimSalesTerritory">
+      <End Role="DimSalesTerritory" EntitySet="DimSalesTerritory" />
+      <End Role="DimGeography" EntitySet="DimGeography" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimOrganization_DimCurrency" Association="AdventureWorksDW2008R2Model.Store.FK_DimOrganization_DimCurrency">
+      <End Role="DimCurrency" EntitySet="DimCurrency" />
+      <End Role="DimOrganization" EntitySet="DimOrganization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimOrganization_DimOrganization" Association="AdventureWorksDW2008R2Model.Store.FK_DimOrganization_DimOrganization">
+      <End Role="DimOrganization" EntitySet="DimOrganization" />
+      <End Role="DimOrganization1" EntitySet="DimOrganization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimProduct_DimProductSubcategory" Association="AdventureWorksDW2008R2Model.Store.FK_DimProduct_DimProductSubcategory">
+      <End Role="DimProductSubcategory" EntitySet="DimProductSubcategory" />
+      <End Role="DimProduct" EntitySet="DimProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimProductSubcategory_DimProductCategory" Association="AdventureWorksDW2008R2Model.Store.FK_DimProductSubcategory_DimProductCategory">
+      <End Role="DimProductCategory" EntitySet="DimProductCategory" />
+      <End Role="DimProductSubcategory" EntitySet="DimProductSubcategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimReseller_DimGeography" Association="AdventureWorksDW2008R2Model.Store.FK_DimReseller_DimGeography">
+      <End Role="DimGeography" EntitySet="DimGeography" />
+      <End Role="DimReseller" EntitySet="DimReseller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactAdditionalInternationalProductDescription_DimProduct" Association="AdventureWorksDW2008R2Model.Store.FK_FactAdditionalInternationalProductDescription_DimProduct">
+      <End Role="DimProduct" EntitySet="DimProduct" />
+      <End Role="FactAdditionalInternationalProductDescription" EntitySet="FactAdditionalInternationalProductDescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactCallCenter_DimDate" Association="AdventureWorksDW2008R2Model.Store.FK_FactCallCenter_DimDate">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactCallCenter" EntitySet="FactCallCenter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactCurrencyRate_DimCurrency" Association="AdventureWorksDW2008R2Model.Store.FK_FactCurrencyRate_DimCurrency">
+      <End Role="DimCurrency" EntitySet="DimCurrency" />
+      <End Role="FactCurrencyRate" EntitySet="FactCurrencyRate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactCurrencyRate_DimDate" Association="AdventureWorksDW2008R2Model.Store.FK_FactCurrencyRate_DimDate">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactCurrencyRate" EntitySet="FactCurrencyRate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactFinance_DimAccount" Association="AdventureWorksDW2008R2Model.Store.FK_FactFinance_DimAccount">
+      <End Role="DimAccount" EntitySet="DimAccount" />
+      <End Role="FactFinance" EntitySet="FactFinance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactFinance_DimDate" Association="AdventureWorksDW2008R2Model.Store.FK_FactFinance_DimDate">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactFinance" EntitySet="FactFinance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactFinance_DimDepartmentGroup" Association="AdventureWorksDW2008R2Model.Store.FK_FactFinance_DimDepartmentGroup">
+      <End Role="DimDepartmentGroup" EntitySet="DimDepartmentGroup" />
+      <End Role="FactFinance" EntitySet="FactFinance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactFinance_DimOrganization" Association="AdventureWorksDW2008R2Model.Store.FK_FactFinance_DimOrganization">
+      <End Role="DimOrganization" EntitySet="DimOrganization" />
+      <End Role="FactFinance" EntitySet="FactFinance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactFinance_DimScenario" Association="AdventureWorksDW2008R2Model.Store.FK_FactFinance_DimScenario">
+      <End Role="DimScenario" EntitySet="DimScenario" />
+      <End Role="FactFinance" EntitySet="FactFinance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimCurrency" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimCurrency">
+      <End Role="DimCurrency" EntitySet="DimCurrency" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimCustomer" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimCustomer">
+      <End Role="DimCustomer" EntitySet="DimCustomer" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimDate" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimDate">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimDate1" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimDate1">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimDate2" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimDate2">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimProduct" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimProduct">
+      <End Role="DimProduct" EntitySet="DimProduct" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimPromotion" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimPromotion">
+      <End Role="DimPromotion" EntitySet="DimPromotion" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSales_DimSalesTerritory" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSales_DimSalesTerritory">
+      <End Role="DimSalesTerritory" EntitySet="DimSalesTerritory" />
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSalesReason_DimSalesReason" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSalesReason_DimSalesReason">
+      <End Role="DimSalesReason" EntitySet="DimSalesReason" />
+      <End Role="FactInternetSalesReason" EntitySet="FactInternetSalesReason" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactInternetSalesReason_FactInternetSales" Association="AdventureWorksDW2008R2Model.Store.FK_FactInternetSalesReason_FactInternetSales">
+      <End Role="FactInternetSales" EntitySet="FactInternetSales" />
+      <End Role="FactInternetSalesReason" EntitySet="FactInternetSalesReason" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimCurrency" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimCurrency">
+      <End Role="DimCurrency" EntitySet="DimCurrency" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimDate" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimDate">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimDate1" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimDate1">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimDate2" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimDate2">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimEmployee" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimEmployee">
+      <End Role="DimEmployee" EntitySet="DimEmployee" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimProduct" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimProduct">
+      <End Role="DimProduct" EntitySet="DimProduct" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimPromotion" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimPromotion">
+      <End Role="DimPromotion" EntitySet="DimPromotion" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimReseller" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimReseller">
+      <End Role="DimReseller" EntitySet="DimReseller" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactResellerSales_DimSalesTerritory" Association="AdventureWorksDW2008R2Model.Store.FK_FactResellerSales_DimSalesTerritory">
+      <End Role="DimSalesTerritory" EntitySet="DimSalesTerritory" />
+      <End Role="FactResellerSales" EntitySet="FactResellerSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactSalesQuota_DimDate" Association="AdventureWorksDW2008R2Model.Store.FK_FactSalesQuota_DimDate">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactSalesQuota" EntitySet="FactSalesQuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactSalesQuota_DimEmployee" Association="AdventureWorksDW2008R2Model.Store.FK_FactSalesQuota_DimEmployee">
+      <End Role="DimEmployee" EntitySet="DimEmployee" />
+      <End Role="FactSalesQuota" EntitySet="FactSalesQuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactSurveyResponse_CustomerKey" Association="AdventureWorksDW2008R2Model.Store.FK_FactSurveyResponse_CustomerKey">
+      <End Role="DimCustomer" EntitySet="DimCustomer" />
+      <End Role="FactSurveyResponse" EntitySet="FactSurveyResponse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactSurveyResponse_DateKey" Association="AdventureWorksDW2008R2Model.Store.FK_FactSurveyResponse_DateKey">
+      <End Role="DimDate" EntitySet="DimDate" />
+      <End Role="FactSurveyResponse" EntitySet="FactSurveyResponse" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorksDW2008R2.dbo.DatabaseLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="DatabaseLog">
+    <Key>
+      <PropertyRef Name="DatabaseLogID" />
+      <PropertyRef Name="PostTime" />
+      <PropertyRef Name="DatabaseUser" />
+      <PropertyRef Name="Event" />
+      <PropertyRef Name="TSQL" />
+      <PropertyRef Name="XmlEvent" />
+    </Key>
+    <Property Name="DatabaseLogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PostTime" Type="datetime" Nullable="false" />
+    <Property Name="DatabaseUser" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Event" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Schema" Type="nvarchar" MaxLength="128" />
+    <Property Name="Object" Type="nvarchar" MaxLength="128" />
+    <Property Name="TSQL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="XmlEvent" Type="xml" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DimAccount">
+    <Key>
+      <PropertyRef Name="AccountKey" />
+    </Key>
+    <Property Name="AccountKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentAccountKey" Type="int" />
+    <Property Name="AccountCodeAlternateKey" Type="int" />
+    <Property Name="ParentAccountCodeAlternateKey" Type="int" />
+    <Property Name="AccountDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomMembers" Type="nvarchar" MaxLength="300" />
+    <Property Name="ValueType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomMemberOptions" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="DimCurrency">
+    <Key>
+      <PropertyRef Name="CurrencyKey" />
+    </Key>
+    <Property Name="CurrencyKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CurrencyAlternateKey" Type="nchar" Nullable="false" MaxLength="3" />
+    <Property Name="CurrencyName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DimCustomer">
+    <Key>
+      <PropertyRef Name="CustomerKey" />
+    </Key>
+    <Property Name="CustomerKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GeographyKey" Type="int" />
+    <Property Name="CustomerAlternateKey" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Title" Type="nvarchar" MaxLength="8" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameStyle" Type="bit" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="1" />
+    <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="1" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearlyIncome" Type="money" />
+    <Property Name="TotalChildren" Type="tinyint" />
+    <Property Name="NumberChildrenAtHome" Type="tinyint" />
+    <Property Name="EnglishEducation" Type="nvarchar" MaxLength="40" />
+    <Property Name="SpanishEducation" Type="nvarchar" MaxLength="40" />
+    <Property Name="FrenchEducation" Type="nvarchar" MaxLength="40" />
+    <Property Name="EnglishOccupation" Type="nvarchar" MaxLength="100" />
+    <Property Name="SpanishOccupation" Type="nvarchar" MaxLength="100" />
+    <Property Name="FrenchOccupation" Type="nvarchar" MaxLength="100" />
+    <Property Name="HouseOwnerFlag" Type="nchar" MaxLength="1" />
+    <Property Name="NumberCarsOwned" Type="tinyint" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="120" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="120" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="DateFirstPurchase" Type="date" />
+    <Property Name="CommuteDistance" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="DimDate">
+    <Key>
+      <PropertyRef Name="DateKey" />
+    </Key>
+    <Property Name="DateKey" Type="int" Nullable="false" />
+    <Property Name="FullDateAlternateKey" Type="date" Nullable="false" />
+    <Property Name="DayNumberOfWeek" Type="tinyint" Nullable="false" />
+    <Property Name="EnglishDayNameOfWeek" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="SpanishDayNameOfWeek" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="FrenchDayNameOfWeek" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="DayNumberOfMonth" Type="tinyint" Nullable="false" />
+    <Property Name="DayNumberOfYear" Type="smallint" Nullable="false" />
+    <Property Name="WeekNumberOfYear" Type="tinyint" Nullable="false" />
+    <Property Name="EnglishMonthName" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="SpanishMonthName" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="FrenchMonthName" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="MonthNumberOfYear" Type="tinyint" Nullable="false" />
+    <Property Name="CalendarQuarter" Type="tinyint" Nullable="false" />
+    <Property Name="CalendarYear" Type="smallint" Nullable="false" />
+    <Property Name="CalendarSemester" Type="tinyint" Nullable="false" />
+    <Property Name="FiscalQuarter" Type="tinyint" Nullable="false" />
+    <Property Name="FiscalYear" Type="smallint" Nullable="false" />
+    <Property Name="FiscalSemester" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DimDepartmentGroup">
+    <Key>
+      <PropertyRef Name="DepartmentGroupKey" />
+    </Key>
+    <Property Name="DepartmentGroupKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentDepartmentGroupKey" Type="int" />
+    <Property Name="DepartmentGroupName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DimEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeKey" />
+    </Key>
+    <Property Name="EmployeeKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentEmployeeKey" Type="int" />
+    <Property Name="EmployeeNationalIDAlternateKey" Type="nvarchar" MaxLength="15" />
+    <Property Name="ParentEmployeeNationalIDAlternateKey" Type="nvarchar" MaxLength="15" />
+    <Property Name="SalesTerritoryKey" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameStyle" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="HireDate" Type="date" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="LoginID" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="25" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="1" />
+    <Property Name="EmergencyContactName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyContactPhone" Type="nvarchar" MaxLength="25" />
+    <Property Name="SalariedFlag" Type="bit" />
+    <Property Name="Gender" Type="nchar" MaxLength="1" />
+    <Property Name="PayFrequency" Type="tinyint" />
+    <Property Name="BaseRate" Type="money" />
+    <Property Name="VacationHours" Type="smallint" />
+    <Property Name="SickLeaveHours" Type="smallint" />
+    <Property Name="CurrentFlag" Type="bit" Nullable="false" />
+    <Property Name="SalesPersonFlag" Type="bit" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DimGeography">
+    <Key>
+      <PropertyRef Name="GeographyKey" />
+    </Key>
+    <Property Name="GeographyKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateProvinceCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="StateProvinceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryRegionCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="EnglishCountryRegionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpanishCountryRegionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FrenchCountryRegionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="SalesTerritoryKey" Type="int" />
+  </EntityType>
+  <EntityType Name="DimOrganization">
+    <Key>
+      <PropertyRef Name="OrganizationKey" />
+    </Key>
+    <Property Name="OrganizationKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentOrganizationKey" Type="int" />
+    <Property Name="PercentageOfOwnership" Type="nvarchar" MaxLength="16" />
+    <Property Name="OrganizationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrencyKey" Type="int" />
+  </EntityType>
+  <EntityType Name="DimProduct">
+    <Key>
+      <PropertyRef Name="ProductKey" />
+    </Key>
+    <Property Name="ProductKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductAlternateKey" Type="nvarchar" MaxLength="25" />
+    <Property Name="ProductSubcategoryKey" Type="int" />
+    <Property Name="WeightUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="SizeUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="EnglishProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpanishProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FrenchProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StandardCost" Type="money" />
+    <Property Name="FinishedGoodsFlag" Type="bit" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="SafetyStockLevel" Type="smallint" />
+    <Property Name="ReorderPoint" Type="smallint" />
+    <Property Name="ListPrice" Type="money" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" />
+    <Property Name="SizeRange" Type="nvarchar" MaxLength="50" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="DaysToManufacture" Type="int" />
+    <Property Name="ProductLine" Type="nchar" MaxLength="2" />
+    <Property Name="DealerPrice" Type="money" />
+    <Property Name="Class" Type="nchar" MaxLength="2" />
+    <Property Name="Style" Type="nchar" MaxLength="2" />
+    <Property Name="ModelName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LargePhoto" Type="varbinary(max)" />
+    <Property Name="EnglishDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="FrenchDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ChineseDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ArabicDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="HebrewDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ThaiDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="GermanDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="JapaneseDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="TurkishDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="DimProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryKey" />
+    </Key>
+    <Property Name="ProductCategoryKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCategoryAlternateKey" Type="int" />
+    <Property Name="EnglishProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpanishProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FrenchProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DimProductSubcategory">
+    <Key>
+      <PropertyRef Name="ProductSubcategoryKey" />
+    </Key>
+    <Property Name="ProductSubcategoryKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductSubcategoryAlternateKey" Type="int" />
+    <Property Name="EnglishProductSubcategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpanishProductSubcategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FrenchProductSubcategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCategoryKey" Type="int" />
+  </EntityType>
+  <EntityType Name="DimPromotion">
+    <Key>
+      <PropertyRef Name="PromotionKey" />
+    </Key>
+    <Property Name="PromotionKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PromotionAlternateKey" Type="int" />
+    <Property Name="EnglishPromotionName" Type="nvarchar" MaxLength="255" />
+    <Property Name="SpanishPromotionName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FrenchPromotionName" Type="nvarchar" MaxLength="255" />
+    <Property Name="DiscountPct" Type="float" />
+    <Property Name="EnglishPromotionType" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpanishPromotionType" Type="nvarchar" MaxLength="50" />
+    <Property Name="FrenchPromotionType" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnglishPromotionCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpanishPromotionCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="FrenchPromotionCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="MinQty" Type="int" />
+    <Property Name="MaxQty" Type="int" />
+  </EntityType>
+  <EntityType Name="DimReseller">
+    <Key>
+      <PropertyRef Name="ResellerKey" />
+    </Key>
+    <Property Name="ResellerKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GeographyKey" Type="int" />
+    <Property Name="ResellerAlternateKey" Type="nvarchar" MaxLength="15" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="25" />
+    <Property Name="BusinessType" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ResellerName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="NumberEmployees" Type="int" />
+    <Property Name="OrderFrequency" Type="char" MaxLength="1" />
+    <Property Name="OrderMonth" Type="tinyint" />
+    <Property Name="FirstOrderYear" Type="int" />
+    <Property Name="LastOrderYear" Type="int" />
+    <Property Name="ProductLine" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="60" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="60" />
+    <Property Name="AnnualSales" Type="money" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MinPaymentType" Type="tinyint" />
+    <Property Name="MinPaymentAmount" Type="money" />
+    <Property Name="AnnualRevenue" Type="money" />
+    <Property Name="YearOpened" Type="int" />
+  </EntityType>
+  <EntityType Name="DimSalesReason">
+    <Key>
+      <PropertyRef Name="SalesReasonKey" />
+    </Key>
+    <Property Name="SalesReasonKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SalesReasonAlternateKey" Type="int" Nullable="false" />
+    <Property Name="SalesReasonName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SalesReasonReasonType" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DimSalesTerritory">
+    <Key>
+      <PropertyRef Name="SalesTerritoryKey" />
+    </Key>
+    <Property Name="SalesTerritoryKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SalesTerritoryAlternateKey" Type="int" />
+    <Property Name="SalesTerritoryRegion" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SalesTerritoryCountry" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SalesTerritoryGroup" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DimScenario">
+    <Key>
+      <PropertyRef Name="ScenarioKey" />
+    </Key>
+    <Property Name="ScenarioKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ScenarioName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FactAdditionalInternationalProductDescription">
+    <Key>
+      <PropertyRef Name="ProductKey" />
+      <PropertyRef Name="CultureName" />
+    </Key>
+    <Property Name="ProductKey" Type="int" Nullable="false" />
+    <Property Name="CultureName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductDescription" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactCallCenter">
+    <Key>
+      <PropertyRef Name="FactCallCenterID" />
+    </Key>
+    <Property Name="FactCallCenterID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DateKey" Type="int" Nullable="false" />
+    <Property Name="WageType" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Shift" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="LevelOneOperators" Type="smallint" Nullable="false" />
+    <Property Name="LevelTwoOperators" Type="smallint" Nullable="false" />
+    <Property Name="TotalOperators" Type="smallint" Nullable="false" />
+    <Property Name="Calls" Type="int" Nullable="false" />
+    <Property Name="AutomaticResponses" Type="int" Nullable="false" />
+    <Property Name="Orders" Type="int" Nullable="false" />
+    <Property Name="IssuesRaised" Type="smallint" Nullable="false" />
+    <Property Name="AverageTimePerIssue" Type="smallint" Nullable="false" />
+    <Property Name="ServiceGrade" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactCurrencyRate">
+    <Key>
+      <PropertyRef Name="CurrencyKey" />
+      <PropertyRef Name="DateKey" />
+    </Key>
+    <Property Name="CurrencyKey" Type="int" Nullable="false" />
+    <Property Name="DateKey" Type="int" Nullable="false" />
+    <Property Name="AverageRate" Type="float" Nullable="false" />
+    <Property Name="EndOfDayRate" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorksDW2008R2.dbo.FactFinance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="FactFinance">
+    <Key>
+      <PropertyRef Name="FinanceKey" />
+      <PropertyRef Name="DateKey" />
+      <PropertyRef Name="OrganizationKey" />
+      <PropertyRef Name="DepartmentGroupKey" />
+      <PropertyRef Name="ScenarioKey" />
+      <PropertyRef Name="AccountKey" />
+      <PropertyRef Name="Amount" />
+    </Key>
+    <Property Name="FinanceKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DateKey" Type="int" Nullable="false" />
+    <Property Name="OrganizationKey" Type="int" Nullable="false" />
+    <Property Name="DepartmentGroupKey" Type="int" Nullable="false" />
+    <Property Name="ScenarioKey" Type="int" Nullable="false" />
+    <Property Name="AccountKey" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactInternetSales">
+    <Key>
+      <PropertyRef Name="SalesOrderNumber" />
+      <PropertyRef Name="SalesOrderLineNumber" />
+    </Key>
+    <Property Name="ProductKey" Type="int" Nullable="false" />
+    <Property Name="OrderDateKey" Type="int" Nullable="false" />
+    <Property Name="DueDateKey" Type="int" Nullable="false" />
+    <Property Name="ShipDateKey" Type="int" Nullable="false" />
+    <Property Name="CustomerKey" Type="int" Nullable="false" />
+    <Property Name="PromotionKey" Type="int" Nullable="false" />
+    <Property Name="CurrencyKey" Type="int" Nullable="false" />
+    <Property Name="SalesTerritoryKey" Type="int" Nullable="false" />
+    <Property Name="SalesOrderNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SalesOrderLineNumber" Type="tinyint" Nullable="false" />
+    <Property Name="RevisionNumber" Type="tinyint" Nullable="false" />
+    <Property Name="OrderQuantity" Type="smallint" Nullable="false" />
+    <Property Name="UnitPrice" Type="money" Nullable="false" />
+    <Property Name="ExtendedAmount" Type="money" Nullable="false" />
+    <Property Name="UnitPriceDiscountPct" Type="float" Nullable="false" />
+    <Property Name="DiscountAmount" Type="float" Nullable="false" />
+    <Property Name="ProductStandardCost" Type="money" Nullable="false" />
+    <Property Name="TotalProductCost" Type="money" Nullable="false" />
+    <Property Name="SalesAmount" Type="money" Nullable="false" />
+    <Property Name="TaxAmt" Type="money" Nullable="false" />
+    <Property Name="Freight" Type="money" Nullable="false" />
+    <Property Name="CarrierTrackingNumber" Type="nvarchar" MaxLength="25" />
+    <Property Name="CustomerPONumber" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="FactInternetSalesReason">
+    <Key>
+      <PropertyRef Name="SalesOrderNumber" />
+      <PropertyRef Name="SalesOrderLineNumber" />
+      <PropertyRef Name="SalesReasonKey" />
+    </Key>
+    <Property Name="SalesOrderNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SalesOrderLineNumber" Type="tinyint" Nullable="false" />
+    <Property Name="SalesReasonKey" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactResellerSales">
+    <Key>
+      <PropertyRef Name="SalesOrderNumber" />
+      <PropertyRef Name="SalesOrderLineNumber" />
+    </Key>
+    <Property Name="ProductKey" Type="int" Nullable="false" />
+    <Property Name="OrderDateKey" Type="int" Nullable="false" />
+    <Property Name="DueDateKey" Type="int" Nullable="false" />
+    <Property Name="ShipDateKey" Type="int" Nullable="false" />
+    <Property Name="ResellerKey" Type="int" Nullable="false" />
+    <Property Name="EmployeeKey" Type="int" Nullable="false" />
+    <Property Name="PromotionKey" Type="int" Nullable="false" />
+    <Property Name="CurrencyKey" Type="int" Nullable="false" />
+    <Property Name="SalesTerritoryKey" Type="int" Nullable="false" />
+    <Property Name="SalesOrderNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SalesOrderLineNumber" Type="tinyint" Nullable="false" />
+    <Property Name="RevisionNumber" Type="tinyint" />
+    <Property Name="OrderQuantity" Type="smallint" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="ExtendedAmount" Type="money" />
+    <Property Name="UnitPriceDiscountPct" Type="float" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="ProductStandardCost" Type="money" />
+    <Property Name="TotalProductCost" Type="money" />
+    <Property Name="SalesAmount" Type="money" />
+    <Property Name="TaxAmt" Type="money" />
+    <Property Name="Freight" Type="money" />
+    <Property Name="CarrierTrackingNumber" Type="nvarchar" MaxLength="25" />
+    <Property Name="CustomerPONumber" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="FactSalesQuota">
+    <Key>
+      <PropertyRef Name="SalesQuotaKey" />
+    </Key>
+    <Property Name="SalesQuotaKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeKey" Type="int" Nullable="false" />
+    <Property Name="DateKey" Type="int" Nullable="false" />
+    <Property Name="CalendarYear" Type="smallint" Nullable="false" />
+    <Property Name="CalendarQuarter" Type="tinyint" Nullable="false" />
+    <Property Name="SalesAmountQuota" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactSurveyResponse">
+    <Key>
+      <PropertyRef Name="SurveyResponseKey" />
+    </Key>
+    <Property Name="SurveyResponseKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DateKey" Type="int" Nullable="false" />
+    <Property Name="CustomerKey" Type="int" Nullable="false" />
+    <Property Name="ProductCategoryKey" Type="int" Nullable="false" />
+    <Property Name="EnglishProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductSubcategoryKey" Type="int" Nullable="false" />
+    <Property Name="EnglishProductSubcategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProspectiveBuyer">
+    <Key>
+      <PropertyRef Name="ProspectiveBuyerKey" />
+    </Key>
+    <Property Name="ProspectiveBuyerKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProspectAlternateKey" Type="nvarchar" MaxLength="15" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="1" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="1" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearlyIncome" Type="money" />
+    <Property Name="TotalChildren" Type="tinyint" />
+    <Property Name="NumberChildrenAtHome" Type="tinyint" />
+    <Property Name="Education" Type="nvarchar" MaxLength="40" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="100" />
+    <Property Name="HouseOwnerFlag" Type="nchar" MaxLength="1" />
+    <Property Name="NumberCarsOwned" Type="tinyint" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="120" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="120" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateProvinceCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Salutation" Type="nvarchar" MaxLength="8" />
+    <Property Name="Unknown" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorksDW2008R2.dbo.vAssocSeqLineItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vAssocSeqLineItems">
+    <Key>
+      <PropertyRef Name="OrderNumber" />
+      <PropertyRef Name="LineNumber" />
+    </Key>
+    <Property Name="OrderNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="LineNumber" Type="tinyint" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorksDW2008R2.dbo.vAssocSeqOrders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vAssocSeqOrders">
+    <Key>
+      <PropertyRef Name="OrderNumber" />
+      <PropertyRef Name="CustomerKey" />
+      <PropertyRef Name="IncomeGroup" />
+    </Key>
+    <Property Name="OrderNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CustomerKey" Type="int" Nullable="false" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomeGroup" Type="varchar" Nullable="false" MaxLength="8" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorksDW2008R2.dbo.vDMPrep' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vDMPrep">
+    <Key>
+      <PropertyRef Name="EnglishProductCategoryName" />
+      <PropertyRef Name="CustomerKey" />
+      <PropertyRef Name="IncomeGroup" />
+      <PropertyRef Name="CalendarYear" />
+      <PropertyRef Name="FiscalYear" />
+      <PropertyRef Name="Month" />
+      <PropertyRef Name="OrderNumber" />
+      <PropertyRef Name="LineNumber" />
+      <PropertyRef Name="Quantity" />
+      <PropertyRef Name="Amount" />
+    </Key>
+    <Property Name="EnglishProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerKey" Type="int" Nullable="false" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="IncomeGroup" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="CalendarYear" Type="smallint" Nullable="false" />
+    <Property Name="FiscalYear" Type="smallint" Nullable="false" />
+    <Property Name="Month" Type="tinyint" Nullable="false" />
+    <Property Name="OrderNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="LineNumber" Type="tinyint" Nullable="false" />
+    <Property Name="Quantity" Type="smallint" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorksDW2008R2.dbo.vTargetMail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vTargetMail">
+    <Key>
+      <PropertyRef Name="CustomerKey" />
+      <PropertyRef Name="CustomerAlternateKey" />
+      <PropertyRef Name="BikeBuyer" />
+    </Key>
+    <Property Name="CustomerKey" Type="int" Nullable="false" />
+    <Property Name="GeographyKey" Type="int" />
+    <Property Name="CustomerAlternateKey" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Title" Type="nvarchar" MaxLength="8" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameStyle" Type="bit" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="1" />
+    <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="1" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearlyIncome" Type="money" />
+    <Property Name="TotalChildren" Type="tinyint" />
+    <Property Name="NumberChildrenAtHome" Type="tinyint" />
+    <Property Name="EnglishEducation" Type="nvarchar" MaxLength="40" />
+    <Property Name="SpanishEducation" Type="nvarchar" MaxLength="40" />
+    <Property Name="FrenchEducation" Type="nvarchar" MaxLength="40" />
+    <Property Name="EnglishOccupation" Type="nvarchar" MaxLength="100" />
+    <Property Name="SpanishOccupation" Type="nvarchar" MaxLength="100" />
+    <Property Name="FrenchOccupation" Type="nvarchar" MaxLength="100" />
+    <Property Name="HouseOwnerFlag" Type="nchar" MaxLength="1" />
+    <Property Name="NumberCarsOwned" Type="tinyint" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="120" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="120" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="DateFirstPurchase" Type="date" />
+    <Property Name="CommuteDistance" Type="nvarchar" MaxLength="15" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="BikeBuyer" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorksDW2008R2.dbo.vTimeSeries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vTimeSeries">
+    <Key>
+      <PropertyRef Name="CalendarYear" />
+      <PropertyRef Name="Month" />
+    </Key>
+    <Property Name="ModelRegion" Type="nvarchar" MaxLength="56" />
+    <Property Name="TimeIndex" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="CalendarYear" Type="smallint" Nullable="false" />
+    <Property Name="Month" Type="tinyint" Nullable="false" />
+    <Property Name="ReportingDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_DimAccount_DimAccount">
+    <End Role="DimAccount" Type="AdventureWorksDW2008R2Model.Store.DimAccount" Multiplicity="0..1" />
+    <End Role="DimAccount1" Type="AdventureWorksDW2008R2Model.Store.DimAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimAccount">
+        <PropertyRef Name="AccountKey" />
+      </Principal>
+      <Dependent Role="DimAccount1">
+        <PropertyRef Name="ParentAccountKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimCustomer_DimGeography">
+    <End Role="DimGeography" Type="AdventureWorksDW2008R2Model.Store.DimGeography" Multiplicity="0..1" />
+    <End Role="DimCustomer" Type="AdventureWorksDW2008R2Model.Store.DimCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimGeography">
+        <PropertyRef Name="GeographyKey" />
+      </Principal>
+      <Dependent Role="DimCustomer">
+        <PropertyRef Name="GeographyKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimDepartmentGroup_DimDepartmentGroup">
+    <End Role="DimDepartmentGroup" Type="AdventureWorksDW2008R2Model.Store.DimDepartmentGroup" Multiplicity="0..1" />
+    <End Role="DimDepartmentGroup1" Type="AdventureWorksDW2008R2Model.Store.DimDepartmentGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDepartmentGroup">
+        <PropertyRef Name="DepartmentGroupKey" />
+      </Principal>
+      <Dependent Role="DimDepartmentGroup1">
+        <PropertyRef Name="ParentDepartmentGroupKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimEmployee_DimEmployee">
+    <End Role="DimEmployee" Type="AdventureWorksDW2008R2Model.Store.DimEmployee" Multiplicity="0..1" />
+    <End Role="DimEmployee1" Type="AdventureWorksDW2008R2Model.Store.DimEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimEmployee">
+        <PropertyRef Name="EmployeeKey" />
+      </Principal>
+      <Dependent Role="DimEmployee1">
+        <PropertyRef Name="ParentEmployeeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimEmployee_DimSalesTerritory">
+    <End Role="DimSalesTerritory" Type="AdventureWorksDW2008R2Model.Store.DimSalesTerritory" Multiplicity="0..1" />
+    <End Role="DimEmployee" Type="AdventureWorksDW2008R2Model.Store.DimEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimSalesTerritory">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Principal>
+      <Dependent Role="DimEmployee">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimGeography_DimSalesTerritory">
+    <End Role="DimSalesTerritory" Type="AdventureWorksDW2008R2Model.Store.DimSalesTerritory" Multiplicity="0..1" />
+    <End Role="DimGeography" Type="AdventureWorksDW2008R2Model.Store.DimGeography" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimSalesTerritory">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Principal>
+      <Dependent Role="DimGeography">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimOrganization_DimCurrency">
+    <End Role="DimCurrency" Type="AdventureWorksDW2008R2Model.Store.DimCurrency" Multiplicity="0..1" />
+    <End Role="DimOrganization" Type="AdventureWorksDW2008R2Model.Store.DimOrganization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimCurrency">
+        <PropertyRef Name="CurrencyKey" />
+      </Principal>
+      <Dependent Role="DimOrganization">
+        <PropertyRef Name="CurrencyKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimOrganization_DimOrganization">
+    <End Role="DimOrganization" Type="AdventureWorksDW2008R2Model.Store.DimOrganization" Multiplicity="0..1" />
+    <End Role="DimOrganization1" Type="AdventureWorksDW2008R2Model.Store.DimOrganization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimOrganization">
+        <PropertyRef Name="OrganizationKey" />
+      </Principal>
+      <Dependent Role="DimOrganization1">
+        <PropertyRef Name="ParentOrganizationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimProduct_DimProductSubcategory">
+    <End Role="DimProductSubcategory" Type="AdventureWorksDW2008R2Model.Store.DimProductSubcategory" Multiplicity="0..1" />
+    <End Role="DimProduct" Type="AdventureWorksDW2008R2Model.Store.DimProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimProductSubcategory">
+        <PropertyRef Name="ProductSubcategoryKey" />
+      </Principal>
+      <Dependent Role="DimProduct">
+        <PropertyRef Name="ProductSubcategoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimProductSubcategory_DimProductCategory">
+    <End Role="DimProductCategory" Type="AdventureWorksDW2008R2Model.Store.DimProductCategory" Multiplicity="0..1" />
+    <End Role="DimProductSubcategory" Type="AdventureWorksDW2008R2Model.Store.DimProductSubcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimProductCategory">
+        <PropertyRef Name="ProductCategoryKey" />
+      </Principal>
+      <Dependent Role="DimProductSubcategory">
+        <PropertyRef Name="ProductCategoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimReseller_DimGeography">
+    <End Role="DimGeography" Type="AdventureWorksDW2008R2Model.Store.DimGeography" Multiplicity="0..1" />
+    <End Role="DimReseller" Type="AdventureWorksDW2008R2Model.Store.DimReseller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimGeography">
+        <PropertyRef Name="GeographyKey" />
+      </Principal>
+      <Dependent Role="DimReseller">
+        <PropertyRef Name="GeographyKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactAdditionalInternationalProductDescription_DimProduct">
+    <End Role="DimProduct" Type="AdventureWorksDW2008R2Model.Store.DimProduct" Multiplicity="1" />
+    <End Role="FactAdditionalInternationalProductDescription" Type="AdventureWorksDW2008R2Model.Store.FactAdditionalInternationalProductDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimProduct">
+        <PropertyRef Name="ProductKey" />
+      </Principal>
+      <Dependent Role="FactAdditionalInternationalProductDescription">
+        <PropertyRef Name="ProductKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactCallCenter_DimDate">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactCallCenter" Type="AdventureWorksDW2008R2Model.Store.FactCallCenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactCallCenter">
+        <PropertyRef Name="DateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactCurrencyRate_DimCurrency">
+    <End Role="DimCurrency" Type="AdventureWorksDW2008R2Model.Store.DimCurrency" Multiplicity="1" />
+    <End Role="FactCurrencyRate" Type="AdventureWorksDW2008R2Model.Store.FactCurrencyRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimCurrency">
+        <PropertyRef Name="CurrencyKey" />
+      </Principal>
+      <Dependent Role="FactCurrencyRate">
+        <PropertyRef Name="CurrencyKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactCurrencyRate_DimDate">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactCurrencyRate" Type="AdventureWorksDW2008R2Model.Store.FactCurrencyRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactCurrencyRate">
+        <PropertyRef Name="DateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactFinance_DimAccount">
+    <End Role="DimAccount" Type="AdventureWorksDW2008R2Model.Store.DimAccount" Multiplicity="1" />
+    <End Role="FactFinance" Type="AdventureWorksDW2008R2Model.Store.FactFinance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimAccount">
+        <PropertyRef Name="AccountKey" />
+      </Principal>
+      <Dependent Role="FactFinance">
+        <PropertyRef Name="AccountKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactFinance_DimDate">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactFinance" Type="AdventureWorksDW2008R2Model.Store.FactFinance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactFinance">
+        <PropertyRef Name="DateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactFinance_DimDepartmentGroup">
+    <End Role="DimDepartmentGroup" Type="AdventureWorksDW2008R2Model.Store.DimDepartmentGroup" Multiplicity="1" />
+    <End Role="FactFinance" Type="AdventureWorksDW2008R2Model.Store.FactFinance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDepartmentGroup">
+        <PropertyRef Name="DepartmentGroupKey" />
+      </Principal>
+      <Dependent Role="FactFinance">
+        <PropertyRef Name="DepartmentGroupKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactFinance_DimOrganization">
+    <End Role="DimOrganization" Type="AdventureWorksDW2008R2Model.Store.DimOrganization" Multiplicity="1" />
+    <End Role="FactFinance" Type="AdventureWorksDW2008R2Model.Store.FactFinance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimOrganization">
+        <PropertyRef Name="OrganizationKey" />
+      </Principal>
+      <Dependent Role="FactFinance">
+        <PropertyRef Name="OrganizationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactFinance_DimScenario">
+    <End Role="DimScenario" Type="AdventureWorksDW2008R2Model.Store.DimScenario" Multiplicity="1" />
+    <End Role="FactFinance" Type="AdventureWorksDW2008R2Model.Store.FactFinance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimScenario">
+        <PropertyRef Name="ScenarioKey" />
+      </Principal>
+      <Dependent Role="FactFinance">
+        <PropertyRef Name="ScenarioKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimCurrency">
+    <End Role="DimCurrency" Type="AdventureWorksDW2008R2Model.Store.DimCurrency" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimCurrency">
+        <PropertyRef Name="CurrencyKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="CurrencyKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimCustomer">
+    <End Role="DimCustomer" Type="AdventureWorksDW2008R2Model.Store.DimCustomer" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimCustomer">
+        <PropertyRef Name="CustomerKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="CustomerKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimDate">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="OrderDateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimDate1">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="DueDateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimDate2">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="ShipDateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimProduct">
+    <End Role="DimProduct" Type="AdventureWorksDW2008R2Model.Store.DimProduct" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimProduct">
+        <PropertyRef Name="ProductKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="ProductKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimPromotion">
+    <End Role="DimPromotion" Type="AdventureWorksDW2008R2Model.Store.DimPromotion" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimPromotion">
+        <PropertyRef Name="PromotionKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="PromotionKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSales_DimSalesTerritory">
+    <End Role="DimSalesTerritory" Type="AdventureWorksDW2008R2Model.Store.DimSalesTerritory" Multiplicity="1" />
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimSalesTerritory">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Principal>
+      <Dependent Role="FactInternetSales">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSalesReason_DimSalesReason">
+    <End Role="DimSalesReason" Type="AdventureWorksDW2008R2Model.Store.DimSalesReason" Multiplicity="1" />
+    <End Role="FactInternetSalesReason" Type="AdventureWorksDW2008R2Model.Store.FactInternetSalesReason" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimSalesReason">
+        <PropertyRef Name="SalesReasonKey" />
+      </Principal>
+      <Dependent Role="FactInternetSalesReason">
+        <PropertyRef Name="SalesReasonKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactInternetSalesReason_FactInternetSales">
+    <End Role="FactInternetSales" Type="AdventureWorksDW2008R2Model.Store.FactInternetSales" Multiplicity="1" />
+    <End Role="FactInternetSalesReason" Type="AdventureWorksDW2008R2Model.Store.FactInternetSalesReason" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FactInternetSales">
+        <PropertyRef Name="SalesOrderNumber" />
+        <PropertyRef Name="SalesOrderLineNumber" />
+      </Principal>
+      <Dependent Role="FactInternetSalesReason">
+        <PropertyRef Name="SalesOrderNumber" />
+        <PropertyRef Name="SalesOrderLineNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimCurrency">
+    <End Role="DimCurrency" Type="AdventureWorksDW2008R2Model.Store.DimCurrency" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimCurrency">
+        <PropertyRef Name="CurrencyKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="CurrencyKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimDate">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="OrderDateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimDate1">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="DueDateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimDate2">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="ShipDateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimEmployee">
+    <End Role="DimEmployee" Type="AdventureWorksDW2008R2Model.Store.DimEmployee" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimEmployee">
+        <PropertyRef Name="EmployeeKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="EmployeeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimProduct">
+    <End Role="DimProduct" Type="AdventureWorksDW2008R2Model.Store.DimProduct" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimProduct">
+        <PropertyRef Name="ProductKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="ProductKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimPromotion">
+    <End Role="DimPromotion" Type="AdventureWorksDW2008R2Model.Store.DimPromotion" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimPromotion">
+        <PropertyRef Name="PromotionKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="PromotionKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimReseller">
+    <End Role="DimReseller" Type="AdventureWorksDW2008R2Model.Store.DimReseller" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimReseller">
+        <PropertyRef Name="ResellerKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="ResellerKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactResellerSales_DimSalesTerritory">
+    <End Role="DimSalesTerritory" Type="AdventureWorksDW2008R2Model.Store.DimSalesTerritory" Multiplicity="1" />
+    <End Role="FactResellerSales" Type="AdventureWorksDW2008R2Model.Store.FactResellerSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimSalesTerritory">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Principal>
+      <Dependent Role="FactResellerSales">
+        <PropertyRef Name="SalesTerritoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactSalesQuota_DimDate">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactSalesQuota" Type="AdventureWorksDW2008R2Model.Store.FactSalesQuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactSalesQuota">
+        <PropertyRef Name="DateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactSalesQuota_DimEmployee">
+    <End Role="DimEmployee" Type="AdventureWorksDW2008R2Model.Store.DimEmployee" Multiplicity="1" />
+    <End Role="FactSalesQuota" Type="AdventureWorksDW2008R2Model.Store.FactSalesQuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimEmployee">
+        <PropertyRef Name="EmployeeKey" />
+      </Principal>
+      <Dependent Role="FactSalesQuota">
+        <PropertyRef Name="EmployeeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactSurveyResponse_CustomerKey">
+    <End Role="DimCustomer" Type="AdventureWorksDW2008R2Model.Store.DimCustomer" Multiplicity="1" />
+    <End Role="FactSurveyResponse" Type="AdventureWorksDW2008R2Model.Store.FactSurveyResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimCustomer">
+        <PropertyRef Name="CustomerKey" />
+      </Principal>
+      <Dependent Role="FactSurveyResponse">
+        <PropertyRef Name="CustomerKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactSurveyResponse_DateKey">
+    <End Role="DimDate" Type="AdventureWorksDW2008R2Model.Store.DimDate" Multiplicity="1" />
+    <End Role="FactSurveyResponse" Type="AdventureWorksDW2008R2Model.Store.FactSurveyResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimDate">
+        <PropertyRef Name="DateKey" />
+      </Principal>
+      <Dependent Role="FactSurveyResponse">
+        <PropertyRef Name="DateKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="spFinanceData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spSalesByRegion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TerritoryList" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryList" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spTopUsInternetCustomers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DateTimeStart" Type="datetime" Mode="In" />
+    <Parameter Name="DateTimeEnd" Type="datetime" Mode="In" />
+    <Parameter Name="TerritoryList" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryList" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spTopUsInternetProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DateTimeStart" Type="datetime" Mode="In" />
+    <Parameter Name="DateTimeEnd" Type="datetime" Mode="In" />
+    <Parameter Name="TerritoryList" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryList" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="udfBuildISO8601Date" ReturnType="datetime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+    <Parameter Name="month" Type="int" Mode="In" />
+    <Parameter Name="day" Type="int" Mode="In" />
+  </Function>
+  <Function Name="udfMinimumDate" ReturnType="datetime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="x" Type="datetime" Mode="In" />
+    <Parameter Name="y" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="udfTwoDigitZeroFill" ReturnType="char" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="number" Type="int" Mode="In" />
+  </Function>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'AdventureWorksDW2008R2.dbo.AdventureWorksDWBuildVersion' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="AdventureWorksDWBuildVersion">
+        <Property Name="DBVersion" Type="nvarchar" MaxLength="50" />
+        <Property Name="VersionDate" Type="datetime" />
+      </EntityType>-->
+</Schema>

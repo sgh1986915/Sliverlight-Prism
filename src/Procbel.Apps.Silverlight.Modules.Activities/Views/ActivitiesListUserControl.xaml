@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Activities.Views.ActivitiesListUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:infra="clr-namespace:Procbel.Apps.Silverlight.Infrastructure;assembly=Procbel.Apps.Silverlight.Infrastructure"
+    xmlns:converters="clr-namespace:Procbel.Apps.Silverlight.Infrastructure.Converters;assembly=Procbel.Apps.Silverlight.Infrastructure"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/CommonStyles.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadGridViewStyle.xaml"/>
+                <ResourceDictionary>
+                    <infra:ApplicationResources x:Key="ApplicationResources"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:ObjectToUpperCaseStringConverter x:Key="ToUpperConverter" />
+            <converters:DateTimeToRecentDaysConverter x:Key="DateTimeToRecentDaysConverter" />
+
+            <DataTemplate x:Key="LowPriorityDataTemplate">
+                <Path Data="M0,0 L9,0 L4.5,7 z" Height="7" Stretch="Fill" Stroke="{StaticResource GreenBrush}" VerticalAlignment="Center" UseLayoutRounding="False" HorizontalAlignment="Center" Width="9"/>
+            </DataTemplate>
+            <DataTemplate x:Key="MediumPriorityDataTemplate">
+                <Rectangle Stroke="{StaticResource MeetBrush}" UseLayoutRounding="True" Height="7" VerticalAlignment="Center" HorizontalAlignment="Center" Width="7" RadiusX="7" RadiusY="7"/>
+            </DataTemplate>
+            <DataTemplate x:Key="HighPriorityDataTemplate">
+                <Path Data="M5,0 L10,10 L0,10 z" HorizontalAlignment="Center" Height="7" Stretch="Fill" Stroke="{StaticResource RedBrush}" UseLayoutRounding="True" VerticalAlignment="Center" Width="9"/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+
+        <telerik:RadGridView x:Name="activitiesGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+							 AutoExpandGroups="True"
+							 ItemsSource="{Binding Activities}" SelectedItem="{Binding SelectedActivity, Mode=TwoWay}"
+							 RowHeight="40" AutoGenerateColumns="False" Margin="0,30,0,0" d:LayoutOverrides="GridBox">
+            <!-- grouping and sorting is now done in viewmodel -->
+            <!--<telerik:RadGridView.SortDescriptors>
+				<telerik:SortDescriptor Member="DueDate"
+										SortDirection="Descending" />
+			</telerik:RadGridView.SortDescriptors>
+			
+			<telerik:RadGridView.GroupDescriptors>
+        		<telerik:GroupDescriptor Member="StatusType" SortDirection="Ascending">
+        			<telerik:GroupDescriptor.AggregateFunctions>
+        				<telerik:CountFunction Caption="Count:"/>
+        			</telerik:GroupDescriptor.AggregateFunctions>
+        		</telerik:GroupDescriptor>
+        	</telerik:RadGridView.GroupDescriptors>-->
+
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding PriorityType}" Header="" Width="40">
+                    <telerik:GridViewDataColumn.CellStyle>
+                        <Style TargetType="telerik:GridViewCell" BasedOn="{StaticResource GridViewCellStyle}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </telerik:GridViewDataColumn.CellStyle>
+                    <telerik:GridViewDataColumn.CellTemplateSelector>
+                        <telerik:ConditionalDataTemplateSelector>
+                            <telerik:DataTemplateRule Condition="Priority = 0 OR Priority = null" Template="{StaticResource LowPriorityDataTemplate}"/>
+                            <telerik:DataTemplateRule Condition="Priority = 1" Template="{StaticResource MediumPriorityDataTemplate}"/>
+                            <telerik:DataTemplateRule Condition="Priority = 2" Template="{StaticResource HighPriorityDataTemplate}" />
+                        </telerik:ConditionalDataTemplateSelector>
+                    </telerik:GridViewDataColumn.CellTemplateSelector>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TypeAsEnum, Converter={StaticResource ToUpperConverter}}" Header="TYPE" Width="80">
+                    <telerik:GridViewDataColumn.CellStyleSelector>
+                        <telerik:ConditionalStyleSelector>
+                            <telerik:StyleRule Condition="Type = 0">
+                                <Style BasedOn="{StaticResource GridViewCellStyle}" TargetType="telerik:GridViewCell">
+                                    <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+                                    <Setter Property="Foreground" Value="{StaticResource MailBrush}" />
+                                </Style>
+                            </telerik:StyleRule>
+                            <telerik:StyleRule Condition="Type = 1">
+                                <Style BasedOn="{StaticResource GridViewCellStyle}" TargetType="telerik:GridViewCell">
+                                    <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+                                    <Setter Property="Foreground" Value="{StaticResource CallBrush}" />
+                                </Style>
+                            </telerik:StyleRule>
+                            <telerik:StyleRule Condition="Type = 2">
+                                <Style BasedOn="{StaticResource GridViewCellStyle}" TargetType="telerik:GridViewCell">
+                                    <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+                                    <Setter Property="Foreground" Value="{StaticResource MeetBrush}" />
+                                </Style>
+                            </telerik:StyleRule>
+                        </telerik:ConditionalStyleSelector>
+                    </telerik:GridViewDataColumn.CellStyleSelector>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="DESCRIPTION" Width="2*">
+                    <telerik:GridViewDataColumn.CellStyle>
+                        <Style BasedOn="{StaticResource GridViewCellStyle}" TargetType="telerik:GridViewCell">
+                            <Setter Property="FontFamily" Value="Segoe UI Light" />
+                            <Setter Property="FontSize" Value="24" />
+                        </Style>
+                    </telerik:GridViewDataColumn.CellStyle>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Opportunity.Description}" Header="OPPORTUNITY" Width="*" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding DueDate,Converter={StaticResource DateTimeToRecentDaysConverter}}" Header="DUE DATE" Width="*">
+                    <telerik:GridViewDataColumn.CellStyle>
+                        <Style BasedOn="{StaticResource GridViewCellStyle}" TargetType="telerik:GridViewCell">
+                            <Setter Property="FontFamily" Value="Segoe UI" />
+                            <Setter Property="FontSize" Value="16" />
+                        </Style>
+                    </telerik:GridViewDataColumn.CellStyle>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding StatusType, Converter={StaticResource ToUpperConverter}}" Header="STATUS" x:Name="Status" IsVisible="False" />
+            </telerik:RadGridView.Columns>
+
+            <telerik:RadGridView.RowStyleSelector>
+                <telerik:ConditionalStyleSelector>
+                    <telerik:StyleRule Condition="IsOverdue">
+                        <Style BasedOn="{StaticResource GridViewRowStyle}" TargetType="telerik:GridViewRow">
+                            <Setter Property="Foreground" Value="{StaticResource ValidationBrush}" />
+                        </Style>
+                    </telerik:StyleRule>
+                    <telerik:StyleRule Condition="IsOverdue = False">
+                        <Style BasedOn="{StaticResource GridViewRowStyle}" TargetType="telerik:GridViewRow">
+                            <Setter Property="Foreground" Value="{StaticResource BasicBrush}" />
+                        </Style>
+                    </telerik:StyleRule>
+                </telerik:ConditionalStyleSelector>
+            </telerik:RadGridView.RowStyleSelector>
+
+        </telerik:RadGridView>
+
+        <Grid Height="30" VerticalAlignment="Top" Margin="0" Background="{StaticResource AccentBrush}">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Strings.Activities, Source={StaticResource ApplicationResources}}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="{StaticResource MainBrush}" Margin="8,0,0,0"/>
+        </Grid>
+    </Grid>
+</UserControl>

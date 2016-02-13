@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01f1d9407155449cb4aad834c42f01af" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.AWBuildVersion" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.DatabaseLog" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ErrorLog" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Department" Width="1.5" PointX="10.25" PointY="88.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Employee" Width="1.5" PointX="5.25" PointY="79.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmployeeDepartmentHistory" Width="3.25" PointX="11.875" PointY="84.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmployeePayHistory" Width="2.125" PointX="6.875" PointY="85" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.JobCandidate" Width="1.5" PointX="7.5" PointY="87.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Shift" Width="1.5" PointX="10.25" PointY="91.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Address" Width="1.5" PointX="12" PointY="57.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.AddressType" Width="1.5" PointX="16.75" PointY="62.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.BusinessEntity" Width="1.5" PointX="7.5" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.BusinessEntityAddress" Width="2.125" PointX="17.25" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.BusinessEntityContact" Width="2.125" PointX="15" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ContactType" Width="1.5" PointX="12.75" PointY="89.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.CountryRegion" Width="1.5" PointX="7.5" PointY="55.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmailAddress" Width="1.5" PointX="12" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Password" Width="1.5" PointX="12" PointY="81.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Person" Width="1.5" PointX="9.75" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.PersonPhone" Width="1.5" PointX="15" PointY="79" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.PhoneNumberType" Width="2.125" PointX="12.75" PointY="92.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.StateProvince" Width="2" PointX="9.25" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.BillOfMaterials" Width="2.125" PointX="2.875" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Culture" Width="1.5" PointX="7.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Illustration" Width="1.5" PointX="0.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Location" Width="2" PointX="12" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Product" Width="1.875" PointX="5.625" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductCategory" Width="1.875" PointX="1" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductCostHistory" Width="2.25" PointX="3.875" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductDescription" Width="1.5" PointX="10" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductDocument" Width="2.25" PointX="8.375" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductInventory" Width="2.25" PointX="11.5" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductListPriceHistory" Width="2" PointX="8.5" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductModel" Width="1.5" PointX="3.5" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductModelIllustration" Width="2.25" PointX="0.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductModelProductDescriptionCulture" Width="3.125" PointX="6.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductPhoto" Width="2.125" PointX="9.5" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductProductPhoto" Width="2.25" PointX="6.625" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductReview" Width="1.5" PointX="9.125" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductSubcategory" Width="1.75" PointX="3.25" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ScrapReason" Width="1.5" PointX="12.625" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.TransactionHistory" Width="2" PointX="11.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.TransactionHistoryArchive" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.UnitMeasure" Width="1.5" PointX="0.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.WorkOrder" Width="1.5" PointX="11.25" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.WorkOrderRouting" Width="2.25" PointX="14.625" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ProductVendor" Width="2" PointX="0.625" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.PurchaseOrderDetail" Width="2.5" PointX="14.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.PurchaseOrderHeader" Width="1.5" PointX="12" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ShipMethod" Width="1.5" PointX="12" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Vendor" Width="1.5" PointX="0.875" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.CountryRegionCurrency" Width="2.125" PointX="17" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.CreditCard" Width="1.5" PointX="12" PointY="66.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Currency" Width="1.5" PointX="9.75" PointY="70.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.CurrencyRate" Width="1.5" PointX="12" PointY="69.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Customer" Width="1.875" PointX="12" PointY="77.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.PersonCreditCard" Width="2" PointX="17.25" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesOrderDetail" Width="1.875" PointX="17" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesOrderHeader" Width="2.375" PointX="14.25" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesOrderHeaderSalesReason" Width="2.75" PointX="17.625" PointY="69" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesPerson" Width="1.5" PointX="7.5" PointY="80" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesPersonQuotaHistory" Width="1.5" PointX="9.75" PointY="84.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesReason" Width="1.5" PointX="14.25" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesTaxRate" Width="1.5" PointX="12" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesTerritory" Width="1.5" PointX="6.875" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SalesTerritoryHistory" Width="1.5" PointX="9.75" PointY="66.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ShoppingCartItem" Width="2.5" PointX="11.5" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SpecialOffer" Width="1.5" PointX="12" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.SpecialOfferProduct" Width="2" PointX="14.625" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Store" Width="1.5" PointX="9.75" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vEmployee" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vEmployeeDepartment" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vEmployeeDepartmentHistory" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vJobCandidate" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vJobCandidateEducation" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vJobCandidateEmployment" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vAdditionalContactInfo" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vStateProvinceCountryRegion" Width="1.5" PointX="10.375" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vProductAndDescription" Width="3" PointX="4" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vProductModelCatalogDescription" Width="2.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vProductModelInstructions" Width="2.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vVendorWithAddresses" Width="1.5" PointX="12.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vVendorWithContacts" Width="2.25" PointX="15.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vIndividualCustomer" Width="2" PointX="15.625" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vPersonDemographics" Width="2.125" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vSalesPerson" Width="1.5" PointX="17.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vSalesPersonSalesByFiscalYears" Width="2.625" PointX="18.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vStoreWithAddresses" Width="2" PointX="17.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vStoreWithContacts" Width="2.125" PointX="17.625" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.vStoreWithDemographics" Width="2.375" PointX="0.5" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeeDepartmentHistory_Department_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Employee_Person_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeePayHistory_Employee_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_JobCandidate_Employee_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PurchaseOrderHeader_Employee_EmployeeID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesPerson_Employee_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeeDepartmentHistory_Shift_ShiftID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Address_StateProvince_StateProvinceID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityAddress_Address_AddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_Address_BillToAddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_Address_ShipToAddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityAddress_AddressType_AddressTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityContact_BusinessEntity_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Person_BusinessEntity_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Store_BusinessEntity_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Vendor_BusinessEntity_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityContact_ContactType_ContactTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityContact_Person_PersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_CountryRegionCurrency_CountryRegion_CountryRegionCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesTerritory_CountryRegion_CountryRegionCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_StateProvince_CountryRegion_CountryRegionCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmailAddress_Person_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Password_Person_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Customer_Person_PersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PersonCreditCard_Person_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PersonPhone_Person_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PersonPhone_PhoneNumberType_PhoneNumberTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesTaxRate_StateProvince_StateProvinceID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_StateProvince_SalesTerritory_TerritoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BillOfMaterials_Product_ComponentID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BillOfMaterials_Product_ProductAssemblyID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BillOfMaterials_UnitMeasure_UnitMeasureCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductModelProductDescriptionCulture_Culture_CultureID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductModelIllustration_Illustration_IllustrationID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductInventory_Location_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_WorkOrderRouting_Location_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Product_ProductModel_ProductModelID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Product_ProductSubcategory_ProductSubcategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Product_UnitMeasure_SizeUnitMeasureCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Product_UnitMeasure_WeightUnitMeasureCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductCostHistory_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductDocument_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductInventory_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductListPriceHistory_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductProductPhoto_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductReview_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductVendor_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PurchaseOrderDetail_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ShoppingCartItem_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SpecialOfferProduct_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_TransactionHistory_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_WorkOrder_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductSubcategory_ProductCategory_ProductCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductModelIllustration_ProductModel_ProductModelID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductProductPhoto_ProductPhoto_ProductPhotoID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_WorkOrder_ScrapReason_ScrapReasonID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductVendor_UnitMeasure_UnitMeasureCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_WorkOrderRouting_WorkOrder_WorkOrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_ProductVendor_Vendor_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PurchaseOrderDetail_PurchaseOrderHeader_PurchaseOrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PurchaseOrderHeader_ShipMethod_ShipMethodID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PurchaseOrderHeader_Vendor_VendorID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_ShipMethod_ShipMethodID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_CountryRegionCurrency_Currency_CurrencyCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PersonCreditCard_CreditCard_CreditCardID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_CreditCard_CreditCardID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_CurrencyRate_Currency_FromCurrencyCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_CurrencyRate_Currency_ToCurrencyCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_CurrencyRate_CurrencyRateID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Customer_SalesTerritory_TerritoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Customer_Store_StoreID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_Customer_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderDetail_SpecialOfferProduct_SpecialOfferIDProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_SalesPerson_SalesPersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeader_SalesTerritory_TerritoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeaderSalesReason_SalesOrderHeader_SalesOrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesOrderHeaderSalesReason_SalesReason_SalesReasonID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesPerson_SalesTerritory_TerritoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesPersonQuotaHistory_SalesPerson_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesTerritoryHistory_SalesPerson_BusinessEntityID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Store_SalesPerson_SalesPersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SalesTerritoryHistory_SalesTerritory_TerritoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_SpecialOfferProduct_SpecialOffer_SpecialOfferID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

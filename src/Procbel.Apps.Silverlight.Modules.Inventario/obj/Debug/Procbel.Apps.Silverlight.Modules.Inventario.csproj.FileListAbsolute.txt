@@ -1,0 +1,8 @@
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\Bin\Debug\Procbel.Apps.Silverlight.Modules.Inventario.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\Bin\Debug\Procbel.Apps.Silverlight.Modules.Inventario.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\Bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\Bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\Bin\Debug\System.Windows.Interactivity.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\Bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\obj\Debug\Procbel.Apps.Silverlight.Modules.Inventario.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Silverlight.Modules.Inventario\obj\Debug\Procbel.Apps.Silverlight.Modules.Inventario.pdb

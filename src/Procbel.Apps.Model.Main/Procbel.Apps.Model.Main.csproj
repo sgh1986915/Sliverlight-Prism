@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E39627AA-4A55-4938-8B5D-BDF49E1411C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Procbel.Apps.Model.Main</RootNamespace>
+    <AssemblyName>Procbel.Apps.Model.Main</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceModel.DomainServices.EntityFramework">
+      <HintPath>..\packages\RIAServices.EntityFramework.4.2.0\lib\Net40\Microsoft.ServiceModel.DomainServices.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Activity.cs" />
+    <Compile Include="Activity\ActivityStatusType.cs" />
+    <Compile Include="Activity\ActivityType.cs" />
+    <Compile Include="AppsMain.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppsMain.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppsMain.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppsMain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppsMain.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Asset.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Code.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\Company.cs" />
+    <Compile Include="Contact.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsMetadata.cs" />
+    <Compile Include="Contact\Contact.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimDate.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimTime.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Document.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeShifts.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactTag.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InfoTag.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocationHierarchyLevel.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocationType.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\Opportunity.cs" />
+    <Compile Include="Opportunity\OpportunityStageType.cs" />
+    <Compile Include="Opportunity\OpportunityStatusType.cs" />
+    <Compile Include="Priority\PriorityType.cs" />
+    <Compile Include="Product.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productAssortment.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBox.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCatalog.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCatalogStructure.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductType.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderTag.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReaderTagAntena.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTrend.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Site.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketAttachment.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketCategory.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketComment.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketEventNotification.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketStatus.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketTag.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketType.cs">
+      <DependentUpon>AppsMain.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="AppsMain.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AppsMain.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="AppsMain.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppsMain.edmx</DependentUpon>
+      <LastGenOutput>AppsMain.Context.cs</LastGenOutput>
+    </None>
+    <None Include="AppsMain.edmx.diagram">
+      <DependentUpon>AppsMain.edmx</DependentUpon>
+    </None>
+    <None Include="AppsMain.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppsMain.edmx</DependentUpon>
+      <LastGenOutput>AppsMain.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppsMain.edmx.sql" />
+    <Content Include="PROCBELAPPS.MDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProcbelAppsLocal.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProcbelAppsLocal_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>ProcbelAppsLocal.mdf</DependentUpon>
+    </Content>
+    <Content Include="PROCBELAPPS_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>PROCBELAPPS.MDF</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Company\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\PROCBELAPPS.MDF
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\ProcbelAppsLocal.mdf
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\ProcbelAppsLocal_log.ldf
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\PROCBELAPPS_log.ldf
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\Procbel.Apps.Model.Main.dll.config
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\Procbel.Apps.Model.Main.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\Procbel.Apps.Model.Main.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\EntityFramework.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\Microsoft.ServiceModel.DomainServices.EntityFramework.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\bin\Debug\EntityFramework.xml
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\obj\Debug\Procbel.Apps.Model.Main.dll
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\obj\Debug\Procbel.Apps.Model.Main.pdb
+D:\Anton\Sliverlight Prism\src\Procbel.Apps.Model.Main\obj\Debug\Procbel.Apps.Model.Main.csprojResolveAssemblyReference.cache

@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Incidencias.Views.AttachedmentUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:infra="clr-namespace:Procbel.Apps.Silverlight.Infrastructure;assembly=Procbel.Apps.Silverlight.Infrastructure"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/CommonStyles.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadDataFormStyle.xaml"/>
+                <ResourceDictionary>
+                    <infra:ApplicationResources x:Key="ApplicationResources"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Margin="0,30,-16,-20">
+        <Rectangle x:Name="overlayRectangle" Stretch="Fill" Fill="Transparent" Margin="-2000" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <i:InvokeCommandAction Command="{Binding Path=UserControlLostfocusCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Rectangle>
+        <Border BorderThickness="0" Background="#FF202020" x:Name="border" VerticalAlignment="Stretch">
+            <Grid>
+                <Rectangle Fill="#FF202020">
+                    <Rectangle.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="24" Opacity="0.7"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Strings.TicketComment, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+
+                        <TextBox Text="{Binding ActiveTicketComment.Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, ValidatesOnDataErrors=True}" 
+				         TextWrapping="Wrap" 
+                         FontFamily="Segoe UI" FontSize="12" Foreground="{StaticResource MainBrush}" Height="40" 
+                         AcceptsReturn="True"  VerticalAlignment="Bottom">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="TextChanged">
+                                    <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="LostFocus">
+                                    <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="{Binding Strings.TicketCommentEvent, Source={StaticResource ApplicationResources}}" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="11" Foreground="{StaticResource StrongBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+
+                        <TextBox Text="{Binding ActiveTicketComment.CommentEvent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, ValidatesOnDataErrors=True}" 
+				         TextWrapping="Wrap" 
+                         FontFamily="Segoe UI" FontSize="12" Foreground="{StaticResource MainBrush}" Height="40" 
+                         AcceptsReturn="True"  VerticalAlignment="Bottom">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="TextChanged">
+                                    <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="LostFocus">
+                                    <i:InvokeCommandAction Command="{Binding Path=TextChangedCommand}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,30,0,0" Grid.Row="10" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" Margin="0,0,50,0" 
+                                       Tag="{Binding Strings.SaveButton, Source={StaticResource ApplicationResources}}"
+                            Command="{Binding Path=SaveCommand}">
+                            <telerik:RadButton.RenderTransform>
+                                <CompositeTransform TranslateY="-21"/>
+                            </telerik:RadButton.RenderTransform>
+                            <Path Stretch="Fill" Fill="{StaticResource MainBrush}"
+                      Data="M223.667,387 L226.5,383.917 L233.667,390.333 L244.792,376.833 L248,379.667 L234,396.667 z"
+                      Height="24" Width="24"/>
+                        </telerik:RadButton>
+                        <telerik:RadButton RenderTransformOrigin="0.5,0.5" Style="{StaticResource HeaderCircleButtonStyle}" 
+                           Command="{Binding Path=CancelCommand}" Tag="{Binding Strings.CancelButton, Source={StaticResource ApplicationResources}}">
+                            <telerik:RadButton.RenderTransform>
+                                <CompositeTransform TranslateY="-21"/>
+                            </telerik:RadButton.RenderTransform>
+                            <Path Stretch="Fill" Fill="{StaticResource MainBrush}" 
+                  Data="M331.5,380 L334.833,376.667 L341.833,383.333 L348.667,376.667 L352,379.667 L345.667,386.167 L352.167,393.167 L348.667,396.667 L342,390.167 L335.167,397 L331.667,393.833 L338.167,386.5 z"
+                  Height="24.634" Width="24.667" VerticalAlignment="Top" HorizontalAlignment="Right" />
+                        </telerik:RadButton>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

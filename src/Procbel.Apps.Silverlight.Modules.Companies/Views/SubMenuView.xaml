@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Procbel.Apps.Silverlight.Modules.Companies.Views.SubMenuView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Procbel.Apps.Silverlight.Theme;component/Styles/RadButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0">
+        <telerik:RadRadioButton Foreground="{StaticResource text}" Tag="OVERVIEW" Command="{Binding SwitchToVisualStateCommand}" CommandParameter="Overview" Style="{StaticResource RadRadioButtonSmallStyle}" IsChecked="True"/>
+        <telerik:RadRadioButton  Foreground="{StaticResource text}" Tag="CONTACTS" Command="{Binding SwitchToVisualStateCommand}" CommandParameter="Contacts" Style="{StaticResource RadRadioButtonSmallStyle}"/>
+        <telerik:RadRadioButton  Foreground="{StaticResource text}" Tag="OPPORTUNITIES" Command="{Binding SwitchToVisualStateCommand}" CommandParameter="Opportunities" Style="{StaticResource RadRadioButtonSmallStyle}"/>
+        <telerik:RadRadioButton  Foreground="{StaticResource text}" Tag="ACTIVITIES" Command="{Binding SwitchToVisualStateCommand}" CommandParameter="Activities" Style="{StaticResource RadRadioButtonSmallStyle}"/>
+    </StackPanel>
+</UserControl>

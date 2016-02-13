@@ -1,0 +1,814 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CRMModelStoreContainer">
+          <EntitySet Name="Activity" EntityType="CRMModel.Store.Activity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Company" EntityType="CRMModel.Store.Company" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contact" EntityType="CRMModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee" EntityType="CRMModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Image" EntityType="CRMModel.Store.Image" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Opportunity" EntityType="CRMModel.Store.Opportunity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="CRMModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesTrend" EntityType="CRMModel.Store.SalesTrend" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Activity_Employee" Association="CRMModel.Store.FK_Activity_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_Opportunity" Association="CRMModel.Store.FK_Activity_Opportunity">
+            <End Role="Opportunity" EntitySet="Opportunity" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Company_Image" Association="CRMModel.Store.FK_Company_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Company" Association="CRMModel.Store.FK_Contact_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Contact" EntitySet="Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Image" Association="CRMModel.Store.FK_Contact_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Contact" EntitySet="Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Image" Association="CRMModel.Store.FK_Employee_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_Company" Association="CRMModel.Store.FK_Opportunity_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_Contact" Association="CRMModel.Store.FK_Opportunity_Contact">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_Product" Association="CRMModel.Store.FK_Opportunity_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Image" Association="CRMModel.Store.FK_Product_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesTrend_Company" Association="CRMModel.Store.FK_SalesTrend_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="SalesTrend" EntitySet="SalesTrend" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="OpportunityID" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="100" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="600" />
+          <Property Name="Revenue" Type="money" />
+          <Property Name="NASDAQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="Industry" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ImageID" Type="int" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="600" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="IsEmployee" Type="bit" />
+          <Property Name="Division" Type="nvarchar" MaxLength="50" />
+          <Property Name="Facebook" Type="nvarchar" MaxLength="100" />
+          <Property Name="Twitter" Type="nvarchar" MaxLength="100" />
+          <Property Name="GooglePlus" Type="nvarchar" MaxLength="100" />
+          <Property Name="Blog" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsImportantPerson" Type="bit" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsMale" Type="bit" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ImageID" Type="int" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImagePath" Type="nvarchar" Nullable="false" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Opportunity">
+          <Key>
+            <PropertyRef Name="OpportunityID" />
+          </Key>
+          <Property Name="OpportunityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Lead" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Stage" Type="int" />
+          <Property Name="SuccessProbability" Type="int" />
+          <Property Name="WonLostReason" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiscountPercent" Type="int" />
+          <Property Name="DiscountReason" Type="nvarchar" MaxLength="100" />
+          <Property Name="EstimationCloseDate" Type="datetime" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="ContactID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="600" />
+          <Property Name="ProductType" Type="int" />
+          <Property Name="Features" Type="nvarchar" MaxLength="600" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="ImageID" Type="int" />
+        </EntityType>
+        <EntityType Name="SalesTrend">
+          <Key>
+            <PropertyRef Name="SalesTrendID" />
+          </Key>
+          <Property Name="SalesTrendID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="CompanyID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Activity_Employee">
+          <End Role="Employee" Type="CRMModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="Activity" Type="CRMModel.Store.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_Opportunity">
+          <End Role="Opportunity" Type="CRMModel.Store.Opportunity" Multiplicity="0..1" />
+          <End Role="Activity" Type="CRMModel.Store.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opportunity">
+              <PropertyRef Name="OpportunityID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="OpportunityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Company_Image">
+          <End Role="Image" Type="CRMModel.Store.Image" Multiplicity="0..1" />
+          <End Role="Company" Type="CRMModel.Store.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Company">
+          <End Role="Company" Type="CRMModel.Store.Company" Multiplicity="0..1" />
+          <End Role="Contact" Type="CRMModel.Store.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Image">
+          <End Role="Image" Type="CRMModel.Store.Image" Multiplicity="0..1" />
+          <End Role="Contact" Type="CRMModel.Store.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Image">
+          <End Role="Image" Type="CRMModel.Store.Image" Multiplicity="0..1" />
+          <End Role="Employee" Type="CRMModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_Company">
+          <End Role="Company" Type="CRMModel.Store.Company" Multiplicity="0..1" />
+          <End Role="Opportunity" Type="CRMModel.Store.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_Contact">
+          <End Role="Contact" Type="CRMModel.Store.Contact" Multiplicity="0..1" />
+          <End Role="Opportunity" Type="CRMModel.Store.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_Product">
+          <End Role="Product" Type="CRMModel.Store.Product" Multiplicity="0..1" />
+          <End Role="Opportunity" Type="CRMModel.Store.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Image">
+          <End Role="Image" Type="CRMModel.Store.Image" Multiplicity="0..1" />
+          <End Role="Product" Type="CRMModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesTrend_Company">
+          <End Role="Company" Type="CRMModel.Store.Company" Multiplicity="0..1" />
+          <End Role="SalesTrend" Type="CRMModel.Store.SalesTrend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="SalesTrend">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CRMEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Activity" EntityType="CRMModel.Activity" />
+          <EntitySet Name="Company" EntityType="CRMModel.Company" />
+          <EntitySet Name="Contact" EntityType="CRMModel.Contact" />
+          <EntitySet Name="Employee" EntityType="CRMModel.Employee" />
+          <EntitySet Name="Image" EntityType="CRMModel.Image" />
+          <EntitySet Name="Opportunity" EntityType="CRMModel.Opportunity" />
+          <EntitySet Name="Product" EntityType="CRMModel.Product" />
+          <EntitySet Name="SalesTrend" EntityType="CRMModel.SalesTrend" />
+          <AssociationSet Name="FK_Activity_Employee" Association="CRMModel.FK_Activity_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_Opportunity" Association="CRMModel.FK_Activity_Opportunity">
+            <End Role="Opportunity" EntitySet="Opportunity" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Company_Image" Association="CRMModel.FK_Company_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Company" Association="CRMModel.FK_Contact_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Contact" EntitySet="Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_Company" Association="CRMModel.FK_Opportunity_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesTrend_Company" Association="CRMModel.FK_SalesTrend_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="SalesTrend" EntitySet="SalesTrend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Image" Association="CRMModel.FK_Contact_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Contact" EntitySet="Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_Contact" Association="CRMModel.FK_Opportunity_Contact">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Image" Association="CRMModel.FK_Employee_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Image" Association="CRMModel.FK_Product_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_Product" Association="CRMModel.FK_Opportunity_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="OpportunityID" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.FK_Activity_Employee" FromRole="Activity" ToRole="Employee" />
+          <NavigationProperty Name="Opportunity" Relationship="CRMModel.FK_Activity_Opportunity" FromRole="Activity" ToRole="Opportunity" />
+          <Property Type="DateTime" Name="DateCreated" Precision="3" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Postcode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Website" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Notes" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+          <Property Name="Revenue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NASDAQ" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Industry" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ImageID" Type="Int32" />
+          <NavigationProperty Name="Image" Relationship="CRMModel.FK_Company_Image" FromRole="Company" ToRole="Image" />
+          <NavigationProperty Name="Contact" Relationship="CRMModel.FK_Contact_Company" FromRole="Company" ToRole="Contact" />
+          <NavigationProperty Name="Opportunity" Relationship="CRMModel.FK_Opportunity_Company" FromRole="Company" ToRole="Opportunity" />
+          <NavigationProperty Name="SalesTrend" Relationship="CRMModel.FK_SalesTrend_Company" FromRole="Company" ToRole="SalesTrend" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Postcode" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Notes" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="IsEmployee" Type="Boolean" />
+          <Property Name="Division" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Facebook" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Twitter" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="GooglePlus" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Blog" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsImportantPerson" Type="Boolean" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="Company" Relationship="CRMModel.FK_Contact_Company" FromRole="Contact" ToRole="Company" />
+          <NavigationProperty Name="Image" Relationship="CRMModel.FK_Contact_Image" FromRole="Contact" ToRole="Image" />
+          <NavigationProperty Name="Opportunity" Relationship="CRMModel.FK_Opportunity_Contact" FromRole="Contact" ToRole="Opportunity" />
+          <Property Type="Boolean" Name="IsMale" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ImageID" Type="Int32" />
+          <NavigationProperty Name="Activity" Relationship="CRMModel.FK_Activity_Employee" FromRole="Employee" ToRole="Activity" />
+          <NavigationProperty Name="Image" Relationship="CRMModel.FK_Employee_Image" FromRole="Employee" ToRole="Image" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Company" Relationship="CRMModel.FK_Company_Image" FromRole="Image" ToRole="Company" />
+          <NavigationProperty Name="Contact" Relationship="CRMModel.FK_Contact_Image" FromRole="Image" ToRole="Contact" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.FK_Employee_Image" FromRole="Image" ToRole="Employee" />
+          <NavigationProperty Name="Product" Relationship="CRMModel.FK_Product_Image" FromRole="Image" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Opportunity">
+          <Key>
+            <PropertyRef Name="OpportunityID" />
+          </Key>
+          <Property Name="OpportunityID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Lead" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Stage" Type="Int32" />
+          <Property Name="SuccessProbability" Type="Int32" />
+          <Property Name="WonLostReason" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DiscountPercent" Type="Int32" />
+          <Property Name="DiscountReason" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="EstimationCloseDate" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="ContactID" Type="Int32" />
+          <Property Name="CompanyID" Type="Int32" />
+          <NavigationProperty Name="Activity" Relationship="CRMModel.FK_Activity_Opportunity" FromRole="Opportunity" ToRole="Activity" />
+          <NavigationProperty Name="Company" Relationship="CRMModel.FK_Opportunity_Company" FromRole="Opportunity" ToRole="Company" />
+          <NavigationProperty Name="Contact" Relationship="CRMModel.FK_Opportunity_Contact" FromRole="Opportunity" ToRole="Contact" />
+          <NavigationProperty Name="Product" Relationship="CRMModel.FK_Opportunity_Product" FromRole="Opportunity" ToRole="Product" />
+          <Property Type="DateTime" Name="DateCreated" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+          <Property Name="ProductType" Type="Int32" />
+          <Property Name="Features" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ImageID" Type="Int32" />
+          <NavigationProperty Name="Image" Relationship="CRMModel.FK_Product_Image" FromRole="Product" ToRole="Image" />
+          <NavigationProperty Name="Opportunity" Relationship="CRMModel.FK_Opportunity_Product" FromRole="Product" ToRole="Opportunity" />
+        </EntityType>
+        <EntityType Name="SalesTrend">
+          <Key>
+            <PropertyRef Name="SalesTrendID" />
+          </Key>
+          <Property Name="SalesTrendID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="CompanyID" Type="Int32" />
+          <NavigationProperty Name="Company" Relationship="CRMModel.FK_SalesTrend_Company" FromRole="SalesTrend" ToRole="Company" />
+        </EntityType>
+        <Association Name="FK_Activity_Employee">
+          <End Role="Employee" Type="CRMModel.Employee" Multiplicity="0..1" />
+          <End Role="Activity" Type="CRMModel.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_Opportunity">
+          <End Role="Opportunity" Type="CRMModel.Opportunity" Multiplicity="0..1" />
+          <End Role="Activity" Type="CRMModel.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opportunity">
+              <PropertyRef Name="OpportunityID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="OpportunityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Company_Image">
+          <End Role="Image" Type="CRMModel.Image" Multiplicity="0..1" />
+          <End Role="Company" Type="CRMModel.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Company">
+          <End Role="Company" Type="CRMModel.Company" Multiplicity="0..1" />
+          <End Role="Contact" Type="CRMModel.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_Company">
+          <End Role="Company" Type="CRMModel.Company" Multiplicity="0..1" />
+          <End Role="Opportunity" Type="CRMModel.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesTrend_Company">
+          <End Role="Company" Type="CRMModel.Company" Multiplicity="0..1" />
+          <End Role="SalesTrend" Type="CRMModel.SalesTrend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="SalesTrend">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Image">
+          <End Role="Image" Type="CRMModel.Image" Multiplicity="0..1" />
+          <End Role="Contact" Type="CRMModel.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_Contact">
+          <End Role="Contact" Type="CRMModel.Contact" Multiplicity="0..1" />
+          <End Role="Opportunity" Type="CRMModel.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Image">
+          <End Role="Image" Type="CRMModel.Image" Multiplicity="0..1" />
+          <End Role="Employee" Type="CRMModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Image">
+          <End Role="Image" Type="CRMModel.Image" Multiplicity="0..1" />
+          <End Role="Product" Type="CRMModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_Product">
+          <End Role="Product" Type="CRMModel.Product" Multiplicity="0..1" />
+          <End Role="Opportunity" Type="CRMModel.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities">
+          <EntitySetMapping Name="Activity">
+            <EntityTypeMapping TypeName="CRMModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="OpportunityID" ColumnName="OpportunityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="CRMModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+                <ScalarProperty Name="NASDAQ" ColumnName="NASDAQ" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact">
+            <EntityTypeMapping TypeName="CRMModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="IsEmployee" ColumnName="IsEmployee" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+                <ScalarProperty Name="GooglePlus" ColumnName="GooglePlus" />
+                <ScalarProperty Name="Blog" ColumnName="Blog" />
+                <ScalarProperty Name="IsImportantPerson" ColumnName="IsImportantPerson" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="CRMModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Image">
+            <EntityTypeMapping TypeName="CRMModel.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opportunity">
+            <EntityTypeMapping TypeName="CRMModel.Opportunity">
+              <MappingFragment StoreEntitySet="Opportunity">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="OpportunityID" ColumnName="OpportunityID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Lead" ColumnName="Lead" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="SuccessProbability" ColumnName="SuccessProbability" />
+                <ScalarProperty Name="WonLostReason" ColumnName="WonLostReason" />
+                <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
+                <ScalarProperty Name="DiscountReason" ColumnName="DiscountReason" />
+                <ScalarProperty Name="EstimationCloseDate" ColumnName="EstimationCloseDate" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="CRMModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Features" ColumnName="Features" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesTrend">
+            <EntityTypeMapping TypeName="CRMModel.SalesTrend">
+              <MappingFragment StoreEntitySet="SalesTrend">
+                <ScalarProperty Name="SalesTrendID" ColumnName="SalesTrendID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

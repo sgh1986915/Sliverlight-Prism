@@ -1,0 +1,3 @@
+﻿Issues
+
+1. Opportunity doesn't have DateCreated : DateTime. So that the Procbel.Apps.Model.CRM.Opportunity is comment out.

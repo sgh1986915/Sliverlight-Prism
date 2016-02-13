@@ -1,0 +1,614 @@
+﻿using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.Regions;
+using Microsoft.Practices.Prism.ViewModel;
+using Procbel.Apps.Silverlight.Modules.Incidencias.Infrastructure;
+using System;
+using System.ComponentModel.Composition;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Ink;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using Procbel.Apps.Silverlight.Web.Services;
+using Procbel.Apps.Silverlight.Infrastructure;
+using Procbel.Apps.Silverlight.Infrastructure.Extensions;
+using Procbel.Apps.Silverlight.Modules.Incidencias.Models;
+using Procbel.Apps.Model.Main;
+using System.Collections.Generic;
+using tk = Telerik.Windows.Controls;
+using System.Windows.Browser;
+using System.Linq;
+using System.ServiceModel.DomainServices.Client;
+using System.ComponentModel;
+using System.Windows.Threading;
+using Procbel.Apps.Silverlight.MainRepository.Incidencias;
+
+namespace Procbel.Apps.Silverlight.Modules.Incidencias.ViewModels
+{
+    [Export]
+    public class IncidenciasViewModel : NotificationObject, IPartImportsSatisfiedNotification, INavigationAware
+    {
+        #region Fields
+
+        DispatcherTimer timer;
+        int counter;
+
+        #endregion
+
+        public IncidenciasViewModel()
+        {
+            SubscriptCommand();
+        }
+
+        #region Import parts
+
+        [Import]
+        public IEventAggregator EventAggregator { get; set; }
+
+        [Import]
+        public IRegionManager RegionManager { get; set; }
+
+        [Import]
+        public IncidenciasRepository IncidenciasRepository { get; set; }
+
+        #endregion
+
+        #region Properites Getters and Setters
+
+        private Ticket searchResultSelectedItem;
+        public Ticket SearchResultSelectedItem
+        {
+            get { return this.searchResultSelectedItem; }
+            set
+            {
+                if (value != this.searchResultSelectedItem)
+                {
+                    this.searchResultSelectedItem = value;
+                    this.RaisePropertyChanged(() => this.SearchResultSelectedItem);
+                    RecordSelected(value);
+                }
+            }
+        }
+
+        private IncidenciasViewState state;
+        public IncidenciasViewState State
+        {
+            get
+            {
+                return this.state;
+            }
+            set
+            {
+                if (value != this.state)
+                {
+                    this.state = value;
+                    this.RaisePropertyChanged(() => this.State);
+                }
+            }
+        }
+
+        private PagedCollectionView listingTickets;
+        public PagedCollectionView ListingTickets
+        {
+            get { return this.listingTickets; }
+            set
+            {
+                if (value != this.listingTickets)
+                {
+                    this.listingTickets = value;
+                    this.RaisePropertyChanged(() => this.ListingTickets);
+                }
+            }
+        }
+
+        private Visibility createVisibility = Visibility.Visible;
+        public Visibility CreateVisibility
+        {
+            get { return this.createVisibility; }
+            set
+            {
+                if (value != this.createVisibility)
+                {
+                    this.createVisibility = value;
+                    this.RaisePropertyChanged(() => this.CreateVisibility);
+                }
+            }
+        }
+
+        private Visibility uploadVisibility = Visibility.Collapsed;
+        public Visibility UploadVisibility
+        {
+            get { return this.uploadVisibility; }
+            set
+            {
+                if (value != this.uploadVisibility)
+                {
+                    this.uploadVisibility = value;
+                    this.RaisePropertyChanged(() => this.UploadVisibility);
+                }
+            }
+        }
+
+        private TicketObject activeTicketObject;
+        public TicketObject ActiveTicketObject
+        {
+            get { return this.activeTicketObject; }
+            set
+            {
+                if (value != this.activeTicketObject)
+                {
+                    this.activeTicketObject = value;
+                    this.RaisePropertyChanged(() => this.ActiveTicketObject);
+                }
+            }
+        }
+
+        private TicketType ticketTypeSelectedItem;
+        public TicketType TicketTypeSelectedItem
+        {
+            get { return this.ticketTypeSelectedItem; }
+            set
+            {
+                if (value != this.ticketTypeSelectedItem)
+                {
+                    this.ticketTypeSelectedItem = value;
+                    this.RaisePropertyChanged(() => this.TicketTypeSelectedItem);
+
+                    //Update command button
+                    ResetViewState();
+                }
+            }
+        }
+
+        private IEnumerable<TicketType> listingTicketTypes;
+        public IEnumerable<TicketType> ListingTicketTypes
+        {
+            get { return this.listingTicketTypes; }
+            set
+            {
+                if (value != this.listingTicketTypes)
+                {
+                    this.listingTicketTypes = value;
+                    this.RaisePropertyChanged(() => this.ListingTicketTypes);
+                }
+            }
+        }
+
+        private TicketCategory ticketCategorySelectedItem;
+        public TicketCategory TicketCategorySelectedItem
+        {
+            get { return this.ticketCategorySelectedItem; }
+            set
+            {
+                if (value != this.ticketCategorySelectedItem)
+                {
+                    this.ticketCategorySelectedItem = value;
+                    this.RaisePropertyChanged(() => this.TicketCategorySelectedItem);
+                    //Update command button
+                    ResetViewState();
+                }
+            }
+        }
+
+        private IEnumerable<TicketCategory> listingTicketCategory;
+        public IEnumerable<TicketCategory> ListingTicketCategory
+        {
+            get { return this.listingTicketCategory; }
+            set
+            {
+                if (value != this.listingTicketCategory)
+                {
+                    this.listingTicketCategory = value;
+                    this.RaisePropertyChanged(() => this.ListingTicketCategory);
+                }
+            }
+        }
+
+        private IEnumerable<TicketTag> listingTicketTags;
+        public IEnumerable<TicketTag> ListingTicketTags
+        {
+            get
+            {
+                if (this.listingTicketTags == null)
+                {
+                    this.IncidenciasRepository.GetTicketTags(items => { this.ListingTicketTags = items; });
+                }
+                return this.listingTicketTags;
+            }
+            set
+            {
+                if (value != this.listingTicketTags)
+                {
+                    this.listingTicketTags = value;
+                    this.RaisePropertyChanged(() => this.ListingTicketTags);
+                }
+            }
+        }
+
+        private bool createButtonIsEnabled;
+        public bool CreateButtonIsEnabled
+        {
+            get { return this.createButtonIsEnabled; }
+            set
+            {
+                if (value != this.createButtonIsEnabled)
+                {
+                    this.createButtonIsEnabled = value;
+                    this.RaisePropertyChanged(() => this.CreateButtonIsEnabled);
+                }
+            }
+        }
+
+        private bool isBusy;
+        public bool IsBusy
+        {
+            get { return this.isBusy; }
+            set
+            {
+                if (value != this.isBusy)
+                {
+                    this.isBusy = value;
+                    this.RaisePropertyChanged(() => this.IsBusy);
+
+                    if (this.isBusy)
+                    {
+                        var backgroundWorker = new BackgroundWorker();
+                        backgroundWorker.DoWork += this.OnBackgroundWorkerDoWork;
+                        backgroundWorker.RunWorkerCompleted += OnBackgroundWorkerRunWorkerCompleted;
+                        backgroundWorker.RunWorkerAsync();
+                    }
+                }
+            }
+        }
+
+        private string busyContent;
+        public string BusyContent
+        {
+            get { return this.busyContent; }
+            set
+            {
+                if (this.busyContent != value)
+                {
+                    this.busyContent = value;
+                    this.RaisePropertyChanged(() => this.BusyContent);
+                }
+            }
+        }
+
+        #endregion
+
+        #region ICommands
+
+        // Save new Entity into database.
+        public DelegateCommand CreateCommand { get; set; }
+
+        public DelegateCommand UpdateCommand
+        {
+            get { return new DelegateCommand(OnUpdateExecuted); }
+        }
+
+        public DelegateCommand<object> AttachmentsCommand
+        {
+            get { return new DelegateCommand<object>(OnAttachmentsExecuted); }
+        }
+
+        public DelegateCommand TextChangedCommand
+        {
+            get { return new DelegateCommand(OnTextChangedExecuted); }
+        }
+
+        public DelegateCommand CancelCommand
+        {
+            get { return new DelegateCommand(OnCancelExecuted); }
+        }
+
+        public DelegateCommand AddNewCommand
+        {
+            get { return new DelegateCommand(OnAddNewExecuted); }
+        }
+
+        public DelegateCommand EditCommand
+        {
+            get { return new DelegateCommand(OnEditExecuted); }
+        }
+
+        #endregion
+
+        #region Methods
+
+        private void OnBackgroundWorkerRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            var backgroundWorker = sender as BackgroundWorker;
+            backgroundWorker.DoWork -= this.OnBackgroundWorkerDoWork;
+            backgroundWorker.RunWorkerCompleted -= OnBackgroundWorkerRunWorkerCompleted;
+        }
+
+        private void OnBackgroundWorkerDoWork(object sender, DoWorkEventArgs e)
+        {
+            this.IncidenciasRepository.GetTicketTypeSet(items => { this.ListingTicketTypes = items; });
+            this.IncidenciasRepository.GetTicketCategorySet(items => { this.ListingTicketCategory = items; });
+            this.IncidenciasRepository.GetTickets(items =>
+            {
+                this.ListingTickets = new PagedCollectionView(this.IncidenciasRepository.Context.Tickets);
+                // Disable the Busy Indicator
+                timer.Stop();
+                timer.Tick -= OnTimerHandler;
+                this.IsBusy = false;
+            });
+
+            // Invoke the Busy Indicator.
+            InvokeUI();
+        }
+
+        void InvokeUI()
+        {
+            var dispatcher = System.Windows.Deployment.Current.Dispatcher;
+            if (dispatcher.CheckAccess())
+            {
+                timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromMilliseconds(1);
+                timer.Tick += OnTimerHandler;
+                timer.Start();
+            }
+            else
+            {
+                dispatcher.BeginInvoke(() =>
+                {
+                    timer = new DispatcherTimer();
+                    timer.Interval = TimeSpan.FromMilliseconds(1);
+                    timer.Tick += OnTimerHandler;
+                    timer.Start();
+                });
+            }
+        }
+
+        void OnTimerHandler(object sender, EventArgs e)
+        {
+            counter++;
+            this.BusyContent = string.Concat("Loaded ", counter, " Tickets");
+        }
+
+        /// <summary>
+        /// Update an Entity into database.
+        /// </summary>
+        void OnUpdateExecuted()
+        {
+            // Exchanges data between domain model for the update entity
+            ExchangedData();
+            this.IncidenciasRepository.Context.SubmitChanges((op) =>
+                {
+                    if (op.HasError)
+                    {
+                        MessageBox.Show(string.Format("Submit Failed: {0}", op.Error.Message));
+                        op.MarkErrorAsHandled();
+                    }
+                    // Switch to Detail view, similar master and detail. It is regular view
+                    RecordSelected(this.SearchResultSelectedItem);
+                },null);
+        }
+
+        // Need updated when there's more fields need saved.
+        void ExchangedData()
+        {
+            this.SearchResultSelectedItem.Title = this.ActiveTicketObject.Title;
+            this.SearchResultSelectedItem.TicketTypeTicketTypeId = this.ActiveTicketObject.TicketTypeTicketTypeId;
+            this.SearchResultSelectedItem.TicketCategoryTicketCategoryId = this.ActiveTicketObject.TicketCategoryTicketCategoryId;
+            this.SearchResultSelectedItem.TagList = this.ActiveTicketObject.TagList;
+            this.SearchResultSelectedItem.Details = this.ActiveTicketObject.Details;
+        }
+
+        void OnAttachmentsExecuted(object obj)
+        {
+            if (obj != null)
+            {
+                var item = obj as tk.RadUploadSelectedFile;
+                Uri uri = new Uri(HtmlPage.Document.DocumentUri, "DocumentFiles" + "\\" + item.Name);
+                TicketAttachment addItem = new TicketAttachment
+                {
+                    TicketId = this.ActiveTicketObject.TicketId,
+                    FileName = item.Name,
+                    FileSize = Convert.ToInt32(item.Size),
+                    FileType = item.File.Extension,
+                    // Need updated
+                    UploadedBy = "Admin",
+                    UploadedDate = DateTime.Now,
+                    FileDescription = "FileDescription",
+                    IsPending = true,
+                    FileURL = uri.ToString()
+                };
+
+                this.IncidenciasRepository.Context.TicketAttachments.Add(addItem);
+                // Save changed
+                this.IncidenciasRepository.Context.SubmitChanges();
+            }
+        }
+
+        void OnTextChangedExecuted()
+        {
+            ResetViewState();
+        }
+
+        /// <summary>
+        /// When selection's event is triged, We don't need to raise multiple events
+        /// </summary>
+        /// <param name="value">The value is Ticket entity that sent from UI</param>
+        void RecordSelected(Ticket value)
+        {
+            this.ActiveTicketObject = null;
+            if (value != null)
+            {
+                this.ActiveTicketObject = value.ConvertToEntity();
+                this.RegionManager.Regions[ModuleRegionNames.IncidenciasDetailsRegion].ClearActiveViews();
+                this.RegionManager.RequestNavigate(ModuleRegionNames.IncidenciasDetailsRegion, "DetailUserControl");
+            }
+
+            UpdateCreatedView(true);
+        }
+
+        void OnCancelExecuted()
+        {
+            RecordSelected(this.SearchResultSelectedItem);
+        }
+
+        void OnEditExecuted()
+        {
+            if (this.SearchResultSelectedItem == null)
+            {
+                // Need implemented MessageBox
+                MessageBox.Show("Please selects an item to update");
+                return;
+            }
+
+            // Exchanges the data between domain model, then revert it back
+            this.ActiveTicketObject = this.SearchResultSelectedItem.ConvertToEntity();
+
+            this.RegionManager.Regions[ModuleRegionNames.IncidenciasDetailsRegion].ClearActiveViews();
+            this.RegionManager.RequestNavigate(ModuleRegionNames.IncidenciasDetailsRegion, "EditTicketUserControl");
+
+            // Show first Layout for create view
+            UpdateCreatedView(true);
+
+            // Update buttons command
+            ResetViewState();
+        }
+
+        void OnAddNewExecuted()
+        {
+            this.ActiveTicketObject = new TicketObject();
+
+            this.RegionManager.Regions[ModuleRegionNames.IncidenciasDetailsRegion].ClearActiveViews();
+            this.RegionManager.RequestNavigate(ModuleRegionNames.IncidenciasDetailsRegion, "CreateTicketUserControl");
+        }
+
+        bool CanCreateExecuted()
+        {
+            var result = this.TicketTypeSelectedItem != null && this.TicketCategorySelectedItem != null
+                && (!string.IsNullOrEmpty(this.ActiveTicketObject.Title) || !string.IsNullOrWhiteSpace(this.ActiveTicketObject.Title));
+            if (result)
+                this.CreateButtonIsEnabled = true;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Add new entities into the database.
+        /// </summary>
+        void OnCreateExecuted()
+        {
+            // Set the Button's IsEnabled to prevent double click. 
+            this.CreateButtonIsEnabled = false;
+
+            this.IncidenciasRepository.Context.Tickets.Add(this.ActiveTicketObject.ConvertToEntity());
+            this.IncidenciasRepository.Context.SubmitChanges((op) =>
+            {
+                if (op.HasError)
+                {
+                    MessageBox.Show(string.Format("Submit Failed: {0}", op.Error.Message));
+                    op.MarkErrorAsHandled();
+                }
+
+                // Hide first Layout
+                UpdateCreatedView(false);
+                // When create an entity is that the Upload process need the current entity's ID.
+                this.ActiveTicketObject.TicketId = (from db in this.IncidenciasRepository.Context.Tickets
+                                                        .OrderByDescending(o => o.TicketId) select db)
+                                                        .FirstOrDefault().TicketId;
+            },null);
+        }
+
+        void UpdateCreatedView(bool isFirstLayout)
+        {
+            if (isFirstLayout)
+            {
+                this.CreateVisibility = Visibility.Visible;
+                this.UploadVisibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.CreateVisibility = Visibility.Collapsed;
+                this.UploadVisibility = Visibility.Visible;
+            }
+        }
+
+        void SubscriptCommand()
+        {
+            this.CreateCommand = new DelegateCommand(OnCreateExecuted, CanCreateExecuted);
+        }
+
+        #endregion
+
+        #region Reset views's states
+
+        void ResetViewState()
+        {
+            this.CreateCommand.RaiseCanExecuteChanged();
+        }
+
+        #endregion
+
+        #region Prism Framework
+
+        public void OnImportsSatisfied()
+        {
+            this.RaisePropertyChanged(() => this.ActiveTicketObject);
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+
+        }
+
+        #endregion
+    }
+}
+
+
+
+
+<Grid x:Name="contactsOverviewGrid" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="39"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Rectangle Fill="{StaticResource StrongBrush}" Height="1" HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="4"/>
+
+                <Border Background="{StaticResource AccentBrush}" MinWidth="44" Grid.RowSpan="2">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="19" Opacity="0.2"/>
+                    </Border.Effect>
+                </Border>
+                <TextBlock Text="{Binding CompaniesViewModel.SelectedCompanyContacts.ItemCount, FallbackValue=0}" FontFamily="Segoe UI Light" 
+	            	HorizontalAlignment="Center"
+	            	FontSize="36" Foreground="{StaticResource MainBrush}" Margin="4,-6,4,-2"/>
+
+                <TextBlock Grid.Column="1" Text="RECENT" Foreground="{StaticResource BasicBrush}" HorizontalAlignment="Left"
+                       FontFamily="Segoe UI Semibold" FontSize="11" VerticalAlignment="Top" Margin="4,0,0,0"/>
+                <TextBlock Grid.Column="2" Text="contacts" FontFamily="Segoe UI Light" FontSize="36" Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Right" Margin="0,-10,0,0"/>
+                
+                <!--ItemsControl-->
+                <ScrollViewer Grid.Row="2" Margin="0,8,0,0" Grid.ColumnSpan="3">
+                    
+                </ScrollViewer>
+            </Grid>
